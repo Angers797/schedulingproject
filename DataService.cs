@@ -84,31 +84,33 @@ namespace C969_Project
 				using (var transaction = _dbConnection.BeginTransaction())
 				{
 					using (var cmdCountry = new MySqlCommand(@"
-						INSERT INTO country (country, createdBy)
-						SELECT @country, @createdBy
+						INSERT INTO country (country, createDate,createdBy)
+						SELECT @country, @createDate,@createdBy
 						FROM DUAL
 						WHERE NOT EXISTS (SELECT 1 FROM country WHERE country = @country);
 						SELECT countryId FROM country WHERE country = @country)", _dbConnection, transaction))
 					{
 						cmdCountry.Parameters.AddWithValue("@country", customer.Country);
+						cmdCountry.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
 						cmdCountry.Parameters.AddWithValue("@createdBy", userId);
 						countryId = Convert.ToInt32(cmdCountry.ExecuteScalar());
 					}
 					using (var cmdCity = new MySqlCommand(@"
-						INSERT INTO city (city, countryId, createdBy)
-						SELECT @city, @countryId, @createdBy
+						INSERT INTO city (city, countryId, createDate, createdBy)
+						SELECT @city, @countryId, @createDate, @createdBy
 						FROM DUAL
 						WHERE NOT EXISTS (SELECT 1 FROM city WHERE city = @city);
 						SELECT cityId FROM city WHERE city = @city", _dbConnection, transaction))
 					{
 						cmdCity.Parameters.AddWithValue("@city", customer.City);
 						cmdCity.Parameters.AddWithValue("@countryId", countryId);
+						cmdCity.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
 						cmdCity.Parameters.AddWithValue("@createdBy", userId);
 						cityId = Convert.ToInt32(cmdCity.ExecuteScalar());
-					}
+					}						
 					using (var cmdAddress = new MySqlCommand(@"
-						INSERT INTO address (address, address2, cityId, postalCode, phone, createdBy)
-						VALUES (@address, @address2, @cityId, @postalCode, @phone, @createdBy);
+						INSERT INTO address (address, address2, cityId, postalCode, phone, createDate, createdBy)
+						VALUES (@address, @address2, @cityId, @postalCode, @phone, @createDate, @createdBy);
 						SELECT LAST_INSERT_ID()", _dbConnection, transaction))
 					{
 						cmdAddress.Parameters.AddWithValue("@address", customer.Address);
@@ -116,16 +118,18 @@ namespace C969_Project
 						cmdAddress.Parameters.AddWithValue("@cityId", cityId);
 						cmdAddress.Parameters.AddWithValue("@postalCode", customer.PostalCode);
 						cmdAddress.Parameters.AddWithValue("@phone", customer.Phone);
+						cmdAddress.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
 						cmdAddress.Parameters.AddWithValue("@createdBy", userId);
 
 						addressId = Convert.ToInt32(cmdAddress.ExecuteScalar());
 					}
-					using (var cmdCustomer = new MySqlCommand("INSERT INTO customer (customerName, addressId, active, createdBy)" +
-						"VALUES (@customerName, @addressId, @active, @createdBy)", _dbConnection, transaction))
+					using (var cmdCustomer = new MySqlCommand("INSERT INTO customer (customerName, addressId, active, createDate, createdBy)" +
+						"VALUES (@customerName, @addressId, @active, @createDate, @createdBy)", _dbConnection, transaction))
 					{
 						cmdCustomer.Parameters.AddWithValue("@customerName", customer.Name);
 						cmdCustomer.Parameters.AddWithValue("@addressId", addressId);
 						cmdCustomer.Parameters.AddWithValue("@active", 1);
+						cmdCustomer.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
 						cmdCustomer.Parameters.AddWithValue("@createdBy", userId);
 						cmdCustomer.ExecuteNonQuery();
 					}
@@ -451,8 +455,9 @@ namespace C969_Project
 		public int addTestUser()
 		{
 			using (var _dbConnection = new MySqlConnection(connectionString))
-			using (var command = new MySqlCommand("INSERT INTO user (userName, password, createdBy) VALUES ('test', 'test', 'system'); SELECT LAST_INSERT_ID();", _dbConnection))
+			using (var command = new MySqlCommand("INSERT INTO user (userName, password, active, createDate, createdBy) VALUES ('test', 'test', 1, @createDate, 'system'); SELECT LAST_INSERT_ID();", _dbConnection))
 			{
+				command.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
 				_dbConnection.Open();
 				var result = command.ExecuteScalar();
 				return Convert.ToInt32(result);
