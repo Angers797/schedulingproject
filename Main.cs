@@ -33,7 +33,7 @@ namespace C969_Project
 			InitializeComponent();
 			this.localZone = localZone;
 			this.loggedInUser = userId;
-			dataService = new DataService("server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!;AllowUserVariables=True");
+			dataService = new DataService("server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!;AllowUserVariables=True;AllowMultipleQueries=true");
 			fillApptsByDay(DateTime.Today, dgv_upcoming);
 			SetupDateTimePickers();
 			//Fill dgv_customers with customers from database here
