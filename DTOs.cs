@@ -12,7 +12,7 @@ namespace C969_Project
 			public string Address { get; set; }
 			public string Address2 { get; set; }
 			public string City { get; set; }
-			public int PostalCode { get; set; }
+			public string PostalCode { get; set; }
 			public string Phone { get; set; }
 			public string Country { get; set; }
 		}
@@ -38,7 +38,7 @@ namespace C969_Project
 			public string Address { get; set; }
 			public string Address2 { get; set; }
 			public string City { get; set; }
-			public int PostalCode { get; set; }
+			public string PostalCode { get; set; }
 			public string Phone { get; set; }
 			public string Country { get; set; }
 			public DateTime CreateDate { get; set; }
@@ -54,7 +54,7 @@ namespace C969_Project
 			public string Address { get; set; }
 			public string Address2 { get; set; }
 			public string City { get; set; }
-			public int PostalCode { get; set; }
+			public string PostalCode { get; set; }
 			public string Phone { get; set; }
 			public string Country { get; set; }			
 			public DateTime LastUpdate { get; set; }
