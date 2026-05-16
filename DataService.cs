@@ -120,11 +120,12 @@ namespace C969_Project
 
 						addressId = Convert.ToInt32(cmdAddress.ExecuteScalar());
 					}
-					using (var cmdCustomer = new MySqlCommand("INSERT INTO customer (customerName, addressId, createdBy)" +
-						"VALUES (@customerName, @addressId, @createdBy)", _dbConnection, transaction))
+					using (var cmdCustomer = new MySqlCommand("INSERT INTO customer (customerName, addressId, active, createdBy)" +
+						"VALUES (@customerName, @addressId, @active, @createdBy)", _dbConnection, transaction))
 					{
 						cmdCustomer.Parameters.AddWithValue("@customerName", customer.Name);
 						cmdCustomer.Parameters.AddWithValue("@addressId", addressId);
+						cmdCustomer.Parameters.AddWithValue("@active", 1);
 						cmdCustomer.Parameters.AddWithValue("@createdBy", userId);
 						cmdCustomer.ExecuteNonQuery();
 					}
