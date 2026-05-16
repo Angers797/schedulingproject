@@ -1,0 +1,686 @@
+﻿namespace C969_Project
+{
+	partial class Main
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		#region Windows Form Designer generated code
+
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.dgv_upcoming = new System.Windows.Forms.DataGridView();
+			this.label1 = new System.Windows.Forms.Label();
+			this.tab_main = new System.Windows.Forms.TabControl();
+			this.tab_overview = new System.Windows.Forms.TabPage();
+			this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+			this.tab_customers = new System.Windows.Forms.TabPage();
+			this.btn_clear = new System.Windows.Forms.Button();
+			this.btn_delete = new System.Windows.Forms.Button();
+			this.btn_update = new System.Windows.Forms.Button();
+			this.btn_add = new System.Windows.Forms.Button();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.lbl_name = new System.Windows.Forms.Label();
+			this.txt_phone = new System.Windows.Forms.TextBox();
+			this.txt_country = new System.Windows.Forms.TextBox();
+			this.txt_zipCode = new System.Windows.Forms.TextBox();
+			this.txt_city = new System.Windows.Forms.TextBox();
+			this.txt_addressTwo = new System.Windows.Forms.TextBox();
+			this.txt_address = new System.Windows.Forms.TextBox();
+			this.txt_name = new System.Windows.Forms.TextBox();
+			this.dgv_customers = new System.Windows.Forms.DataGridView();
+			this.tab_appointments = new System.Windows.Forms.TabPage();
+			this.btn_appt_delete = new System.Windows.Forms.Button();
+			this.btn_appt_update = new System.Windows.Forms.Button();
+			this.btn_appt_add = new System.Windows.Forms.Button();
+			this.label16 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.label14 = new System.Windows.Forms.Label();
+			this.label13 = new System.Windows.Forms.Label();
+			this.label12 = new System.Windows.Forms.Label();
+			this.label11 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.lbl_apptName = new System.Windows.Forms.Label();
+			this.dtp_timeEnd = new System.Windows.Forms.DateTimePicker();
+			this.dtp_timeStart = new System.Windows.Forms.DateTimePicker();
+			this.txt_apptUrl = new System.Windows.Forms.TextBox();
+			this.dtp_dateEnd = new System.Windows.Forms.DateTimePicker();
+			this.dtp_dateStart = new System.Windows.Forms.DateTimePicker();
+			this.txt_apptLocation = new System.Windows.Forms.TextBox();
+			this.txt_apptDescription = new System.Windows.Forms.TextBox();
+			this.txt_apptTitle = new System.Windows.Forms.TextBox();
+			this.txt_apptNameView = new System.Windows.Forms.TextBox();
+			this.dgv_apptAppointments = new System.Windows.Forms.DataGridView();
+			this.dgv_apptCustomers = new System.Windows.Forms.DataGridView();
+			this.btn_exit = new System.Windows.Forms.Button();
+			this.txt_apptContact = new System.Windows.Forms.TextBox();
+			this.txt_apptType = new System.Windows.Forms.TextBox();
+			this.btn_apptClearForm = new System.Windows.Forms.Button();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_upcoming)).BeginInit();
+			this.tab_main.SuspendLayout();
+			this.tab_overview.SuspendLayout();
+			this.tab_customers.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_customers)).BeginInit();
+			this.tab_appointments.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_apptAppointments)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_apptCustomers)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// dgv_upcoming
+			// 
+			this.dgv_upcoming.AllowUserToAddRows = false;
+			this.dgv_upcoming.AllowUserToDeleteRows = false;
+			this.dgv_upcoming.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_upcoming.Location = new System.Drawing.Point(6, 26);
+			this.dgv_upcoming.Name = "dgv_upcoming";
+			this.dgv_upcoming.ReadOnly = true;
+			this.dgv_upcoming.Size = new System.Drawing.Size(332, 469);
+			this.dgv_upcoming.TabIndex = 3;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(6, 3);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(184, 20);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Upcoming Appointments";
+			// 
+			// tab_main
+			// 
+			this.tab_main.Controls.Add(this.tab_overview);
+			this.tab_main.Controls.Add(this.tab_customers);
+			this.tab_main.Controls.Add(this.tab_appointments);
+			this.tab_main.Location = new System.Drawing.Point(2, 4);
+			this.tab_main.Name = "tab_main";
+			this.tab_main.SelectedIndex = 0;
+			this.tab_main.Size = new System.Drawing.Size(1064, 517);
+			this.tab_main.TabIndex = 6;
+			// 
+			// tab_overview
+			// 
+			this.tab_overview.Controls.Add(this.monthCalendar1);
+			this.tab_overview.Controls.Add(this.label1);
+			this.tab_overview.Controls.Add(this.dgv_upcoming);
+			this.tab_overview.Location = new System.Drawing.Point(4, 22);
+			this.tab_overview.Name = "tab_overview";
+			this.tab_overview.Padding = new System.Windows.Forms.Padding(3);
+			this.tab_overview.Size = new System.Drawing.Size(1056, 491);
+			this.tab_overview.TabIndex = 0;
+			this.tab_overview.Text = "Overview";
+			this.tab_overview.UseVisualStyleBackColor = true;
+			// 
+			// monthCalendar1
+			// 
+			this.monthCalendar1.Location = new System.Drawing.Point(350, 26);
+			this.monthCalendar1.Name = "monthCalendar1";
+			this.monthCalendar1.TabIndex = 6;
+			this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+			// 
+			// tab_customers
+			// 
+			this.tab_customers.Controls.Add(this.btn_clear);
+			this.tab_customers.Controls.Add(this.btn_delete);
+			this.tab_customers.Controls.Add(this.btn_update);
+			this.tab_customers.Controls.Add(this.btn_add);
+			this.tab_customers.Controls.Add(this.label8);
+			this.tab_customers.Controls.Add(this.label7);
+			this.tab_customers.Controls.Add(this.label6);
+			this.tab_customers.Controls.Add(this.label5);
+			this.tab_customers.Controls.Add(this.label4);
+			this.tab_customers.Controls.Add(this.label3);
+			this.tab_customers.Controls.Add(this.lbl_name);
+			this.tab_customers.Controls.Add(this.txt_phone);
+			this.tab_customers.Controls.Add(this.txt_country);
+			this.tab_customers.Controls.Add(this.txt_zipCode);
+			this.tab_customers.Controls.Add(this.txt_city);
+			this.tab_customers.Controls.Add(this.txt_addressTwo);
+			this.tab_customers.Controls.Add(this.txt_address);
+			this.tab_customers.Controls.Add(this.txt_name);
+			this.tab_customers.Controls.Add(this.dgv_customers);
+			this.tab_customers.Location = new System.Drawing.Point(4, 22);
+			this.tab_customers.Name = "tab_customers";
+			this.tab_customers.Padding = new System.Windows.Forms.Padding(3);
+			this.tab_customers.Size = new System.Drawing.Size(1056, 491);
+			this.tab_customers.TabIndex = 1;
+			this.tab_customers.Text = "Customers";
+			this.tab_customers.UseVisualStyleBackColor = true;
+			// 
+			// btn_clear
+			// 
+			this.btn_clear.Location = new System.Drawing.Point(732, 277);
+			this.btn_clear.Name = "btn_clear";
+			this.btn_clear.Size = new System.Drawing.Size(75, 23);
+			this.btn_clear.TabIndex = 18;
+			this.btn_clear.Text = "Clear Form";
+			this.btn_clear.UseVisualStyleBackColor = true;
+			this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+			// 
+			// btn_delete
+			// 
+			this.btn_delete.Location = new System.Drawing.Point(732, 325);
+			this.btn_delete.Name = "btn_delete";
+			this.btn_delete.Size = new System.Drawing.Size(75, 23);
+			this.btn_delete.TabIndex = 17;
+			this.btn_delete.Text = "Delete";
+			this.btn_delete.UseVisualStyleBackColor = true;
+			this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+			// 
+			// btn_update
+			// 
+			this.btn_update.Location = new System.Drawing.Point(651, 325);
+			this.btn_update.Name = "btn_update";
+			this.btn_update.Size = new System.Drawing.Size(75, 23);
+			this.btn_update.TabIndex = 16;
+			this.btn_update.Text = "Update";
+			this.btn_update.UseVisualStyleBackColor = true;
+			this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+			// 
+			// btn_add
+			// 
+			this.btn_add.Location = new System.Drawing.Point(570, 325);
+			this.btn_add.Name = "btn_add";
+			this.btn_add.Size = new System.Drawing.Size(75, 23);
+			this.btn_add.TabIndex = 15;
+			this.btn_add.Text = "Add";
+			this.btn_add.UseVisualStyleBackColor = true;
+			this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(707, 169);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(50, 13);
+			this.label8.TabIndex = 14;
+			this.label8.Text = "Zip Code";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(570, 261);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(38, 13);
+			this.label7.TabIndex = 13;
+			this.label7.Text = "Phone";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(570, 215);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(43, 13);
+			this.label6.TabIndex = 12;
+			this.label6.Text = "Country";
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(570, 169);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(24, 13);
+			this.label5.TabIndex = 11;
+			this.label5.Text = "City";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(570, 123);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(77, 13);
+			this.label4.TabIndex = 10;
+			this.label4.Text = "Address Line 2";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(570, 79);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(45, 13);
+			this.label3.TabIndex = 9;
+			this.label3.Text = "Address";
+			// 
+			// lbl_name
+			// 
+			this.lbl_name.AutoSize = true;
+			this.lbl_name.Location = new System.Drawing.Point(570, 37);
+			this.lbl_name.Name = "lbl_name";
+			this.lbl_name.Size = new System.Drawing.Size(35, 13);
+			this.lbl_name.TabIndex = 8;
+			this.lbl_name.Text = "Name";
+			// 
+			// txt_phone
+			// 
+			this.txt_phone.Location = new System.Drawing.Point(570, 280);
+			this.txt_phone.Name = "txt_phone";
+			this.txt_phone.Size = new System.Drawing.Size(100, 20);
+			this.txt_phone.TabIndex = 7;
+			// 
+			// txt_country
+			// 
+			this.txt_country.Location = new System.Drawing.Point(570, 234);
+			this.txt_country.Name = "txt_country";
+			this.txt_country.Size = new System.Drawing.Size(100, 20);
+			this.txt_country.TabIndex = 6;
+			// 
+			// txt_zipCode
+			// 
+			this.txt_zipCode.Location = new System.Drawing.Point(707, 188);
+			this.txt_zipCode.Name = "txt_zipCode";
+			this.txt_zipCode.Size = new System.Drawing.Size(100, 20);
+			this.txt_zipCode.TabIndex = 5;
+			// 
+			// txt_city
+			// 
+			this.txt_city.Location = new System.Drawing.Point(570, 188);
+			this.txt_city.Name = "txt_city";
+			this.txt_city.Size = new System.Drawing.Size(100, 20);
+			this.txt_city.TabIndex = 4;
+			// 
+			// txt_addressTwo
+			// 
+			this.txt_addressTwo.Location = new System.Drawing.Point(570, 142);
+			this.txt_addressTwo.Name = "txt_addressTwo";
+			this.txt_addressTwo.Size = new System.Drawing.Size(100, 20);
+			this.txt_addressTwo.TabIndex = 3;
+			// 
+			// txt_address
+			// 
+			this.txt_address.Location = new System.Drawing.Point(570, 100);
+			this.txt_address.Name = "txt_address";
+			this.txt_address.Size = new System.Drawing.Size(100, 20);
+			this.txt_address.TabIndex = 2;
+			// 
+			// txt_name
+			// 
+			this.txt_name.Location = new System.Drawing.Point(570, 56);
+			this.txt_name.Name = "txt_name";
+			this.txt_name.Size = new System.Drawing.Size(100, 20);
+			this.txt_name.TabIndex = 1;
+			// 
+			// dgv_customers
+			// 
+			this.dgv_customers.AllowUserToAddRows = false;
+			this.dgv_customers.AllowUserToDeleteRows = false;
+			this.dgv_customers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_customers.Location = new System.Drawing.Point(7, 7);
+			this.dgv_customers.Name = "dgv_customers";
+			this.dgv_customers.ReadOnly = true;
+			this.dgv_customers.Size = new System.Drawing.Size(369, 488);
+			this.dgv_customers.TabIndex = 0;
+			// 
+			// tab_appointments
+			// 
+			this.tab_appointments.Controls.Add(this.btn_apptClearForm);
+			this.tab_appointments.Controls.Add(this.txt_apptType);
+			this.tab_appointments.Controls.Add(this.txt_apptContact);
+			this.tab_appointments.Controls.Add(this.btn_appt_delete);
+			this.tab_appointments.Controls.Add(this.btn_appt_update);
+			this.tab_appointments.Controls.Add(this.btn_appt_add);
+			this.tab_appointments.Controls.Add(this.label16);
+			this.tab_appointments.Controls.Add(this.label15);
+			this.tab_appointments.Controls.Add(this.label14);
+			this.tab_appointments.Controls.Add(this.label13);
+			this.tab_appointments.Controls.Add(this.label12);
+			this.tab_appointments.Controls.Add(this.label11);
+			this.tab_appointments.Controls.Add(this.label10);
+			this.tab_appointments.Controls.Add(this.label9);
+			this.tab_appointments.Controls.Add(this.lbl_apptName);
+			this.tab_appointments.Controls.Add(this.dtp_timeEnd);
+			this.tab_appointments.Controls.Add(this.dtp_timeStart);
+			this.tab_appointments.Controls.Add(this.txt_apptUrl);
+			this.tab_appointments.Controls.Add(this.dtp_dateEnd);
+			this.tab_appointments.Controls.Add(this.dtp_dateStart);
+			this.tab_appointments.Controls.Add(this.txt_apptLocation);
+			this.tab_appointments.Controls.Add(this.txt_apptDescription);
+			this.tab_appointments.Controls.Add(this.txt_apptTitle);
+			this.tab_appointments.Controls.Add(this.txt_apptNameView);
+			this.tab_appointments.Controls.Add(this.dgv_apptAppointments);
+			this.tab_appointments.Controls.Add(this.dgv_apptCustomers);
+			this.tab_appointments.Location = new System.Drawing.Point(4, 22);
+			this.tab_appointments.Name = "tab_appointments";
+			this.tab_appointments.Padding = new System.Windows.Forms.Padding(3);
+			this.tab_appointments.Size = new System.Drawing.Size(1056, 491);
+			this.tab_appointments.TabIndex = 2;
+			this.tab_appointments.Text = "Appointments";
+			this.tab_appointments.UseVisualStyleBackColor = true;
+			// 
+			// btn_appt_delete
+			// 
+			this.btn_appt_delete.Location = new System.Drawing.Point(547, 305);
+			this.btn_appt_delete.Name = "btn_appt_delete";
+			this.btn_appt_delete.Size = new System.Drawing.Size(75, 23);
+			this.btn_appt_delete.TabIndex = 24;
+			this.btn_appt_delete.Text = "Delete";
+			this.btn_appt_delete.UseVisualStyleBackColor = true;
+			this.btn_appt_delete.Click += new System.EventHandler(this.btn_appt_delete_Click);
+			// 
+			// btn_appt_update
+			// 
+			this.btn_appt_update.Location = new System.Drawing.Point(435, 305);
+			this.btn_appt_update.Name = "btn_appt_update";
+			this.btn_appt_update.Size = new System.Drawing.Size(75, 23);
+			this.btn_appt_update.TabIndex = 23;
+			this.btn_appt_update.Text = "Update";
+			this.btn_appt_update.UseVisualStyleBackColor = true;
+			this.btn_appt_update.Click += new System.EventHandler(this.btn_appt_update_Click);
+			// 
+			// btn_appt_add
+			// 
+			this.btn_appt_add.Location = new System.Drawing.Point(325, 306);
+			this.btn_appt_add.Name = "btn_appt_add";
+			this.btn_appt_add.Size = new System.Drawing.Size(75, 23);
+			this.btn_appt_add.TabIndex = 22;
+			this.btn_appt_add.Text = "Add";
+			this.btn_appt_add.UseVisualStyleBackColor = true;
+			this.btn_appt_add.Click += new System.EventHandler(this.btn_appt_add_Click);
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Location = new System.Drawing.Point(259, 240);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(30, 13);
+			this.label16.TabIndex = 21;
+			this.label16.Text = "Time";
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Location = new System.Drawing.Point(256, 213);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(30, 13);
+			this.label15.TabIndex = 20;
+			this.label15.Text = "Date";
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Location = new System.Drawing.Point(259, 187);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(20, 13);
+			this.label14.TabIndex = 19;
+			this.label14.Text = "Url";
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Location = new System.Drawing.Point(259, 160);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(31, 13);
+			this.label13.TabIndex = 18;
+			this.label13.Text = "Type";
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Location = new System.Drawing.Point(256, 132);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(44, 13);
+			this.label12.TabIndex = 17;
+			this.label12.Text = "Contact";
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Location = new System.Drawing.Point(256, 104);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(48, 13);
+			this.label11.TabIndex = 16;
+			this.label11.Text = "Location";
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(253, 78);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(60, 13);
+			this.label10.TabIndex = 15;
+			this.label10.Text = "Description";
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(253, 52);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(27, 13);
+			this.label9.TabIndex = 14;
+			this.label9.Text = "Title";
+			// 
+			// lbl_apptName
+			// 
+			this.lbl_apptName.AutoSize = true;
+			this.lbl_apptName.Location = new System.Drawing.Point(253, 26);
+			this.lbl_apptName.Name = "lbl_apptName";
+			this.lbl_apptName.Size = new System.Drawing.Size(35, 13);
+			this.lbl_apptName.TabIndex = 13;
+			this.lbl_apptName.Text = "Name";
+			// 
+			// dtp_timeEnd
+			// 
+			this.dtp_timeEnd.Location = new System.Drawing.Point(547, 234);
+			this.dtp_timeEnd.Name = "dtp_timeEnd";
+			this.dtp_timeEnd.Size = new System.Drawing.Size(200, 20);
+			this.dtp_timeEnd.TabIndex = 12;
+			// 
+			// dtp_timeStart
+			// 
+			this.dtp_timeStart.Location = new System.Drawing.Point(325, 234);
+			this.dtp_timeStart.Name = "dtp_timeStart";
+			this.dtp_timeStart.Size = new System.Drawing.Size(200, 20);
+			this.dtp_timeStart.TabIndex = 11;
+			this.dtp_timeStart.Value = new System.DateTime(2026, 5, 8, 17, 24, 0, 0);
+			// 
+			// txt_apptUrl
+			// 
+			this.txt_apptUrl.Location = new System.Drawing.Point(325, 181);
+			this.txt_apptUrl.Name = "txt_apptUrl";
+			this.txt_apptUrl.Size = new System.Drawing.Size(148, 20);
+			this.txt_apptUrl.TabIndex = 10;
+			// 
+			// dtp_dateEnd
+			// 
+			this.dtp_dateEnd.Location = new System.Drawing.Point(547, 207);
+			this.dtp_dateEnd.Name = "dtp_dateEnd";
+			this.dtp_dateEnd.Size = new System.Drawing.Size(208, 20);
+			this.dtp_dateEnd.TabIndex = 7;
+			// 
+			// dtp_dateStart
+			// 
+			this.dtp_dateStart.Location = new System.Drawing.Point(325, 207);
+			this.dtp_dateStart.Name = "dtp_dateStart";
+			this.dtp_dateStart.Size = new System.Drawing.Size(200, 20);
+			this.dtp_dateStart.TabIndex = 6;
+			this.dtp_dateStart.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+			// 
+			// txt_apptLocation
+			// 
+			this.txt_apptLocation.Location = new System.Drawing.Point(325, 98);
+			this.txt_apptLocation.Name = "txt_apptLocation";
+			this.txt_apptLocation.Size = new System.Drawing.Size(148, 20);
+			this.txt_apptLocation.TabIndex = 5;
+			// 
+			// txt_apptDescription
+			// 
+			this.txt_apptDescription.Location = new System.Drawing.Point(325, 72);
+			this.txt_apptDescription.Name = "txt_apptDescription";
+			this.txt_apptDescription.Size = new System.Drawing.Size(513, 20);
+			this.txt_apptDescription.TabIndex = 4;
+			// 
+			// txt_apptTitle
+			// 
+			this.txt_apptTitle.Location = new System.Drawing.Point(325, 46);
+			this.txt_apptTitle.Name = "txt_apptTitle";
+			this.txt_apptTitle.Size = new System.Drawing.Size(148, 20);
+			this.txt_apptTitle.TabIndex = 3;
+			// 
+			// txt_apptNameView
+			// 
+			this.txt_apptNameView.Location = new System.Drawing.Point(325, 20);
+			this.txt_apptNameView.Name = "txt_apptNameView";
+			this.txt_apptNameView.Size = new System.Drawing.Size(148, 20);
+			this.txt_apptNameView.TabIndex = 2;
+			// 
+			// dgv_apptAppointments
+			// 
+			this.dgv_apptAppointments.AllowUserToAddRows = false;
+			this.dgv_apptAppointments.AllowUserToDeleteRows = false;
+			this.dgv_apptAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_apptAppointments.Location = new System.Drawing.Point(6, 241);
+			this.dgv_apptAppointments.Name = "dgv_apptAppointments";
+			this.dgv_apptAppointments.ReadOnly = true;
+			this.dgv_apptAppointments.Size = new System.Drawing.Size(240, 244);
+			this.dgv_apptAppointments.TabIndex = 1;
+			// 
+			// dgv_apptCustomers
+			// 
+			this.dgv_apptCustomers.AllowUserToAddRows = false;
+			this.dgv_apptCustomers.AllowUserToDeleteRows = false;
+			this.dgv_apptCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_apptCustomers.Location = new System.Drawing.Point(6, 6);
+			this.dgv_apptCustomers.Name = "dgv_apptCustomers";
+			this.dgv_apptCustomers.ReadOnly = true;
+			this.dgv_apptCustomers.Size = new System.Drawing.Size(240, 212);
+			this.dgv_apptCustomers.TabIndex = 0;
+			this.dgv_apptCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_apptCustomers_CellContentClick);
+			// 
+			// btn_exit
+			// 
+			this.btn_exit.Location = new System.Drawing.Point(924, 528);
+			this.btn_exit.Name = "btn_exit";
+			this.btn_exit.Size = new System.Drawing.Size(75, 23);
+			this.btn_exit.TabIndex = 7;
+			this.btn_exit.Text = "Exit";
+			this.btn_exit.UseVisualStyleBackColor = true;
+			this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+			// 
+			// txt_apptContact
+			// 
+			this.txt_apptContact.Location = new System.Drawing.Point(325, 124);
+			this.txt_apptContact.Name = "txt_apptContact";
+			this.txt_apptContact.Size = new System.Drawing.Size(148, 20);
+			this.txt_apptContact.TabIndex = 25;
+			// 
+			// txt_apptType
+			// 
+			this.txt_apptType.Location = new System.Drawing.Point(325, 152);
+			this.txt_apptType.Name = "txt_apptType";
+			this.txt_apptType.Size = new System.Drawing.Size(148, 20);
+			this.txt_apptType.TabIndex = 26;
+			// 
+			// btn_apptClearForm
+			// 
+			this.btn_apptClearForm.Location = new System.Drawing.Point(672, 305);
+			this.btn_apptClearForm.Name = "btn_apptClearForm";
+			this.btn_apptClearForm.Size = new System.Drawing.Size(75, 23);
+			this.btn_apptClearForm.TabIndex = 27;
+			this.btn_apptClearForm.Text = "Clear Form";
+			this.btn_apptClearForm.UseVisualStyleBackColor = true;
+			this.btn_apptClearForm.Click += new System.EventHandler(this.btn_apptClearForm_Click);
+			// 
+			// Main
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(1078, 558);
+			this.Controls.Add(this.btn_exit);
+			this.Controls.Add(this.tab_main);
+			this.Name = "Main";
+			this.Text = "Main Application";
+			((System.ComponentModel.ISupportInitialize)(this.dgv_upcoming)).EndInit();
+			this.tab_main.ResumeLayout(false);
+			this.tab_overview.ResumeLayout(false);
+			this.tab_overview.PerformLayout();
+			this.tab_customers.ResumeLayout(false);
+			this.tab_customers.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_customers)).EndInit();
+			this.tab_appointments.ResumeLayout(false);
+			this.tab_appointments.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_apptAppointments)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgv_apptCustomers)).EndInit();
+			this.ResumeLayout(false);
+
+		}
+
+		#endregion
+		private System.Windows.Forms.DataGridView dgv_upcoming;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TabControl tab_main;
+		private System.Windows.Forms.TabPage tab_overview;
+		private System.Windows.Forms.TabPage tab_customers;
+		private System.Windows.Forms.MonthCalendar monthCalendar1;
+		private System.Windows.Forms.DataGridView dgv_customers;
+		private System.Windows.Forms.TabPage tab_appointments;
+		private System.Windows.Forms.Button btn_exit;
+		private System.Windows.Forms.TextBox txt_name;
+		private System.Windows.Forms.TextBox txt_addressTwo;
+		private System.Windows.Forms.TextBox txt_address;
+		private System.Windows.Forms.TextBox txt_phone;
+		private System.Windows.Forms.TextBox txt_country;
+		private System.Windows.Forms.TextBox txt_zipCode;
+		private System.Windows.Forms.TextBox txt_city;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label lbl_name;
+		private System.Windows.Forms.Button btn_update;
+		private System.Windows.Forms.Button btn_add;
+		private System.Windows.Forms.Button btn_clear;
+		private System.Windows.Forms.Button btn_delete;
+		private System.Windows.Forms.DataGridView dgv_apptAppointments;
+		private System.Windows.Forms.DataGridView dgv_apptCustomers;
+		private System.Windows.Forms.TextBox txt_apptLocation;
+		private System.Windows.Forms.TextBox txt_apptDescription;
+		private System.Windows.Forms.TextBox txt_apptTitle;
+		private System.Windows.Forms.TextBox txt_apptNameView;
+		private System.Windows.Forms.DateTimePicker dtp_dateEnd;
+		private System.Windows.Forms.DateTimePicker dtp_dateStart;
+		private System.Windows.Forms.TextBox txt_apptUrl;
+		private System.Windows.Forms.DateTimePicker dtp_timeEnd;
+		private System.Windows.Forms.DateTimePicker dtp_timeStart;
+		private System.Windows.Forms.Label label16;
+		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Label lbl_apptName;
+		private System.Windows.Forms.Button btn_appt_delete;
+		private System.Windows.Forms.Button btn_appt_update;
+		private System.Windows.Forms.Button btn_appt_add;
+		private System.Windows.Forms.TextBox txt_apptType;
+		private System.Windows.Forms.TextBox txt_apptContact;
+		private System.Windows.Forms.Button btn_apptClearForm;
+	}
+}
