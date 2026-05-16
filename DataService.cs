@@ -417,7 +417,7 @@ namespace C969_Project
 							Address2 = reader.IsDBNull(reader.GetOrdinal("address2")) ? null : reader.GetString("address2"),
 							City = reader.GetString("city"),
 							Country = reader.GetString("country"),
-							PostalCode = reader.GetInt32("postalCode"),
+							PostalCode = reader.GetString("postalCode"),
 							Phone = reader.GetString("phone")
 						});
 					}
@@ -450,7 +450,7 @@ namespace C969_Project
 							Address2 = reader.IsDBNull(reader.GetOrdinal("address2")) ? null : reader.GetString("address2"),
 							City = reader.GetString("city"),
 							Country = reader.GetString("country"),
-							PostalCode = reader.GetInt32("postalCode"),
+							PostalCode = reader.GetString("postalCode"),
 							Phone = reader.GetString("phone")
 						};
 					}

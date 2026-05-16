@@ -76,7 +76,7 @@ namespace C969_Project
 					Address = TrimString(txt_address.Text),
 					Address2 = TrimString(txt_addressTwo.Text),
 					City = TrimString(txt_city.Text),
-					PostalCode = int.Parse(TrimString(txt_zipCode.Text)),
+					PostalCode = TrimString(txt_zipCode.Text),
 					Phone = TrimString(txt_phone.Text),
 					Country = TrimString(txt_country.Text)
 				};
@@ -244,7 +244,7 @@ namespace C969_Project
 					Address = TrimString(txt_address.Text),
 					Address2 = TrimString(txt_addressTwo.Text),
 					City = TrimString(txt_city.Text),
-					PostalCode = int.Parse(TrimString(txt_zipCode.Text)),
+					PostalCode = TrimString(txt_zipCode.Text),
 					Phone = TrimString(txt_phone.Text),
 					Country = TrimString(txt_country.Text)
 				};
