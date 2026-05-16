@@ -471,7 +471,6 @@ namespace C969_Project
 				var result = command.ExecuteScalar();
 				return Convert.ToInt32(result);
 			}
-
 		}
 
 		public void populateDatabase(int userId)

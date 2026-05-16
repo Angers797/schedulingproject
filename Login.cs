@@ -36,7 +36,7 @@ namespace C969_Project
 		{
 			try
 			{
-				DataService dataService = new DataService("server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!;");
+				DataService dataService = new DataService("server = localhost; user = sqlUser; database = client_schedule; port = 3306; password = Passw0rd!; AllowUserVariables = True");
 				int id = dataService.addTestUser();
 				dataService.populateDatabase(id);
 			}
@@ -63,7 +63,7 @@ namespace C969_Project
 
 		private void btn_login_Click(object sender, EventArgs e)
 		{
-			DataService dataService = new DataService("server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!;");
+			DataService dataService = new DataService("server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!;AllowUserVariables=True");
 			//Add Validation for username and password fields
 			string user = txt_userName.Text;
 			string pass = txt_password.Text;
