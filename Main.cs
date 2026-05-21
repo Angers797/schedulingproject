@@ -36,8 +36,6 @@ namespace C969_Project
 			dataService = new DataService("server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!;AllowUserVariables=True");
 			fillApptsByDay(DateTime.Today, dgv_upcoming);
 			SetupDateTimePickers();
-			//Fill dgv_customers with customers from database here
-			//Fill dgv_appointments with appointments from database here
 		}
 
 		private void SetupDateTimePickers()
@@ -71,15 +69,15 @@ namespace C969_Project
 			}
 
 			DTOs.Customer newCustomer = new DTOs.Customer
-				{
-					Name = TrimString(txt_name.Text),
-					Address = TrimString(txt_address.Text),
-					Address2 = TrimString(txt_addressTwo.Text),
-					City = TrimString(txt_city.Text),
-					PostalCode = TrimString(txt_zipCode.Text),
-					Phone = TrimString(txt_phone.Text),
-					Country = TrimString(txt_country.Text)
-				};
+			{
+				Name = TrimString(txt_name.Text),
+				Address = TrimString(txt_address.Text),
+				Address2 = TrimString(txt_addressTwo.Text),
+				City = TrimString(txt_city.Text),
+				PostalCode = TrimString(txt_zipCode.Text),
+				Phone = TrimString(txt_phone.Text),
+				Country = TrimString(txt_country.Text)
+			};
 			//Hit API to add customer to database here
 			if(dataService.AddNewCustomer(newCustomer, loggedInUser))
 			{

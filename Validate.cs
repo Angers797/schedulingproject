@@ -12,8 +12,8 @@ namespace C969_Project
 {
 	public static class Validate
 	{
-		private static readonly DateTime earliestAppointment = DateTime.MinValue.AddHours(9);
-		private static readonly DateTime latestAppointment = DateTime.MinValue.AddHours(17);
+		private static readonly TimeSpan earliestAppointment = TimeSpan.FromHours(9);
+		private static readonly TimeSpan latestAppointment = TimeSpan.FromHours(17);
 
 		public static bool IsAnyNull(params object[] values) 
 		{
@@ -56,7 +56,7 @@ namespace C969_Project
 				MessageBox.Show("Appointment start time must be before end time and both times must be on the same day.");
 				return false;
 			}
-			if (utcStart < earliestAppointment || utcStart > latestAppointment || utcEnd < earliestAppointment || utcEnd > latestAppointment)
+			if (utcStart.TimeOfDay < earliestAppointment || utcStart.TimeOfDay > latestAppointment || utcEnd.TimeOfDay < earliestAppointment || utcEnd.TimeOfDay > latestAppointment)
 			{
 				MessageBox.Show("Appointment times must be within business hours (9 AM to 5 PM).");
 				return false;
