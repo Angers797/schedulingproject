@@ -502,6 +502,18 @@ namespace C969_Project
 				txt_country.Text = row.Cells["colCountry"].Value.ToString();
 			}
 		}
+
+		private void dgv_apptCustomers_Click(object sender, EventArgs e)
+		{
+			if (dgv_apptCustomers.CurrentRow != null)
+			{
+				DataGridViewRow row = dgv_apptCustomers.CurrentRow;
+				int customerId = Convert.ToInt32(row.Cells["colApptTabCustId"].Value);
+				selectedCustomerId = customerId;
+				fillApptByPerson(customerId, true);
+				txt_apptNameView.Text = row.Cells["colApptTabCustName"].Value.ToString();
+			}
+		}
 	}	
 }
 

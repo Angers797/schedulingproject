@@ -697,6 +697,7 @@
 			this.dgv_apptCustomers.Size = new System.Drawing.Size(240, 212);
 			this.dgv_apptCustomers.TabIndex = 0;
 			this.dgv_apptCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_apptCustomers_CellContentClick);
+			this.dgv_apptCustomers.Click += new System.EventHandler(this.dgv_apptCustomers_Click);
 			// 
 			// colApptTabCustId
 			// 
