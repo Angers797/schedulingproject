@@ -259,7 +259,7 @@ namespace C969_Project
 			using (var _dbConnection = new MySqlConnection(connectionString))
 			using (var command = new MySqlCommand(@"
 				INSERT INTO appointment (customerId, userId, title, description, location, contact, url, start, end, createdBy) 
-				VALUES (@customerId, @userId, @title, @description, @location, @contact, @url, @start, @end)", _dbConnection))
+				VALUES (@customerId, @userId, @title, @description, @location, @contact, @url, @start, @end, @createdBy)", _dbConnection))
 			{
 				command.Parameters.AddWithValue("@customerId", appointment.CustomerId);
 				command.Parameters.AddWithValue("@userId", appointment.UserId);
