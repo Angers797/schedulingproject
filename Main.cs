@@ -485,7 +485,16 @@ namespace C969_Project
 			if (e.RowIndex >= 0)
 			{
 				DataGridViewRow row = dgv_customers.Rows[e.RowIndex];
-				int customerId = Convert.ToInt32(row.Cells["CustomerId"].Value);
+				int customerId = Convert.ToInt32(row.Cells["colId"].Value);
+			}
+		}
+
+		private void dgv_customers_Click(object sender, EventArgs e)
+		{
+			if (dgv_customers.CurrentRow != null)
+			{
+				DataGridViewRow row = dgv_customers.CurrentRow;
+				int customerId = Convert.ToInt32(row.Cells["colId"].Value);
 			}
 		}
 	}	

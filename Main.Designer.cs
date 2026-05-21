@@ -352,7 +352,8 @@
 			this.dgv_customers.ReadOnly = true;
 			this.dgv_customers.Size = new System.Drawing.Size(369, 488);
 			this.dgv_customers.TabIndex = 0;
-			this.dgv_customers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_customers_CellContentClick);
+			this.dgv_customers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_customers_CellContentClick);
+			this.dgv_customers.Click += new System.EventHandler(this.dgv_customers_Click);
 			// 
 			// tab_appointments
 			// 
