@@ -232,8 +232,7 @@ namespace C969_Project
 			dgv_apptAppointments.Rows.Clear();
 			foreach (Appointment appointment in appointments)
 			{
-				dgv_apptAppointments.Rows.Add(
-					appointment.CustomerId,
+				dgv_apptAppointments.Rows.Add(					
 					appointment.AppointmentId,
 					appointment.Title,
 					appointment.Description,
@@ -500,7 +499,7 @@ namespace C969_Project
 				txt_address.Text = row.Cells["colAddress"].Value.ToString();
 				txt_addressTwo.Text = row.Cells["colAddress2"].Value.ToString();
 				txt_city.Text = row.Cells["colCity"].Value.ToString();
-				txt_zipCode.Text = row.Cells["colPostal"].Value.ToString();
+				txt_zipCode.Text = row.Cells["colPostalCode"].Value.ToString();
 				txt_phone.Text = row.Cells["colPhone"].Value.ToString();
 				txt_country.Text = row.Cells["colCountry"].Value.ToString();
 			}

@@ -53,6 +53,14 @@
 			this.txt_address = new System.Windows.Forms.TextBox();
 			this.txt_name = new System.Windows.Forms.TextBox();
 			this.dgv_customers = new System.Windows.Forms.DataGridView();
+			this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colAddress2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colPostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tab_appointments = new System.Windows.Forms.TabPage();
 			this.btn_apptClearForm = new System.Windows.Forms.Button();
 			this.txt_apptType = new System.Windows.Forms.TextBox();
@@ -80,15 +88,24 @@
 			this.txt_apptNameView = new System.Windows.Forms.TextBox();
 			this.dgv_apptAppointments = new System.Windows.Forms.DataGridView();
 			this.dgv_apptCustomers = new System.Windows.Forms.DataGridView();
+			this.colApptTabCustId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabCustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabCustAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabCustAddress2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabCustCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabCustPostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabCustPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabCustCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.btn_exit = new System.Windows.Forms.Button();
-			this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colAddress2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colPostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_upcoming)).BeginInit();
 			this.tab_main.SuspendLayout();
 			this.tab_overview.SuspendLayout();
@@ -104,6 +121,16 @@
 			this.dgv_upcoming.AllowUserToAddRows = false;
 			this.dgv_upcoming.AllowUserToDeleteRows = false;
 			this.dgv_upcoming.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_upcoming.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colOverviewId,
+            this.colOverviewTitle,
+            this.colOverviewDescription,
+            this.colOverviewLocation,
+            this.colOverviewContact,
+            this.colOverviewType,
+            this.colOverviewUrl,
+            this.colOverviewStartTime,
+            this.colOverviewEndTime});
 			this.dgv_upcoming.Location = new System.Drawing.Point(6, 26);
 			this.dgv_upcoming.Name = "dgv_upcoming";
 			this.dgv_upcoming.ReadOnly = true;
@@ -354,6 +381,54 @@
 			this.dgv_customers.TabIndex = 0;
 			this.dgv_customers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_customers_CellContentClick);
 			this.dgv_customers.Click += new System.EventHandler(this.dgv_customers_Click);
+			// 
+			// colId
+			// 
+			this.colId.HeaderText = "Id";
+			this.colId.Name = "colId";
+			this.colId.ReadOnly = true;
+			// 
+			// colName
+			// 
+			this.colName.HeaderText = "Name";
+			this.colName.Name = "colName";
+			this.colName.ReadOnly = true;
+			// 
+			// colAddress
+			// 
+			this.colAddress.HeaderText = "Address";
+			this.colAddress.Name = "colAddress";
+			this.colAddress.ReadOnly = true;
+			// 
+			// colAddress2
+			// 
+			this.colAddress2.HeaderText = "Address 2";
+			this.colAddress2.Name = "colAddress2";
+			this.colAddress2.ReadOnly = true;
+			// 
+			// colCity
+			// 
+			this.colCity.HeaderText = "City";
+			this.colCity.Name = "colCity";
+			this.colCity.ReadOnly = true;
+			// 
+			// colPostalCode
+			// 
+			this.colPostalCode.HeaderText = "Postal Code";
+			this.colPostalCode.Name = "colPostalCode";
+			this.colPostalCode.ReadOnly = true;
+			// 
+			// colPhone
+			// 
+			this.colPhone.HeaderText = "Phone";
+			this.colPhone.Name = "colPhone";
+			this.colPhone.ReadOnly = true;
+			// 
+			// colCountry
+			// 
+			this.colCountry.HeaderText = "Country";
+			this.colCountry.Name = "colCountry";
+			this.colCountry.ReadOnly = true;
 			// 
 			// tab_appointments
 			// 
@@ -607,12 +682,69 @@
 			this.dgv_apptCustomers.AllowUserToAddRows = false;
 			this.dgv_apptCustomers.AllowUserToDeleteRows = false;
 			this.dgv_apptCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_apptCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colApptTabCustId,
+            this.colApptTabCustName,
+            this.colApptTabCustAddress,
+            this.colApptTabCustAddress2,
+            this.colApptTabCustCity,
+            this.colApptTabCustPostalCode,
+            this.colApptTabCustPhone,
+            this.colApptTabCustCountry});
 			this.dgv_apptCustomers.Location = new System.Drawing.Point(6, 6);
 			this.dgv_apptCustomers.Name = "dgv_apptCustomers";
 			this.dgv_apptCustomers.ReadOnly = true;
 			this.dgv_apptCustomers.Size = new System.Drawing.Size(240, 212);
 			this.dgv_apptCustomers.TabIndex = 0;
 			this.dgv_apptCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_apptCustomers_CellContentClick);
+			// 
+			// colApptTabCustId
+			// 
+			this.colApptTabCustId.HeaderText = "Id";
+			this.colApptTabCustId.Name = "colApptTabCustId";
+			this.colApptTabCustId.ReadOnly = true;
+			// 
+			// colApptTabCustName
+			// 
+			this.colApptTabCustName.HeaderText = "Name";
+			this.colApptTabCustName.Name = "colApptTabCustName";
+			this.colApptTabCustName.ReadOnly = true;
+			// 
+			// colApptTabCustAddress
+			// 
+			this.colApptTabCustAddress.HeaderText = "Address";
+			this.colApptTabCustAddress.Name = "colApptTabCustAddress";
+			this.colApptTabCustAddress.ReadOnly = true;
+			// 
+			// colApptTabCustAddress2
+			// 
+			this.colApptTabCustAddress2.HeaderText = "Address 2";
+			this.colApptTabCustAddress2.Name = "colApptTabCustAddress2";
+			this.colApptTabCustAddress2.ReadOnly = true;
+			// 
+			// colApptTabCustCity
+			// 
+			this.colApptTabCustCity.HeaderText = "City";
+			this.colApptTabCustCity.Name = "colApptTabCustCity";
+			this.colApptTabCustCity.ReadOnly = true;
+			// 
+			// colApptTabCustPostalCode
+			// 
+			this.colApptTabCustPostalCode.HeaderText = "Postal Code";
+			this.colApptTabCustPostalCode.Name = "colApptTabCustPostalCode";
+			this.colApptTabCustPostalCode.ReadOnly = true;
+			// 
+			// colApptTabCustPhone
+			// 
+			this.colApptTabCustPhone.HeaderText = "Phone";
+			this.colApptTabCustPhone.Name = "colApptTabCustPhone";
+			this.colApptTabCustPhone.ReadOnly = true;
+			// 
+			// colApptTabCustCountry
+			// 
+			this.colApptTabCustCountry.HeaderText = "Country";
+			this.colApptTabCustCountry.Name = "colApptTabCustCountry";
+			this.colApptTabCustCountry.ReadOnly = true;
 			// 
 			// btn_exit
 			// 
@@ -624,53 +756,60 @@
 			this.btn_exit.UseVisualStyleBackColor = true;
 			this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
 			// 
-			// colId
+			// colOverviewId
 			// 
-			this.colId.HeaderText = "Id";
-			this.colId.Name = "colId";
-			this.colId.ReadOnly = true;
+			this.colOverviewId.HeaderText = "Id";
+			this.colOverviewId.Name = "colOverviewId";
+			this.colOverviewId.ReadOnly = true;
+			this.colOverviewId.Visible = false;
 			// 
-			// colName
+			// colOverviewTitle
 			// 
-			this.colName.HeaderText = "Name";
-			this.colName.Name = "colName";
-			this.colName.ReadOnly = true;
+			this.colOverviewTitle.HeaderText = "Title";
+			this.colOverviewTitle.Name = "colOverviewTitle";
+			this.colOverviewTitle.ReadOnly = true;
 			// 
-			// colAddress
+			// colOverviewDescription
 			// 
-			this.colAddress.HeaderText = "Address";
-			this.colAddress.Name = "colAddress";
-			this.colAddress.ReadOnly = true;
+			this.colOverviewDescription.HeaderText = "Description";
+			this.colOverviewDescription.Name = "colOverviewDescription";
+			this.colOverviewDescription.ReadOnly = true;
 			// 
-			// colAddress2
+			// colOverviewLocation
 			// 
-			this.colAddress2.HeaderText = "Address 2";
-			this.colAddress2.Name = "colAddress2";
-			this.colAddress2.ReadOnly = true;
+			this.colOverviewLocation.HeaderText = "Location";
+			this.colOverviewLocation.Name = "colOverviewLocation";
+			this.colOverviewLocation.ReadOnly = true;
 			// 
-			// colCity
+			// colOverviewContact
 			// 
-			this.colCity.HeaderText = "City";
-			this.colCity.Name = "colCity";
-			this.colCity.ReadOnly = true;
+			this.colOverviewContact.HeaderText = "Contact";
+			this.colOverviewContact.Name = "colOverviewContact";
+			this.colOverviewContact.ReadOnly = true;
 			// 
-			// colPostalCode
+			// colOverviewType
 			// 
-			this.colPostalCode.HeaderText = "Postal Code";
-			this.colPostalCode.Name = "colPostalCode";
-			this.colPostalCode.ReadOnly = true;
+			this.colOverviewType.HeaderText = "Type";
+			this.colOverviewType.Name = "colOverviewType";
+			this.colOverviewType.ReadOnly = true;
 			// 
-			// colPhone
+			// colOverviewUrl
 			// 
-			this.colPhone.HeaderText = "Phone";
-			this.colPhone.Name = "colPhone";
-			this.colPhone.ReadOnly = true;
+			this.colOverviewUrl.HeaderText = "Url";
+			this.colOverviewUrl.Name = "colOverviewUrl";
+			this.colOverviewUrl.ReadOnly = true;
 			// 
-			// colCountry
+			// colOverviewStartTime
 			// 
-			this.colCountry.HeaderText = "Country";
-			this.colCountry.Name = "colCountry";
-			this.colCountry.ReadOnly = true;
+			this.colOverviewStartTime.HeaderText = "Start";
+			this.colOverviewStartTime.Name = "colOverviewStartTime";
+			this.colOverviewStartTime.ReadOnly = true;
+			// 
+			// colOverviewEndTime
+			// 
+			this.colOverviewEndTime.HeaderText = "End";
+			this.colOverviewEndTime.Name = "colOverviewEndTime";
+			this.colOverviewEndTime.ReadOnly = true;
 			// 
 			// Main
 			// 
@@ -758,5 +897,22 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn colPostalCode;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colCountry;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabCustId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabCustName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabCustAddress;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabCustAddress2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabCustCity;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabCustPostalCode;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabCustPhone;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabCustCountry;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewTitle;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewDescription;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewLocation;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewContact;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewType;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewUrl;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewStartTime;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewEndTime;
 	}
 }
