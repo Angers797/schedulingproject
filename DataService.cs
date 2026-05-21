@@ -253,7 +253,7 @@ namespace C969_Project
 			}
 		}		
 
-		public bool AddAppointment(Appointment appointment)
+		public bool AddAppointment(NewAppointment appointment)
 		{
 
 			using (var _dbConnection = new MySqlConnection(connectionString))
@@ -281,7 +281,7 @@ namespace C969_Project
 			}
 		}
 
-		public bool UpdateAppointment(Appointment appointment)
+		public bool UpdateAppointment(UpdateAppointment appointment)
 		{
 
 			using (var _dbConnection = new MySqlConnection(connectionString))
@@ -293,10 +293,12 @@ namespace C969_Project
 					description = @description,
 					location = @location,
 					contact = @contact,
+					type = @type,
 					url = @url,
 					start = @start,
 					end = @end,
-					lastUpdateBy = @userId
+					lastUpdate = @lastUpdate,
+					lastUpdateBy = @lastUpdateBy
 				WHERE appointmentId = @appointmentId", _dbConnection))
 			{
 				command.Parameters.AddWithValue("@customerId", appointment.CustomerId);
@@ -305,9 +307,11 @@ namespace C969_Project
 				command.Parameters.AddWithValue("@description", appointment.Description);
 				command.Parameters.AddWithValue("@location", appointment.Location);
 				command.Parameters.AddWithValue("@contact", appointment.Contact);
+				command.Parameters.AddWithValue("@type", appointment.Type);
 				command.Parameters.AddWithValue("@url", appointment.Url);
 				command.Parameters.AddWithValue("@start", appointment.Start);
-				command.Parameters.AddWithValue("@end", appointment.End);
+				command.Parameters.AddWithValue("@end", appointment.End);				
+				command.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
 				command.Parameters.AddWithValue("@lastUpdateBy", appointment.UserId);
 				_dbConnection.Open();
 				var result = command.ExecuteNonQuery();

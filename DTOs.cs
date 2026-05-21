@@ -15,22 +15,7 @@ namespace C969_Project
 			public string PostalCode { get; set; }
 			public string Phone { get; set; }
 			public string Country { get; set; }
-		}
-
-		public class Appointment
-		{
-			public int? AppointmentId { get; set; }
-			public int CustomerId { get; set; }
-			public int? UserId { get; set; }
-			public string Title { get; set; }
-			public string Description { get; set; }
-			public string Location { get; set; }
-			public string Contact { get; set; }
-			public string Type { get; set; }
-			public string Url { get; set; }
-			public DateTime Start { get; set; }
-			public DateTime End { get; set; }
-		}
+		}		
 
 		public class NewCustomer
 		{
@@ -72,10 +57,33 @@ namespace C969_Project
 			public string LastUpdateBy { get; set; }
 		}
 
-		public class NewAppointment
+		public interface IApptTimes
 		{
+			int? AppointmentId { get; set; }
+			DateTime Start { get; set; }
+			DateTime End { get; set; }
+		}	
+
+		public class Appointment : IApptTimes
+		{
+			public int? AppointmentId { get; set; }
 			public int CustomerId { get; set; }
 			public int? UserId { get; set; }
+			public string Title { get; set; }
+			public string Description { get; set; }
+			public string Location { get; set; }
+			public string Contact { get; set; }
+			public string Type { get; set; }
+			public string Url { get; set; }
+			public DateTime Start { get; set; }
+			public DateTime End { get; set; }
+		}
+
+		public class NewAppointment : IApptTimes
+		{
+			public int? AppointmentId { get; set; }
+			public int CustomerId { get; set; }
+			public int UserId { get; set; }
 			public string Title { get; set; }
 			public string Description { get; set; }
 			public string Location { get; set; }
@@ -90,9 +98,9 @@ namespace C969_Project
 			public string LastUpdateBy { get; set; }
 		}
 
-		public class UpdateAppointment
+		public class UpdateAppointment : IApptTimes
 		{
-			public int AppointmentId { get; set; }
+			public int? AppointmentId { get; set; }
 			public int CustomerId { get; set; }
 			public int? UserId { get; set; }
 			public string Title { get; set; }

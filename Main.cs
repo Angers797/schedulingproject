@@ -358,7 +358,7 @@ namespace C969_Project
 			start = dtp_dateStart.Value.Date + dtp_timeStart.Value.TimeOfDay;
 			end = dtp_dateEnd.Value.Date + dtp_timeEnd.Value.TimeOfDay;	
 
-			DTOs.Appointment newAppointment = new DTOs.Appointment
+			DTOs.NewAppointment newAppointment = new DTOs.NewAppointment
 			{
 				CustomerId = selectedCustomerId,
 				UserId = loggedInUser,
@@ -414,7 +414,7 @@ namespace C969_Project
 				start = dtp_dateStart.Value.Date + dtp_timeStart.Value.TimeOfDay;
 				end = dtp_dateEnd.Value.Date + dtp_timeEnd.Value.TimeOfDay;
 
-				DTOs.Appointment updateAppointment = new DTOs.Appointment
+				DTOs.UpdateAppointment updateAppointment = new DTOs.UpdateAppointment
 				{
 					CustomerId = selectedCustomerId,
 					UserId = loggedInUser,

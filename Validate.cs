@@ -43,7 +43,7 @@ namespace C969_Project
 			return value;
 		}
 		
-		public static bool IsApptTimeValid(Appointment appt, List<Appointment> existingAppointments, TimeZoneInfo localZone)
+		public static bool IsApptTimeValid(IApptTimes appt, List<Appointment> existingAppointments, TimeZoneInfo localZone)
 		{
 			DateTime utcStart;
 			DateTime utcEnd;
