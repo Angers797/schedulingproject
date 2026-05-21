@@ -300,19 +300,6 @@ namespace C969_Project
 			fillApptsByDay(monthCalendar1.SelectionStart, dgv_upcoming);
 		}
 
-		private void dgv_apptCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-			if (e.RowIndex >= 0) 
-			{
-				DataGridViewRow row = dgv_apptCustomers.Rows[e.RowIndex];
-				int customerId = Convert.ToInt32(row.Cells["CustomerId"].Value);
-				fillApptByPerson(customerId, true);
-			}			
-			//Hit API to get appointments for selected customer from database here
-			//If good response, fill dgv_apptAppointments with appointments for selected customer. If not, show error message and leave dgv_apptAppointments blank.
-			//Make sure to handle case where customer has no appointments and show appropriate message.
-		}
-
 		private void btn_delete_Click(object sender, EventArgs e)
 		{
 			if (selectedCustomerId < 0)
