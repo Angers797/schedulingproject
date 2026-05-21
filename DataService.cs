@@ -227,20 +227,31 @@ namespace C969_Project
 			}
 		}
 
+
 		public bool DeleteCustomer(int customerId)
 		{
-			using (var _dbConnection = new MySqlConnection(connectionString))
-			using (var command = new MySqlCommand("DELETE customer, address" +
-				"FROM customer" +
-				"INNER JOIN address ON  customer.addressId = address.addressId" +
-				"WHERE customer.customerId = @customerId", _dbConnection))
+			string query = @"
+				DELETE customer, address
+				FROM customer
+				INNER JOIN address ON customer.addressId = address.addressId
+				WHERE customer.customerId = @customerId";
+			try
 			{
-				command.Parameters.AddWithValue("@customerId", 1); // Placeholder, should be replaced with actual customer ID
-				_dbConnection.Open();
-				var result = command.ExecuteNonQuery();
-				return result > 0;
+				using (var _dbConnection = new MySqlConnection(connectionString))
+				using (var command = new MySqlCommand(query, _dbConnection))
+				{
+					command.Parameters.AddWithValue("@customerId", customerId);
+					_dbConnection.Open();
+					var result = command.ExecuteNonQuery();
+					return result > 0;
+				}
 			}
-		}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error deleting customer: " + ex.Message);
+				return false;
+			}
+		}		
 
 		public bool AddAppointment(Appointment appointment)
 		{

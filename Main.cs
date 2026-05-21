@@ -494,7 +494,7 @@ namespace C969_Project
 			if (dgv_customers.CurrentRow != null)
 			{
 				DataGridViewRow row = dgv_customers.CurrentRow;
-				int customerId = Convert.ToInt32(row.Cells["colId"].Value);
+				selectedCustomerId = Convert.ToInt32(row.Cells["colId"].Value);
 			}
 		}
 	}	
