@@ -106,6 +106,15 @@
 			this.colOverviewUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colOverviewStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colOverviewEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabApptId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_upcoming)).BeginInit();
 			this.tab_main.SuspendLayout();
 			this.tab_overview.SuspendLayout();
@@ -671,6 +680,16 @@
 			this.dgv_apptAppointments.AllowUserToAddRows = false;
 			this.dgv_apptAppointments.AllowUserToDeleteRows = false;
 			this.dgv_apptAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_apptAppointments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colApptTabApptId,
+            this.colApptTabTitle,
+            this.colApptTabDescription,
+            this.colApptTabLocation,
+            this.colApptTabContact,
+            this.colApptTabType,
+            this.colApptTabUrl,
+            this.colApptTabStartTime,
+            this.colApptTabEndTime});
 			this.dgv_apptAppointments.Location = new System.Drawing.Point(6, 241);
 			this.dgv_apptAppointments.Name = "dgv_apptAppointments";
 			this.dgv_apptAppointments.ReadOnly = true;
@@ -812,6 +831,61 @@
 			this.colOverviewEndTime.Name = "colOverviewEndTime";
 			this.colOverviewEndTime.ReadOnly = true;
 			// 
+			// colApptTabApptId
+			// 
+			this.colApptTabApptId.HeaderText = "Id";
+			this.colApptTabApptId.Name = "colApptTabApptId";
+			this.colApptTabApptId.ReadOnly = true;
+			this.colApptTabApptId.Visible = false;
+			// 
+			// colApptTabTitle
+			// 
+			this.colApptTabTitle.HeaderText = "Title";
+			this.colApptTabTitle.Name = "colApptTabTitle";
+			this.colApptTabTitle.ReadOnly = true;
+			// 
+			// colApptTabDescription
+			// 
+			this.colApptTabDescription.HeaderText = "Description";
+			this.colApptTabDescription.Name = "colApptTabDescription";
+			this.colApptTabDescription.ReadOnly = true;
+			// 
+			// colApptTabLocation
+			// 
+			this.colApptTabLocation.HeaderText = "Location";
+			this.colApptTabLocation.Name = "colApptTabLocation";
+			this.colApptTabLocation.ReadOnly = true;
+			// 
+			// colApptTabContact
+			// 
+			this.colApptTabContact.HeaderText = "Contact";
+			this.colApptTabContact.Name = "colApptTabContact";
+			this.colApptTabContact.ReadOnly = true;
+			// 
+			// colApptTabType
+			// 
+			this.colApptTabType.HeaderText = "Type";
+			this.colApptTabType.Name = "colApptTabType";
+			this.colApptTabType.ReadOnly = true;
+			// 
+			// colApptTabUrl
+			// 
+			this.colApptTabUrl.HeaderText = "Url";
+			this.colApptTabUrl.Name = "colApptTabUrl";
+			this.colApptTabUrl.ReadOnly = true;
+			// 
+			// colApptTabStartTime
+			// 
+			this.colApptTabStartTime.HeaderText = "Start Time";
+			this.colApptTabStartTime.Name = "colApptTabStartTime";
+			this.colApptTabStartTime.ReadOnly = true;
+			// 
+			// colApptTabEndTime
+			// 
+			this.colApptTabEndTime.HeaderText = "End Time";
+			this.colApptTabEndTime.Name = "colApptTabEndTime";
+			this.colApptTabEndTime.ReadOnly = true;
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -915,5 +989,14 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewUrl;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewStartTime;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colOverviewEndTime;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabApptId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabTitle;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabDescription;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabLocation;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabContact;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabType;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabUrl;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabStartTime;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabEndTime;
 	}
 }
