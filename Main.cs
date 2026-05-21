@@ -174,8 +174,24 @@ namespace C969_Project
 
 		private void fillCustomers(DataGridView view)
 		{
-			List<Customer> customers = new List<Customer>();
-			customers = dataService.GetAllCustomers();
+			System.Diagnostics.Debug.WriteLine($"[DEBUG] fillCustomers called for {view.Name}");
+
+			if (view == null)
+			{
+				System.Diagnostics.Debug.WriteLine("[DEBUG] DataGridView is null. Cannot fill customers.");
+				return;
+			}
+
+			System.Diagnostics.Debug.WriteLine("[DEBUG] Attempting to fetch data...");
+			
+			List<Customer> customers = dataService.GetAllCustomers();
+
+			if (customers == null)
+			{
+				System.Diagnostics.Debug.WriteLine("[DEBUG] No customers retrieved. Check data service.");
+				return;
+			}
+
 			view.Rows.Clear();
 			foreach (Customer customer in customers)
 			{
