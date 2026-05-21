@@ -54,6 +54,9 @@
 			this.txt_name = new System.Windows.Forms.TextBox();
 			this.dgv_customers = new System.Windows.Forms.DataGridView();
 			this.tab_appointments = new System.Windows.Forms.TabPage();
+			this.btn_apptClearForm = new System.Windows.Forms.Button();
+			this.txt_apptType = new System.Windows.Forms.TextBox();
+			this.txt_apptContact = new System.Windows.Forms.TextBox();
 			this.btn_appt_delete = new System.Windows.Forms.Button();
 			this.btn_appt_update = new System.Windows.Forms.Button();
 			this.btn_appt_add = new System.Windows.Forms.Button();
@@ -78,9 +81,13 @@
 			this.dgv_apptAppointments = new System.Windows.Forms.DataGridView();
 			this.dgv_apptCustomers = new System.Windows.Forms.DataGridView();
 			this.btn_exit = new System.Windows.Forms.Button();
-			this.txt_apptContact = new System.Windows.Forms.TextBox();
-			this.txt_apptType = new System.Windows.Forms.TextBox();
-			this.btn_apptClearForm = new System.Windows.Forms.Button();
+			this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colAddress2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colPostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_upcoming)).BeginInit();
 			this.tab_main.SuspendLayout();
 			this.tab_overview.SuspendLayout();
@@ -329,6 +336,14 @@
 			this.dgv_customers.AllowUserToAddRows = false;
 			this.dgv_customers.AllowUserToDeleteRows = false;
 			this.dgv_customers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv_customers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colName,
+            this.colAddress,
+            this.colAddress2,
+            this.colCity,
+            this.colPostalCode,
+            this.colPhone,
+            this.colCountry});
 			this.dgv_customers.Location = new System.Drawing.Point(7, 7);
 			this.dgv_customers.Name = "dgv_customers";
 			this.dgv_customers.ReadOnly = true;
@@ -370,6 +385,30 @@
 			this.tab_appointments.TabIndex = 2;
 			this.tab_appointments.Text = "Appointments";
 			this.tab_appointments.UseVisualStyleBackColor = true;
+			// 
+			// btn_apptClearForm
+			// 
+			this.btn_apptClearForm.Location = new System.Drawing.Point(672, 305);
+			this.btn_apptClearForm.Name = "btn_apptClearForm";
+			this.btn_apptClearForm.Size = new System.Drawing.Size(75, 23);
+			this.btn_apptClearForm.TabIndex = 27;
+			this.btn_apptClearForm.Text = "Clear Form";
+			this.btn_apptClearForm.UseVisualStyleBackColor = true;
+			this.btn_apptClearForm.Click += new System.EventHandler(this.btn_apptClearForm_Click);
+			// 
+			// txt_apptType
+			// 
+			this.txt_apptType.Location = new System.Drawing.Point(325, 152);
+			this.txt_apptType.Name = "txt_apptType";
+			this.txt_apptType.Size = new System.Drawing.Size(148, 20);
+			this.txt_apptType.TabIndex = 26;
+			// 
+			// txt_apptContact
+			// 
+			this.txt_apptContact.Location = new System.Drawing.Point(325, 124);
+			this.txt_apptContact.Name = "txt_apptContact";
+			this.txt_apptContact.Size = new System.Drawing.Size(148, 20);
+			this.txt_apptContact.TabIndex = 25;
 			// 
 			// btn_appt_delete
 			// 
@@ -580,29 +619,47 @@
 			this.btn_exit.UseVisualStyleBackColor = true;
 			this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
 			// 
-			// txt_apptContact
+			// colName
 			// 
-			this.txt_apptContact.Location = new System.Drawing.Point(325, 124);
-			this.txt_apptContact.Name = "txt_apptContact";
-			this.txt_apptContact.Size = new System.Drawing.Size(148, 20);
-			this.txt_apptContact.TabIndex = 25;
+			this.colName.HeaderText = "Name";
+			this.colName.Name = "colName";
+			this.colName.ReadOnly = true;
 			// 
-			// txt_apptType
+			// colAddress
 			// 
-			this.txt_apptType.Location = new System.Drawing.Point(325, 152);
-			this.txt_apptType.Name = "txt_apptType";
-			this.txt_apptType.Size = new System.Drawing.Size(148, 20);
-			this.txt_apptType.TabIndex = 26;
+			this.colAddress.HeaderText = "Address";
+			this.colAddress.Name = "colAddress";
+			this.colAddress.ReadOnly = true;
 			// 
-			// btn_apptClearForm
+			// colAddress2
 			// 
-			this.btn_apptClearForm.Location = new System.Drawing.Point(672, 305);
-			this.btn_apptClearForm.Name = "btn_apptClearForm";
-			this.btn_apptClearForm.Size = new System.Drawing.Size(75, 23);
-			this.btn_apptClearForm.TabIndex = 27;
-			this.btn_apptClearForm.Text = "Clear Form";
-			this.btn_apptClearForm.UseVisualStyleBackColor = true;
-			this.btn_apptClearForm.Click += new System.EventHandler(this.btn_apptClearForm_Click);
+			this.colAddress2.HeaderText = "Address 2";
+			this.colAddress2.Name = "colAddress2";
+			this.colAddress2.ReadOnly = true;
+			// 
+			// colCity
+			// 
+			this.colCity.HeaderText = "City";
+			this.colCity.Name = "colCity";
+			this.colCity.ReadOnly = true;
+			// 
+			// colPostalCode
+			// 
+			this.colPostalCode.HeaderText = "Postal Code";
+			this.colPostalCode.Name = "colPostalCode";
+			this.colPostalCode.ReadOnly = true;
+			// 
+			// colPhone
+			// 
+			this.colPhone.HeaderText = "Phone";
+			this.colPhone.Name = "colPhone";
+			this.colPhone.ReadOnly = true;
+			// 
+			// colCountry
+			// 
+			this.colCountry.HeaderText = "Country";
+			this.colCountry.Name = "colCountry";
+			this.colCountry.ReadOnly = true;
 			// 
 			// Main
 			// 
@@ -682,5 +739,12 @@
 		private System.Windows.Forms.TextBox txt_apptType;
 		private System.Windows.Forms.TextBox txt_apptContact;
 		private System.Windows.Forms.Button btn_apptClearForm;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colAddress2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colCity;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colPostalCode;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colCountry;
 	}
 }
