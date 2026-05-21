@@ -81,6 +81,7 @@
 			this.dgv_apptAppointments = new System.Windows.Forms.DataGridView();
 			this.dgv_apptCustomers = new System.Windows.Forms.DataGridView();
 			this.btn_exit = new System.Windows.Forms.Button();
+			this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colAddress2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -338,6 +339,7 @@
 			this.dgv_customers.AllowUserToDeleteRows = false;
 			this.dgv_customers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgv_customers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
             this.colName,
             this.colAddress,
             this.colAddress2,
@@ -350,6 +352,7 @@
 			this.dgv_customers.ReadOnly = true;
 			this.dgv_customers.Size = new System.Drawing.Size(369, 488);
 			this.dgv_customers.TabIndex = 0;
+			this.dgv_customers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_customers_CellContentClick);
 			// 
 			// tab_appointments
 			// 
@@ -620,6 +623,12 @@
 			this.btn_exit.UseVisualStyleBackColor = true;
 			this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
 			// 
+			// colId
+			// 
+			this.colId.HeaderText = "Id";
+			this.colId.Name = "colId";
+			this.colId.ReadOnly = true;
+			// 
 			// colName
 			// 
 			this.colName.HeaderText = "Name";
@@ -740,6 +749,7 @@
 		private System.Windows.Forms.TextBox txt_apptType;
 		private System.Windows.Forms.TextBox txt_apptContact;
 		private System.Windows.Forms.Button btn_apptClearForm;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colAddress2;

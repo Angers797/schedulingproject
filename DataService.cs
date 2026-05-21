@@ -431,6 +431,7 @@ namespace C969_Project
 					{
 						customers.Add(new Customer
 						{
+							CustomerId = reader.GetInt32("customerId"),
 							Name = reader.GetString("customerName"),
 							Address = reader.GetString("address"),
 							Address2 = reader.IsDBNull(reader.GetOrdinal("address2")) ? null : reader.GetString("address2"),

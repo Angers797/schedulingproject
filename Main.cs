@@ -213,7 +213,8 @@ namespace C969_Project
 			view.Rows.Clear();
 			foreach (Customer customer in customers)
 			{
-				view.Rows.Add(					
+				view.Rows.Add(
+					customer.CustomerId,
 					customer.Name,
 					customer.Address,
 					customer.Address2,
@@ -476,6 +477,15 @@ namespace C969_Project
 				//If good response, show success message and clear fields. If not, show error message and keep fields populated for user to try again.
 				MessageBox.Show($"Appointment {deleteAppointment.Title} deleted successfully!");
 				ClearFields(Tab.Appointments);
+			}
+		}
+
+		private void dgv_customers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex >= 0)
+			{
+				DataGridViewRow row = dgv_customers.Rows[e.RowIndex];
+				int customerId = Convert.ToInt32(row.Cells["CustomerId"].Value);
 			}
 		}
 	}	
