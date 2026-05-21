@@ -125,26 +125,44 @@ namespace C969_Project
 
 		private void tab_main_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			System.Diagnostics.Debug.WriteLine($"[DEBUG] Tab changed. SelectedTab is: {tab_main.SelectedTab?.Name}");
+
+			if (tab_main.SelectedTab == null) return;
+
 			if (tab_main.SelectedTab == tab_customers)
 			{
+				System.Diagnostics.Debug.WriteLine($"[DEBUG] Switched to Customers tab.");
 				selectedAppointmentId = -1;
-				selectedCustomerId	= -1;
+				selectedCustomerId = -1;
+
+				if (dgv_customers == null)
+				{
+					System.Diagnostics.Debug.WriteLine("[DEBUG] ERROR: dgv_customers is null!");
+					MessageBox.Show("Error: dgv_customers control not found.");
+					return;
+				}
+
 				fillCustomers(dgv_customers);
 			}
 			else if (tab_main.SelectedTab == tab_appointments)
 			{
+				System.Diagnostics.Debug.WriteLine($"[DEBUG] Switched to Appointments tab.");
 				selectedCustomerId = -1;
 				selectedAppointmentId = -1;
-				fillApptsByDay(DateTime.Today, dgv_apptAppointments);
-				fillCustomers(dgv_apptCustomers);
-			} else if (tab_main.SelectedTab == tab_overview)
+
+				if (dgv_apptAppointments != null) fillApptsByDay(DateTime.Today, dgv_apptAppointments);
+				if (dgv_apptCustomers != null) fillCustomers(dgv_apptCustomers);
+			}
+			else if (tab_main.SelectedTab == tab_overview)
 			{
+				System.Diagnostics.Debug.WriteLine($"[DEBUG] Switched to Overview tab.");
 				selectedAppointmentId = -1;
 				selectedCustomerId = -1;
-				fillApptsByDay(DateTime.Today, dgv_upcoming);
+
+				if (dgv_upcoming != null) fillApptsByDay(DateTime.Today, dgv_upcoming);
 			}
 		}
-		
+
 
 		private void fillApptsByDay(DateTime date, DataGridView view)
 		{
