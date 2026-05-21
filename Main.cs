@@ -33,7 +33,7 @@ namespace C969_Project
 			InitializeComponent();
 			this.localZone = localZone;
 			this.loggedInUser = userId;
-			dataService = new DataService("server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!;AllowUserVariables=True;AllowMultipleQueries=true");
+			dataService = new DataService("server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!;AllowUserVariables=True");
 			fillApptsByDay(DateTime.Today, dgv_upcoming);
 			SetupDateTimePickers();
 			//Fill dgv_customers with customers from database here
@@ -59,9 +59,9 @@ namespace C969_Project
 				return;
 			}
 
-			if (!IsAnyNull(txt_name.Text, txt_address.Text, txt_city.Text, txt_phone.Text, txt_country.Text))
+			if (IsAnyNull(txt_name.Text, txt_address.Text, txt_city.Text, txt_phone.Text, txt_country.Text))
 			{
-				MessageBox.Show("Please fill out all fields before adding an appointment.");
+				MessageBox.Show("Please fill out all fields before adding a customer.");
 				return;
 			}
 			if(!IsPhoneValid(txt_phone.Text))
@@ -226,7 +226,7 @@ namespace C969_Project
 			DialogResult result = MessageBox.Show("Are you sure you want to update the user " + txt_name.Text + "?", "Update Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (result == DialogResult.Yes)
 			{	
-				if (!IsAnyNull(txt_name.Text, txt_address.Text, txt_city.Text, txt_phone.Text, txt_country.Text))
+				if (IsAnyNull(txt_name.Text, txt_address.Text, txt_city.Text, txt_phone.Text, txt_country.Text))
 				{
 					MessageBox.Show("Please fill out all fields before adding an appointment.");
 					return;
@@ -316,7 +316,7 @@ namespace C969_Project
 				return;
 			}
 
-			if (!IsAnyNull(txt_apptTitle.Text, txt_apptDescription.Text, txt_apptLocation.Text, txt_apptContact.Text, txt_apptType.Text, txt_apptUrl.Text))
+			if (IsAnyNull(txt_apptTitle.Text, txt_apptDescription.Text, txt_apptLocation.Text, txt_apptContact.Text, txt_apptType.Text, txt_apptUrl.Text))
 			{
 				MessageBox.Show("Please fill out all fields before adding an appointment.");
 				return;
@@ -372,7 +372,7 @@ namespace C969_Project
 			DialogResult result = MessageBox.Show("Are you sure you want to update the appointment " + txt_apptTitle.Text + "?", "Update Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (result == DialogResult.Yes)
 			{
-				if (!IsAnyNull(txt_apptTitle.Text, txt_apptDescription.Text, txt_apptLocation.Text, txt_apptContact.Text, txt_apptType.Text, txt_apptUrl.Text))
+				if (IsAnyNull(txt_apptTitle.Text, txt_apptDescription.Text, txt_apptLocation.Text, txt_apptContact.Text, txt_apptType.Text, txt_apptUrl.Text))
 				{
 					MessageBox.Show("Please fill out all fields before updating an appointment.");
 					return;
