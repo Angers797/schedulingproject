@@ -501,6 +501,11 @@ namespace C969_Project
 				txt_apptNameView.Text = row.Cells["colApptTabCustName"].Value.ToString();
 			}
 		}
+
+		private void dgv_apptAppointments_Click(object sender, EventArgs e)
+		{
+
+		}
 	}	
 }
 

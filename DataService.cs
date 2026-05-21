@@ -524,5 +524,37 @@ namespace C969_Project
 				AddNewCustomer(customer, userId);
 			}
 		}
+
+		public void emptyDatabase()
+		{
+			string resetSql = @"
+        SET FOREIGN_KEY_CHECKS = 0;
+		TRUNCATE TABLE user;        
+		TRUNCATE TABLE country;
+        TRUNCATE TABLE city;
+        TRUNCATE TABLE address;
+        TRUNCATE TABLE customer;
+        TRUNCATE TABLE appointment;
+        SET FOREIGN_KEY_CHECKS = 1;
+    ";
+
+			try
+			{
+				using (var connection = new MySqlConnection(connectionString))
+				{
+					connection.Open();
+					using (var command = new MySqlCommand(resetSql, connection))
+					{
+						int rowsAffected = command.ExecuteNonQuery();
+						MessageBox.Show($"Database reset. {rowsAffected} operations performed.");
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Error resetting database: {ex.Message}");
+				throw; // Re-throw to stop test data loading if reset fails
+			}
+		}
 	}
 }

@@ -37,6 +37,8 @@ namespace C969_Project
 			try
 			{
 				DataService dataService = new DataService("server = localhost; user = sqlUser; database = client_schedule; port = 3306; password = Passw0rd!;AllowUserVariables = True");
+				//REMOVE BEFORE SUBMISSION
+				dataService.emptyDatabase();
 				int id = dataService.addTestUser();
 				dataService.populateDatabase(id);
 			}

@@ -695,6 +695,7 @@
 			this.dgv_apptAppointments.ReadOnly = true;
 			this.dgv_apptAppointments.Size = new System.Drawing.Size(240, 244);
 			this.dgv_apptAppointments.TabIndex = 1;
+			this.dgv_apptAppointments.Click += new System.EventHandler(this.dgv_apptAppointments_Click);
 			// 
 			// dgv_apptCustomers
 			// 
