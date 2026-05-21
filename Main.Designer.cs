@@ -129,6 +129,7 @@
 			this.tab_main.SelectedIndex = 0;
 			this.tab_main.Size = new System.Drawing.Size(1064, 517);
 			this.tab_main.TabIndex = 6;
+			this.tab_main.SelectedIndexChanged += new System.EventHandler(this.tab_main_SelectedIndexChanged);
 			// 
 			// tab_overview
 			// 
