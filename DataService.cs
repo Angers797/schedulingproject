@@ -71,79 +71,98 @@ namespace C969_Project
 			}
 		}
 
-		//incomplete, put in try/catch and return bool for success/failure, also need to add userId for createdBy and lastUpdateBy fields in the database
+
 		public bool AddNewCustomer(Customer customer, int userId)
 		{
+			if (customer == null) throw new ArgumentNullException(nameof(customer));
+
 			var countryId = 0;
 			var cityId = 0;
 			var addressId = 0;
 
-			using (var _dbConnection = new MySqlConnection(connectionString))
+			using var _dbConnection = new MySqlConnection(connectionString);
+			_dbConnection.Open();
+			
+			using var transaction = _dbConnection.BeginTransaction(); // Single transaction
+
+			try
 			{
-				_dbConnection.Open();
-				using (var transaction = _dbConnection.BeginTransaction())
+				// 1. Insert Country (if not exists) and get ID
+				using (var cmd = new MySqlCommand(@"
+					INSERT INTO country (country, createDate, createdBy, lastUpdate, lastUpdateBy)
+					SELECT @country, @createDate, @createdBy, @lastUpdate, @lastUpdateBy
+					FROM DUAL
+					WHERE NOT EXISTS (SELECT 1 FROM country WHERE country = @country);
+					SELECT countryId FROM country WHERE country = @country;", _dbConnection, transaction))
 				{
-					using (var cmdCountry = new MySqlCommand(@"
-						INSERT INTO country (country, createDate, createdBy, lastUpdate, lastUpdateBy)
-						SELECT @country, @createDate,@createdBy, @lastUpdate, @lastUpdateBy
-						FROM DUAL
-						WHERE NOT EXISTS (SELECT 1 FROM country WHERE country = @country);
-						SELECT countryId FROM country WHERE country = @country)", _dbConnection, transaction))
-					{
-						cmdCountry.Parameters.AddWithValue("@country", customer.Country);
-						cmdCountry.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
-						cmdCountry.Parameters.AddWithValue("@createdBy", userId);
-						cmdCountry.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
-						cmdCountry.Parameters.AddWithValue("@lastUpdateBy", userId);
-						countryId = Convert.ToInt32(cmdCountry.ExecuteScalar());
-					}
-					using (var cmdCity = new MySqlCommand(@"
-						INSERT INTO city (city, countryId, createDate, createdBy, lastUpdate, lastUpdateBy)
-						SELECT @city, @countryId, @createDate, @createdBy, @lastUpdate, @lastUpdateBy
-						FROM DUAL
-						WHERE NOT EXISTS (SELECT 1 FROM city WHERE city = @city);
-						SELECT cityId FROM city WHERE city = @city", _dbConnection, transaction))
-					{
-						cmdCity.Parameters.AddWithValue("@city", customer.City);
-						cmdCity.Parameters.AddWithValue("@countryId", countryId);
-						cmdCity.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
-						cmdCity.Parameters.AddWithValue("@createdBy", userId);
-						cmdCity.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
-						cmdCity.Parameters.AddWithValue("@lastUpdateBy", userId);
-						cityId = Convert.ToInt32(cmdCity.ExecuteScalar());
-					}						
-					using (var cmdAddress = new MySqlCommand(@"
-						INSERT INTO address (address, address2, cityId, postalCode, phone, createDate, createdBy, lastUpdate, lastUpdateBy)
-						VALUES (@address, @address2, @cityId, @postalCode, @phone, @createDate, @createdBy, @lastUpdate, @lastUpdateBy);
-						SELECT LAST_INSERT_ID()", _dbConnection, transaction))
-					{
-						cmdAddress.Parameters.AddWithValue("@address", customer.Address);
-						cmdAddress.Parameters.AddWithValue("@address2", customer.Address2);
-						cmdAddress.Parameters.AddWithValue("@cityId", cityId);
-						cmdAddress.Parameters.AddWithValue("@postalCode", customer.PostalCode);
-						cmdAddress.Parameters.AddWithValue("@phone", customer.Phone);
-						cmdAddress.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
-						cmdAddress.Parameters.AddWithValue("@createdBy", userId);
-						cmdAddress.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
-						cmdAddress.Parameters.AddWithValue("@lastUpdateBy", userId);
-						addressId = Convert.ToInt32(cmdAddress.ExecuteScalar());
-					}
-					using (var cmdCustomer = new MySqlCommand("INSERT INTO customer (customerName, addressId, active, createDate, createdBy, lastUpdate, lastUpdateBy)" +
-						"VALUES (@customerName, @addressId, @active, @createDate, @createdBy, @lastUpdate, @lastUpdateBy)", _dbConnection, transaction))
-					{
-						cmdCustomer.Parameters.AddWithValue("@customerName", customer.Name);
-						cmdCustomer.Parameters.AddWithValue("@addressId", addressId);
-						cmdCustomer.Parameters.AddWithValue("@active", 1);
-						cmdCustomer.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
-						cmdCustomer.Parameters.AddWithValue("@createdBy", userId);
-						cmdCustomer.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
-						cmdCustomer.Parameters.AddWithValue("@lastUpdateBy", userId);
-						cmdCustomer.ExecuteNonQuery();
-					}
+					cmd.Parameters.AddWithValue("@country", customer.Country);
+					cmd.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
+					cmd.Parameters.AddWithValue("@createdBy", userId);
+					cmd.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
+					cmd.Parameters.AddWithValue("@lastUpdateBy", userId);
+					countryId = Convert.ToInt32(cmd.ExecuteScalar());
 				}
+
+				// 2. Insert City (if not exists) and get ID
+				using (var cmd = new MySqlCommand(@"
+					INSERT INTO city (city, countryId, createDate, createdBy, lastUpdate, lastUpdateBy)
+					SELECT @city, @countryId, @createDate, @createdBy, @lastUpdate, @lastUpdateBy
+					FROM DUAL
+					WHERE NOT EXISTS (SELECT 1 FROM city WHERE city = @city);
+					SELECT cityId FROM city WHERE city = @city;", _dbConnection, transaction))
+				{
+					cmd.Parameters.AddWithValue("@city", customer.City);
+					cmd.Parameters.AddWithValue("@countryId", countryId);
+					cmd.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
+					cmd.Parameters.AddWithValue("@createdBy", userId);
+					cmd.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
+					cmd.Parameters.AddWithValue("@lastUpdateBy", userId);
+					cityId = Convert.ToInt32(cmd.ExecuteScalar());
+				}
+
+				// 3. Insert Address and get new addressId
+				using (var cmd = new MySqlCommand(@"
+					INSERT INTO address (address, address2, cityId, postalCode, phone, createDate, createdBy, lastUpdate, lastUpdateBy)
+					VALUES (@address, @address2, @cityId, @postalCode, @phone, @createDate, @createdBy, @lastUpdate, @lastUpdateBy);
+					SELECT LAST_INSERT_ID();", _dbConnection, transaction))
+				{
+					cmd.Parameters.AddWithValue("@address", customer.Address);
+					cmd.Parameters.AddWithValue("@address2", customer.Address2 ?? (object)DBNull.Value);
+					cmd.Parameters.AddWithValue("@cityId", cityId);
+					cmd.Parameters.AddWithValue("@postalCode", customer.PostalCode);
+					cmd.Parameters.AddWithValue("@phone", customer.Phone);
+					cmd.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
+					cmd.Parameters.AddWithValue("@createdBy", userId);
+					cmd.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
+					cmd.Parameters.AddWithValue("@lastUpdateBy", userId);
+					addressId = Convert.ToInt32(cmd.ExecuteScalar());
+				}
+
+				// 4. Insert Customer
+				using (var cmd = new MySqlCommand(@"
+					INSERT INTO customer (customerName, addressId, active, createDate, createdBy, lastUpdate, lastUpdateBy)
+					VALUES (@customerName, @addressId, @active, @createDate, @createdBy, @lastUpdate, @lastUpdateBy);", _dbConnection, transaction))
+				{
+					cmd.Parameters.AddWithValue("@customerName", customer.Name);
+					cmd.Parameters.AddWithValue("@addressId", addressId);
+					cmd.Parameters.AddWithValue("@active", 1);
+					cmd.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
+					cmd.Parameters.AddWithValue("@createdBy", userId);
+					cmd.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
+					cmd.Parameters.AddWithValue("@lastUpdateBy", userId);
+					cmd.ExecuteNonQuery();
+				}
+
+				// Commit only if all steps succeed
+				transaction.Commit();
 				return true;
 			}
-		}
+			catch (Exception)
+			{
+				transaction.Rollback(); // Ensure rollback on error
+				return false;
+			}
+		}   
 
 		public bool UpdateCustomer(Customer customer, int userId)
 		{
