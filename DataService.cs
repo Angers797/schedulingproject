@@ -258,8 +258,8 @@ namespace C969_Project
 
 			using (var _dbConnection = new MySqlConnection(connectionString))
 			using (var command = new MySqlCommand(@"
-				INSERT INTO appointment (customerId, userId, title, description, location, contact, url, start, end, createdBy) 
-				VALUES (@customerId, @userId, @title, @description, @location, @contact, @url, @start, @end, @createdBy)", _dbConnection))
+				INSERT INTO appointment (customerId, userId, title, description, location, contact,type, url, start, end, createDate, createdBy, lastUpdate, lastUpdateBy) 
+				VALUES (@customerId, @userId, @title, @description, @location, @contact, @type, @url, @start, @end, @createDate, @createdBy, @lastUpdate, @lastUpdateBy)", _dbConnection))
 			{
 				command.Parameters.AddWithValue("@customerId", appointment.CustomerId);
 				command.Parameters.AddWithValue("@userId", appointment.UserId);
@@ -267,10 +267,14 @@ namespace C969_Project
 				command.Parameters.AddWithValue("@description", appointment.Description);
 				command.Parameters.AddWithValue("@location", appointment.Location);
 				command.Parameters.AddWithValue("@contact", appointment.Contact);
+				command.Parameters.AddWithValue("@type", appointment.Type);
 				command.Parameters.AddWithValue("@url", appointment.Url);
 				command.Parameters.AddWithValue("@start", appointment.Start);
 				command.Parameters.AddWithValue("@end", appointment.End);
+				command.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
 				command.Parameters.AddWithValue("@createdBy", appointment.UserId);
+				command.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
+				command.Parameters.AddWithValue("@lastUpdateBy", appointment.UserId);
 				_dbConnection.Open();
 				var result = command.ExecuteNonQuery();
 				return result > 0;
