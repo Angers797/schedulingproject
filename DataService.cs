@@ -80,10 +80,10 @@ namespace C969_Project
 			var cityId = 0;
 			var addressId = 0;
 
-			using var _dbConnection = new MySqlConnection(connectionString);
+			var _dbConnection = new MySqlConnection(connectionString);
 			_dbConnection.Open();
 			
-			using var transaction = _dbConnection.BeginTransaction(); // Single transaction
+			var transaction = _dbConnection.BeginTransaction(); // Single transaction
 
 			try
 			{
