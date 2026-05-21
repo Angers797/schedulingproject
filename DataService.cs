@@ -242,7 +242,7 @@ namespace C969_Project
 				{
 					command.Parameters.AddWithValue("@customerId", customerId);
 					_dbConnection.Open();
-					var result = command.ExecuteNonQuery();
+					var result = command.ExecuteNonQuery();				
 					return result > 0;
 				}
 			}

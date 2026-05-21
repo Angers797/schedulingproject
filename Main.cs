@@ -336,7 +336,8 @@ namespace C969_Project
 				dataService.DeleteCustomer(deleteCustomer.CustomerId);
 				//If good response, show success message and clear fields. If not, show error message and keep fields populated for user to try again.
 				MessageBox.Show($"Customer {deleteCustomer.Name} deleted successfully!");
-				ClearFields(Tab.Customers);				
+				ClearFields(Tab.Customers);	
+				fillCustomers(dgv_customers);
 			}
 		}
 
@@ -495,6 +496,13 @@ namespace C969_Project
 			{
 				DataGridViewRow row = dgv_customers.CurrentRow;
 				selectedCustomerId = Convert.ToInt32(row.Cells["colId"].Value);
+				txt_name.Text = row.Cells["colName"].Value.ToString();
+				txt_address.Text = row.Cells["colAddress"].Value.ToString();
+				txt_addressTwo.Text = row.Cells["colAddress2"].Value.ToString();
+				txt_city.Text = row.Cells["colCity"].Value.ToString();
+				txt_zipCode.Text = row.Cells["colPostal"].Value.ToString();
+				txt_phone.Text = row.Cells["colPhone"].Value.ToString();
+				txt_country.Text = row.Cells["colCountry"].Value.ToString();
 			}
 		}
 	}	
