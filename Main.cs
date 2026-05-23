@@ -25,8 +25,7 @@ namespace C969_Project
 		int selectedCustomerId;
 		int selectedAppointmentId;
 		TimeZoneInfo localZone;	
-		int loggedInUser;
-		
+		int loggedInUser;		
 
 		public Main(TimeZoneInfo localZone, int userId)
 		{
@@ -90,6 +89,7 @@ namespace C969_Project
 				MessageBox.Show("Failed to add customer. Please try again.");
 			}
 		}
+
 		private void ClearFields(Tab tab)
 		{
 			if (tab == Tab.Customers)
@@ -135,8 +135,7 @@ namespace C969_Project
 
 				if (dgv_customers == null)
 				{
-					System.Diagnostics.Debug.WriteLine("[DEBUG] ERROR: dgv_customers is null!");
-					MessageBox.Show("Error: dgv_customers control not found.");
+					System.Diagnostics.Debug.WriteLine("[DEBUG] ERROR: dgv_customers is null!");					
 					return;
 				}
 
@@ -160,7 +159,6 @@ namespace C969_Project
 				if (dgv_upcoming != null) fillApptsByDay(DateTime.Today, dgv_upcoming);
 			}
 		}
-
 
 		private void fillApptsByDay(DateTime date, DataGridView view)
 		{
@@ -467,16 +465,7 @@ namespace C969_Project
 				MessageBox.Show($"Appointment {deleteAppointment.Title} deleted successfully!");
 				ClearFields(Tab.Appointments);
 			}
-		}
-
-		private void dgv_customers_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-			if (e.RowIndex >= 0)
-			{
-				DataGridViewRow row = dgv_customers.Rows[e.RowIndex];
-				int customerId = Convert.ToInt32(row.Cells["colId"].Value);
-			}
-		}
+		}			
 
 		private void dgv_customers_Click(object sender, EventArgs e)
 		{
@@ -498,17 +487,41 @@ namespace C969_Project
 		{
 			if (dgv_apptCustomers.CurrentRow != null)
 			{
+				//Capture the row
 				DataGridViewRow row = dgv_apptCustomers.CurrentRow;
+				//Set a temp variable for customer ID
 				int customerId = Convert.ToInt32(row.Cells["colApptTabCustId"].Value);
+				//Set the global var so we know we have a customer selected
 				selectedCustomerId = customerId;
+				//Grab appointments for that customer
 				fillApptByPerson(customerId, true);
+				//Ensure fields are cleared
+				ClearFields(Tab.Appointments);
+				//Set the Customer Name field on the appointment tab so user knows they have a selection
 				txt_apptNameView.Text = row.Cells["colApptTabCustName"].Value.ToString();
+				//Ensure selected appointment is cleared
+				selectedAppointmentId = -1;
 			}
 		}
 
 		private void dgv_apptAppointments_Click(object sender, EventArgs e)
 		{
-
+			if (dgv_apptAppointments.CurrentRow != null)
+			{
+				DataGridViewRow row = dgv_apptAppointments.CurrentRow;
+				selectedAppointmentId = Convert.ToInt32(row.Cells["colApptTabApptId"].Value);
+				txt_apptNameView.Text = row.Cells["colName"].Value.ToString();
+				txt_apptTitle.Text = row.Cells["colApptTitle"].Value.ToString();
+				txt_apptDescription.Text = row.Cells["colApptDescription"].Value.ToString();
+				txt_apptLocation.Text = row.Cells["colApptLocation"].Value.ToString();
+				txt_apptContact.Text = row.Cells["colApptContact"].Value.ToString();
+				txt_apptType.Text = row.Cells["colApptType"].Value.ToString();
+				txt_apptUrl.Text = row.Cells["colApptUrl"].Value.ToString();
+				dtp_dateStart.Value = Convert.ToDateTime(row.Cells["colApptStartDate"].Value);
+				dtp_timeStart.Value = Convert.ToDateTime(row.Cells["colApptStartTime"].Value);
+				dtp_dateEnd.Value = Convert.ToDateTime(row.Cells["colApptEndDate"].Value);
+				dtp_timeEnd.Value = Convert.ToDateTime(row.Cells["colApptEndTime"].Value);				
+			}
 		}
 	}	
 }
