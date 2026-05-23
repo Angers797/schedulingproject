@@ -71,7 +71,6 @@ namespace C969_Project
 			}
 		}
 
-
 		public bool AddNewCustomer(NewCustomer customer, int userId)
 		{
 			if (customer == null) throw new ArgumentNullException(nameof(customer));
@@ -229,7 +228,6 @@ namespace C969_Project
 			}
 		}
 
-
 		public bool DeleteCustomer(int customerId)
 		{
 			string query = @"
@@ -334,6 +332,7 @@ namespace C969_Project
 				return false;
 			}
 		}
+
 		public bool DeleteAppointment(int appointmentId)
 		{
 			try
@@ -357,136 +356,170 @@ namespace C969_Project
 		public List<Appointment> GetAppointmentsByDate(DateTime date)
 		{
 			var appointments = new List<Appointment>();
-
-			using (var _dbConnection = new MySqlConnection(connectionString))
-			using (var command = new MySqlCommand("SELECT * " +
-				"FROM appointment WHERE DATE(start) = @date", _dbConnection))
+			try
 			{
-				command.Parameters.AddWithValue("@date", date);
-				_dbConnection.Open();
-				using (MySqlDataReader reader = command.ExecuteReader())
+				using (var _dbConnection = new MySqlConnection(connectionString))
+				using (var command = new MySqlCommand("SELECT * " +
+					"FROM appointment WHERE DATE(start) = @date", _dbConnection))
 				{
-					while (reader.Read())
+					command.Parameters.AddWithValue("@date", date);
+					_dbConnection.Open();
+					using (MySqlDataReader reader = command.ExecuteReader())
 					{
-						//DB Returns apptId(0), customerId(1), userId(2), title(3), description(4), location(5), contact(6),
-						//type(7), url(8), start(9), end(10), createDate(11), createdBy(12, lastUpdate(13), lastUpdateBy(14)
-						appointments.Add(new Appointment
+						while (reader.Read())
 						{
-							AppointmentId = reader.GetInt32(0),
-							CustomerId = reader.GetInt32(1),
-							UserId = reader.GetInt32(2),
-							Title = reader.IsDBNull(3) ? null : reader.GetString("title"),
-							Description = reader.IsDBNull(4) ? null : reader.GetString("description"),
-							Location = reader.IsDBNull(5) ? null : reader.GetString("location"),
-							Contact = reader.IsDBNull(6) ? null : reader.GetString("contact"),
-							Type = reader.IsDBNull(7) ? null : reader.GetString("type"),
-							Url = reader.IsDBNull(8) ? null : reader.GetString("url"),
-							Start = reader.GetDateTime(9),
-							End = reader.GetDateTime(10)
-						});
+							//DB Returns apptId(0), customerId(1), userId(2), title(3), description(4), location(5), contact(6),
+							//type(7), url(8), start(9), end(10), createDate(11), createdBy(12, lastUpdate(13), lastUpdateBy(14)
+							appointments.Add(new Appointment
+							{
+								AppointmentId = reader.GetInt32(0),
+								CustomerId = reader.GetInt32(1),
+								UserId = reader.GetInt32(2),
+								Title = reader.IsDBNull(3) ? null : reader.GetString("title"),
+								Description = reader.IsDBNull(4) ? null : reader.GetString("description"),
+								Location = reader.IsDBNull(5) ? null : reader.GetString("location"),
+								Contact = reader.IsDBNull(6) ? null : reader.GetString("contact"),
+								Type = reader.IsDBNull(7) ? null : reader.GetString("type"),
+								Url = reader.IsDBNull(8) ? null : reader.GetString("url"),
+								Start = reader.GetDateTime(9),
+								End = reader.GetDateTime(10)
+							});
+						}
 					}
 				}
+				return appointments;
 			}
-			return appointments;
+			catch (Exception ex) 
+			{
+				MessageBox.Show("Error fetching appointments: " + ex.Message);
+				return null;
+			}
 		}
 
 		//Gets appointments by either user or customer, depending on the ID passed in, flag isCustomer in the request
 		public List<Appointment> GetAppointmentsByPerson(int personId, bool isCustomer)
 		{
 			var appointments = new List<Appointment>();
-			using (var _dbConnection = new MySqlConnection(connectionString))
-			using (var command = new MySqlCommand("SELECT * " +
-				"FROM appointment WHERE " + (isCustomer ? "customerId" : "userId") + " = @personId", _dbConnection))
+
+			try
 			{
-				command.Parameters.AddWithValue("@personId", personId);
-				_dbConnection.Open();
-				using (MySqlDataReader reader = command.ExecuteReader())
+				using (var _dbConnection = new MySqlConnection(connectionString))
+				using (var command = new MySqlCommand("SELECT * " +
+					"FROM appointment WHERE " + (isCustomer ? "customerId" : "userId") + " = @personId", _dbConnection))
 				{
-					while (reader.Read())
+					command.Parameters.AddWithValue("@personId", personId);
+					_dbConnection.Open();
+					using (MySqlDataReader reader = command.ExecuteReader())
 					{
-						appointments.Add(new Appointment
+						while (reader.Read())
 						{
-							AppointmentId = reader.GetInt32(0),
-							CustomerId = reader.GetInt32(1),
-							UserId = reader.GetInt32(2),
-							Title = reader.IsDBNull(3) ? null : reader.GetString("title"),
-							Description = reader.IsDBNull(4) ? null : reader.GetString("description"),
-							Location = reader.IsDBNull(5) ? null : reader.GetString("location"),
-							Contact = reader.IsDBNull(6) ? null : reader.GetString("contact"),
-							Type = reader.IsDBNull(7) ? null : reader.GetString("type"),
-							Url = reader.IsDBNull(8) ? null : reader.GetString("url"),
-							Start = reader.GetDateTime(9),
-							End = reader.GetDateTime(10)
-						});
+							appointments.Add(new Appointment
+							{
+								AppointmentId = reader.GetInt32(0),
+								CustomerId = reader.GetInt32(1),
+								UserId = reader.GetInt32(2),
+								Title = reader.IsDBNull(3) ? null : reader.GetString("title"),
+								Description = reader.IsDBNull(4) ? null : reader.GetString("description"),
+								Location = reader.IsDBNull(5) ? null : reader.GetString("location"),
+								Contact = reader.IsDBNull(6) ? null : reader.GetString("contact"),
+								Type = reader.IsDBNull(7) ? null : reader.GetString("type"),
+								Url = reader.IsDBNull(8) ? null : reader.GetString("url"),
+								Start = reader.GetDateTime(9),
+								End = reader.GetDateTime(10)
+							});
+						}
 					}
 				}
+				return appointments;
 			}
-			return appointments;
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error fetching appointments: " + ex.Message);
+				return null;
+			}
 		}
 
 		public List<Appointment> GetAppointmentsByMonth(int month, int year)
 		{
 			var appointments = new List<Appointment>();
-			using (var _dbConnection = new MySqlConnection(connectionString))
-			using (var command = new MySqlCommand("SELECT * " +
-				"FROM appointment WHERE MONTH(start) = @month AND YEAR(start) = @year", _dbConnection))
+
+			try
 			{
-				command.Parameters.AddWithValue("@month", month);
-				command.Parameters.AddWithValue("@year", year);
-				_dbConnection.Open();
-				using (MySqlDataReader reader = command.ExecuteReader())
+				using (var _dbConnection = new MySqlConnection(connectionString))
+				using (var command = new MySqlCommand("SELECT * " +
+					"FROM appointment WHERE MONTH(start) = @month AND YEAR(start) = @year", _dbConnection))
 				{
-					while (reader.Read())
+					command.Parameters.AddWithValue("@month", month);
+					command.Parameters.AddWithValue("@year", year);
+					_dbConnection.Open();
+					using (MySqlDataReader reader = command.ExecuteReader())
 					{
-						appointments.Add(new Appointment
+						while (reader.Read())
 						{
-							AppointmentId = reader.GetInt32(0),
-							CustomerId = reader.GetInt32(1),
-							UserId = reader.GetInt32(2),
-							Title = reader.IsDBNull(3) ? null : reader.GetString("title"),
-							Description = reader.IsDBNull(4) ? null : reader.GetString("description"),
-							Location = reader.IsDBNull(5) ? null : reader.GetString("location"),
-							Contact = reader.IsDBNull(6) ? null : reader.GetString("contact"),
-							Type = reader.IsDBNull(7) ? null : reader.GetString("type"),
-							Url = reader.IsDBNull(8) ? null : reader.GetString("url"),
-							Start = reader.GetDateTime(9),
-							End = reader.GetDateTime(10)
-						});
+							appointments.Add(new Appointment
+							{
+								AppointmentId = reader.GetInt32(0),
+								CustomerId = reader.GetInt32(1),
+								UserId = reader.GetInt32(2),
+								Title = reader.IsDBNull(3) ? null : reader.GetString("title"),
+								Description = reader.IsDBNull(4) ? null : reader.GetString("description"),
+								Location = reader.IsDBNull(5) ? null : reader.GetString("location"),
+								Contact = reader.IsDBNull(6) ? null : reader.GetString("contact"),
+								Type = reader.IsDBNull(7) ? null : reader.GetString("type"),
+								Url = reader.IsDBNull(8) ? null : reader.GetString("url"),
+								Start = reader.GetDateTime(9),
+								End = reader.GetDateTime(10)
+							});
+						}
 					}
 				}
+				return appointments;
 			}
-			return appointments;
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error fetching appointments: " + ex.Message);
+				return null;
+			}
 		}
+
 		public List<Customer> GetAllCustomers()
 		{
 			var customers = new List<Customer>();
-			using (var _dbConnection = new MySqlConnection(connectionString))
-			using (var command = new MySqlCommand("SELECT c.customerId, c.customerName, a.address, a.address2, ci.city, co.country, a.postalCode, a.phone " +
-				"FROM customer c " +
-				"INNER JOIN address a ON c.addressId = a.addressId " +
-				"INNER JOIN city ci ON a.cityId = ci.cityId " +
-				"INNER JOIN country co ON ci.countryId = co.countryId", _dbConnection))
+			try
 			{
-				_dbConnection.Open();
-				using (MySqlDataReader reader = command.ExecuteReader())
+				using (var _dbConnection = new MySqlConnection(connectionString))
+				using (var command = new MySqlCommand("SELECT c.customerId, c.customerName, a.address, a.address2, ci.city, co.country, a.postalCode, a.phone " +
+					"FROM customer c " +
+					"INNER JOIN address a ON c.addressId = a.addressId " +
+					"INNER JOIN city ci ON a.cityId = ci.cityId " +
+					"INNER JOIN country co ON ci.countryId = co.countryId", _dbConnection))
 				{
-					while (reader.Read())
+					_dbConnection.Open();
+					using (MySqlDataReader reader = command.ExecuteReader())
 					{
-						customers.Add(new Customer
+						while (reader.Read())
 						{
-							CustomerId = reader.GetInt32("customerId"),
-							Name = reader.GetString("customerName"),
-							Address = reader.GetString("address"),
-							Address2 = reader.IsDBNull(reader.GetOrdinal("address2")) ? null : reader.GetString("address2"),
-							City = reader.GetString("city"),
-							Country = reader.GetString("country"),
-							PostalCode = reader.GetString("postalCode"),
-							Phone = reader.GetString("phone")
-						});
+							customers.Add(new Customer
+							{
+								CustomerId = reader.GetInt32("customerId"),
+								Name = reader.GetString("customerName"),
+								Address = reader.GetString("address"),
+								Address2 = reader.IsDBNull(reader.GetOrdinal("address2")) ? null : reader.GetString("address2"),
+								City = reader.GetString("city"),
+								Country = reader.GetString("country"),
+								PostalCode = reader.GetString("postalCode"),
+								Phone = reader.GetString("phone")
+							});
+						}
 					}
 				}
+				return customers;
 			}
-			return customers;
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error fetching customers: " + ex.Message);
+				return null;
+			}
 		}
 
 		public Customer GetCustomerById(int customerId)
@@ -537,8 +570,7 @@ namespace C969_Project
 		}
 
 		public void populateDatabase(int userId)
-		{
-			//Create a test user first.
+		{			
 			//This method is for testing purposes only. It will populate the database with some dummy data to work with when testing the application.
 			//In a production environment, this method would not be used and would likely be removed from the codebase entirely.
 			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Json", "customers.json"));	
