@@ -68,7 +68,7 @@ namespace C969_Project
 				return;
 			}
 
-			DTOs.Customer newCustomer = new DTOs.Customer
+			DTOs.NewCustomer newCustomer = new DTOs.NewCustomer
 			{
 				Name = TrimString(txt_name.Text),
 				Address = TrimString(txt_address.Text),
@@ -269,7 +269,7 @@ namespace C969_Project
 					return;
 				}
 
-				DTOs.Customer updateCustomer = new DTOs.Customer
+				DTOs.UpdateCustomer updateCustomer = new DTOs.UpdateCustomer
 				{
 					CustomerId = selectedCustomerId,
 					Name = TrimString(txt_name.Text),
@@ -281,6 +281,10 @@ namespace C969_Project
 					Country = TrimString(txt_country.Text)
 				};
 				//Hit API to add customer to database here
+				if (dataService.UpdateCustomer(updateCustomer, loggedInUser))
+				{
+
+				}
 				//If good response, show success message and clear fields. If not, show error message and keep fields populated for user to try again.
 				MessageBox.Show($"Customer {updateCustomer.Name} added successfully!");
 				ClearFields(Tab.Customers);

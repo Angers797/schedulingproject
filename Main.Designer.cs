@@ -477,7 +477,7 @@
 			// 
 			// btn_apptClearForm
 			// 
-			this.btn_apptClearForm.Location = new System.Drawing.Point(672, 305);
+			this.btn_apptClearForm.Location = new System.Drawing.Point(897, 348);
 			this.btn_apptClearForm.Name = "btn_apptClearForm";
 			this.btn_apptClearForm.Size = new System.Drawing.Size(75, 23);
 			this.btn_apptClearForm.TabIndex = 27;
@@ -487,21 +487,21 @@
 			// 
 			// txt_apptType
 			// 
-			this.txt_apptType.Location = new System.Drawing.Point(325, 152);
+			this.txt_apptType.Location = new System.Drawing.Point(550, 195);
 			this.txt_apptType.Name = "txt_apptType";
 			this.txt_apptType.Size = new System.Drawing.Size(148, 20);
 			this.txt_apptType.TabIndex = 26;
 			// 
 			// txt_apptContact
 			// 
-			this.txt_apptContact.Location = new System.Drawing.Point(325, 124);
+			this.txt_apptContact.Location = new System.Drawing.Point(550, 167);
 			this.txt_apptContact.Name = "txt_apptContact";
 			this.txt_apptContact.Size = new System.Drawing.Size(148, 20);
 			this.txt_apptContact.TabIndex = 25;
 			// 
 			// btn_appt_delete
 			// 
-			this.btn_appt_delete.Location = new System.Drawing.Point(547, 305);
+			this.btn_appt_delete.Location = new System.Drawing.Point(772, 348);
 			this.btn_appt_delete.Name = "btn_appt_delete";
 			this.btn_appt_delete.Size = new System.Drawing.Size(75, 23);
 			this.btn_appt_delete.TabIndex = 24;
@@ -511,7 +511,7 @@
 			// 
 			// btn_appt_update
 			// 
-			this.btn_appt_update.Location = new System.Drawing.Point(435, 305);
+			this.btn_appt_update.Location = new System.Drawing.Point(660, 348);
 			this.btn_appt_update.Name = "btn_appt_update";
 			this.btn_appt_update.Size = new System.Drawing.Size(75, 23);
 			this.btn_appt_update.TabIndex = 23;
@@ -521,7 +521,7 @@
 			// 
 			// btn_appt_add
 			// 
-			this.btn_appt_add.Location = new System.Drawing.Point(325, 306);
+			this.btn_appt_add.Location = new System.Drawing.Point(550, 349);
 			this.btn_appt_add.Name = "btn_appt_add";
 			this.btn_appt_add.Size = new System.Drawing.Size(75, 23);
 			this.btn_appt_add.TabIndex = 22;
@@ -532,7 +532,7 @@
 			// label16
 			// 
 			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(259, 240);
+			this.label16.Location = new System.Drawing.Point(484, 283);
 			this.label16.Name = "label16";
 			this.label16.Size = new System.Drawing.Size(30, 13);
 			this.label16.TabIndex = 21;
@@ -541,7 +541,7 @@
 			// label15
 			// 
 			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(256, 213);
+			this.label15.Location = new System.Drawing.Point(481, 256);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(30, 13);
 			this.label15.TabIndex = 20;
@@ -550,7 +550,7 @@
 			// label14
 			// 
 			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(259, 187);
+			this.label14.Location = new System.Drawing.Point(484, 230);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(20, 13);
 			this.label14.TabIndex = 19;
@@ -559,7 +559,7 @@
 			// label13
 			// 
 			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(259, 160);
+			this.label13.Location = new System.Drawing.Point(484, 203);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(31, 13);
 			this.label13.TabIndex = 18;
@@ -568,7 +568,7 @@
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(256, 132);
+			this.label12.Location = new System.Drawing.Point(481, 175);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(44, 13);
 			this.label12.TabIndex = 17;
@@ -577,7 +577,7 @@
 			// label11
 			// 
 			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(256, 104);
+			this.label11.Location = new System.Drawing.Point(481, 147);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(48, 13);
 			this.label11.TabIndex = 16;
@@ -586,7 +586,7 @@
 			// label10
 			// 
 			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(253, 78);
+			this.label10.Location = new System.Drawing.Point(478, 121);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(60, 13);
 			this.label10.TabIndex = 15;
@@ -595,7 +595,7 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(253, 52);
+			this.label9.Location = new System.Drawing.Point(478, 95);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(27, 13);
 			this.label9.TabIndex = 14;
@@ -604,7 +604,7 @@
 			// lbl_apptName
 			// 
 			this.lbl_apptName.AutoSize = true;
-			this.lbl_apptName.Location = new System.Drawing.Point(253, 26);
+			this.lbl_apptName.Location = new System.Drawing.Point(478, 69);
 			this.lbl_apptName.Name = "lbl_apptName";
 			this.lbl_apptName.Size = new System.Drawing.Size(35, 13);
 			this.lbl_apptName.TabIndex = 13;
@@ -612,14 +612,14 @@
 			// 
 			// dtp_timeEnd
 			// 
-			this.dtp_timeEnd.Location = new System.Drawing.Point(547, 234);
+			this.dtp_timeEnd.Location = new System.Drawing.Point(772, 277);
 			this.dtp_timeEnd.Name = "dtp_timeEnd";
-			this.dtp_timeEnd.Size = new System.Drawing.Size(200, 20);
+			this.dtp_timeEnd.Size = new System.Drawing.Size(208, 20);
 			this.dtp_timeEnd.TabIndex = 12;
 			// 
 			// dtp_timeStart
 			// 
-			this.dtp_timeStart.Location = new System.Drawing.Point(325, 234);
+			this.dtp_timeStart.Location = new System.Drawing.Point(550, 277);
 			this.dtp_timeStart.Name = "dtp_timeStart";
 			this.dtp_timeStart.Size = new System.Drawing.Size(200, 20);
 			this.dtp_timeStart.TabIndex = 11;
@@ -627,21 +627,21 @@
 			// 
 			// txt_apptUrl
 			// 
-			this.txt_apptUrl.Location = new System.Drawing.Point(325, 181);
+			this.txt_apptUrl.Location = new System.Drawing.Point(550, 224);
 			this.txt_apptUrl.Name = "txt_apptUrl";
 			this.txt_apptUrl.Size = new System.Drawing.Size(148, 20);
 			this.txt_apptUrl.TabIndex = 10;
 			// 
 			// dtp_dateEnd
 			// 
-			this.dtp_dateEnd.Location = new System.Drawing.Point(547, 207);
+			this.dtp_dateEnd.Location = new System.Drawing.Point(772, 250);
 			this.dtp_dateEnd.Name = "dtp_dateEnd";
 			this.dtp_dateEnd.Size = new System.Drawing.Size(208, 20);
 			this.dtp_dateEnd.TabIndex = 7;
 			// 
 			// dtp_dateStart
 			// 
-			this.dtp_dateStart.Location = new System.Drawing.Point(325, 207);
+			this.dtp_dateStart.Location = new System.Drawing.Point(550, 250);
 			this.dtp_dateStart.Name = "dtp_dateStart";
 			this.dtp_dateStart.Size = new System.Drawing.Size(200, 20);
 			this.dtp_dateStart.TabIndex = 6;
@@ -649,28 +649,28 @@
 			// 
 			// txt_apptLocation
 			// 
-			this.txt_apptLocation.Location = new System.Drawing.Point(325, 98);
+			this.txt_apptLocation.Location = new System.Drawing.Point(550, 141);
 			this.txt_apptLocation.Name = "txt_apptLocation";
 			this.txt_apptLocation.Size = new System.Drawing.Size(148, 20);
 			this.txt_apptLocation.TabIndex = 5;
 			// 
 			// txt_apptDescription
 			// 
-			this.txt_apptDescription.Location = new System.Drawing.Point(325, 72);
+			this.txt_apptDescription.Location = new System.Drawing.Point(550, 115);
 			this.txt_apptDescription.Name = "txt_apptDescription";
-			this.txt_apptDescription.Size = new System.Drawing.Size(513, 20);
+			this.txt_apptDescription.Size = new System.Drawing.Size(430, 20);
 			this.txt_apptDescription.TabIndex = 4;
 			// 
 			// txt_apptTitle
 			// 
-			this.txt_apptTitle.Location = new System.Drawing.Point(325, 46);
+			this.txt_apptTitle.Location = new System.Drawing.Point(550, 89);
 			this.txt_apptTitle.Name = "txt_apptTitle";
 			this.txt_apptTitle.Size = new System.Drawing.Size(148, 20);
 			this.txt_apptTitle.TabIndex = 3;
 			// 
 			// txt_apptNameView
 			// 
-			this.txt_apptNameView.Location = new System.Drawing.Point(325, 20);
+			this.txt_apptNameView.Location = new System.Drawing.Point(550, 63);
 			this.txt_apptNameView.Name = "txt_apptNameView";
 			this.txt_apptNameView.Size = new System.Drawing.Size(148, 20);
 			this.txt_apptNameView.TabIndex = 2;
@@ -693,7 +693,7 @@
 			this.dgv_apptAppointments.Location = new System.Drawing.Point(6, 241);
 			this.dgv_apptAppointments.Name = "dgv_apptAppointments";
 			this.dgv_apptAppointments.ReadOnly = true;
-			this.dgv_apptAppointments.Size = new System.Drawing.Size(240, 244);
+			this.dgv_apptAppointments.Size = new System.Drawing.Size(437, 244);
 			this.dgv_apptAppointments.TabIndex = 1;
 			this.dgv_apptAppointments.Click += new System.EventHandler(this.dgv_apptAppointments_Click);
 			// 
@@ -714,7 +714,7 @@
 			this.dgv_apptCustomers.Location = new System.Drawing.Point(6, 6);
 			this.dgv_apptCustomers.Name = "dgv_apptCustomers";
 			this.dgv_apptCustomers.ReadOnly = true;
-			this.dgv_apptCustomers.Size = new System.Drawing.Size(240, 212);
+			this.dgv_apptCustomers.Size = new System.Drawing.Size(437, 212);
 			this.dgv_apptCustomers.TabIndex = 0;
 			this.dgv_apptCustomers.Click += new System.EventHandler(this.dgv_apptCustomers_Click);
 			// 

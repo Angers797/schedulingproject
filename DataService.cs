@@ -72,7 +72,7 @@ namespace C969_Project
 		}
 
 
-		public bool AddNewCustomer(Customer customer, int userId)
+		public bool AddNewCustomer(NewCustomer customer, int userId)
 		{
 			if (customer == null) throw new ArgumentNullException(nameof(customer));
 
@@ -86,8 +86,7 @@ namespace C969_Project
 			var transaction = _dbConnection.BeginTransaction(); // Single transaction
 
 			try
-			{
-				// 1. Insert Country (if not exists) and get ID
+			{				
 				using (var cmd = new MySqlCommand(@"
 					INSERT INTO country (country, createDate, createdBy, lastUpdate, lastUpdateBy)
 					SELECT @country, @createDate, @createdBy, @lastUpdate, @lastUpdateBy
@@ -102,8 +101,7 @@ namespace C969_Project
 					cmd.Parameters.AddWithValue("@lastUpdateBy", userId);
 					countryId = Convert.ToInt32(cmd.ExecuteScalar());
 				}
-
-				// 2. Insert City (if not exists) and get ID
+								
 				using (var cmd = new MySqlCommand(@"
 					INSERT INTO city (city, countryId, createDate, createdBy, lastUpdate, lastUpdateBy)
 					SELECT @city, @countryId, @createDate, @createdBy, @lastUpdate, @lastUpdateBy
@@ -119,8 +117,7 @@ namespace C969_Project
 					cmd.Parameters.AddWithValue("@lastUpdateBy", userId);
 					cityId = Convert.ToInt32(cmd.ExecuteScalar());
 				}
-
-				// 3. Insert Address and get new addressId
+				
 				using (var cmd = new MySqlCommand(@"
 					INSERT INTO address (address, address2, cityId, postalCode, phone, createDate, createdBy, lastUpdate, lastUpdateBy)
 					VALUES (@address, @address2, @cityId, @postalCode, @phone, @createDate, @createdBy, @lastUpdate, @lastUpdateBy);
@@ -137,8 +134,7 @@ namespace C969_Project
 					cmd.Parameters.AddWithValue("@lastUpdateBy", userId);
 					addressId = Convert.ToInt32(cmd.ExecuteScalar());
 				}
-
-				// 4. Insert Customer
+				
 				using (var cmd = new MySqlCommand(@"
 					INSERT INTO customer (customerName, addressId, active, createDate, createdBy, lastUpdate, lastUpdateBy)
 					VALUES (@customerName, @addressId, @active, @createDate, @createdBy, @lastUpdate, @lastUpdateBy);", _dbConnection, transaction))
@@ -152,53 +148,53 @@ namespace C969_Project
 					cmd.Parameters.AddWithValue("@lastUpdateBy", userId);
 					cmd.ExecuteNonQuery();
 				}
-
-				// Commit only if all steps succeed
+				
 				transaction.Commit();
 				return true;
 			}
 			catch (Exception)
 			{
-				transaction.Rollback(); // Ensure rollback on error
+				transaction.Rollback(); 
 				return false;
 			}
-		}   
+		}
 
-		public bool UpdateCustomer(Customer customer, int userId)
+		public bool UpdateCustomer(UpdateCustomer customer, int userId)
 		{
 			var countryId = 0;
 			var cityId = 0;
-
-			using (var _dbConnection = new MySqlConnection(connectionString))
+			try
 			{
-				_dbConnection.Open();
-				using (var transaction = _dbConnection.BeginTransaction())
+				using (var _dbConnection = new MySqlConnection(connectionString))
 				{
-					using (var cmdCountry = new MySqlCommand("INSERT INTO country (country, createdBy)" +
-						"SELECT @country, @createdBy" +
-						"FROM DUAL" +
-						"WHERE NOT EXISTS (SELECT 1 FROM country WHERE country = @country);" +
-						"SELECT countryId FROM country WHERE country = @country;", _dbConnection, transaction))
+					_dbConnection.Open();
+					using (var transaction = _dbConnection.BeginTransaction())
 					{
-						cmdCountry.Parameters.AddWithValue("@country", customer.Country);
-						cmdCountry.Parameters.AddWithValue("@createdBy", userId);
-						countryId = Convert.ToInt32(cmdCountry.ExecuteScalar());
-					}
-					using (var cmdCity = new MySqlCommand(@"
+						using (var cmdCountry = new MySqlCommand("INSERT INTO country (country, createdBy)" +
+							"SELECT @country, @createdBy" +
+							"FROM DUAL" +
+							"WHERE NOT EXISTS (SELECT 1 FROM country WHERE country = @country);" +
+							"SELECT countryId FROM country WHERE country = @country;", _dbConnection, transaction))
+						{
+							cmdCountry.Parameters.AddWithValue("@country", customer.Country);
+							cmdCountry.Parameters.AddWithValue("@createdBy", userId);
+							countryId = Convert.ToInt32(cmdCountry.ExecuteScalar());
+						}
+						using (var cmdCity = new MySqlCommand(@"
 						INSERT INTO city (city, countryId, createdBy) 
 						SELECT @city, @countryId, @createdBy 
 						FROM DUAL 
 						WHERE NOT EXISTS (SELECT 1 FROM city WHERE city = @city);
 						SELECT cityId FROM city WHERE city = @city;", _dbConnection, transaction))
-					{
-						cmdCity.Parameters.AddWithValue("@city", customer.City);
-						cmdCity.Parameters.AddWithValue("@countryId", countryId);
-						cmdCity.Parameters.AddWithValue("@createdBy", userId);
+						{
+							cmdCity.Parameters.AddWithValue("@city", customer.City);
+							cmdCity.Parameters.AddWithValue("@countryId", countryId);
+							cmdCity.Parameters.AddWithValue("@createdBy", userId);
 
-						cityId = Convert.ToInt32(cmdCity.ExecuteScalar());
+							cityId = Convert.ToInt32(cmdCity.ExecuteScalar());
 
-					}
-					using (var cmdUpdate = new MySqlCommand(@"
+						}
+						using (var cmdUpdate = new MySqlCommand(@"
 						UPDATE customer c
 						INNER JOIN address a ON c.addressId = a.addressId
 						SET
@@ -211,19 +207,25 @@ namespace C969_Project
 							c.customerName = @customerName,
 							c.lastUpdateBy = @lastUpdateBy
 						WHERE c.customerId = @customerId", _dbConnection, transaction))
-					{
-						cmdUpdate.Parameters.AddWithValue("@customerName", customer.Name);
-						cmdUpdate.Parameters.AddWithValue("@address", customer.Address);
-						cmdUpdate.Parameters.AddWithValue("@address2", customer.Address2);
-						cmdUpdate.Parameters.AddWithValue("@cityId", cityId);
-						cmdUpdate.Parameters.AddWithValue("@postalCode", customer.PostalCode);
-						cmdUpdate.Parameters.AddWithValue("@phone", customer.Phone);
-						cmdUpdate.Parameters.AddWithValue("@lastUpdateBy", userId);
-						cmdUpdate.Parameters.AddWithValue("@customerId", customer.CustomerId);
-						cmdUpdate.ExecuteNonQuery();
+						{
+							cmdUpdate.Parameters.AddWithValue("@customerName", customer.Name);
+							cmdUpdate.Parameters.AddWithValue("@address", customer.Address);
+							cmdUpdate.Parameters.AddWithValue("@address2", customer.Address2);
+							cmdUpdate.Parameters.AddWithValue("@cityId", cityId);
+							cmdUpdate.Parameters.AddWithValue("@postalCode", customer.PostalCode);
+							cmdUpdate.Parameters.AddWithValue("@phone", customer.Phone);
+							cmdUpdate.Parameters.AddWithValue("@lastUpdateBy", userId);
+							cmdUpdate.Parameters.AddWithValue("@customerId", customer.CustomerId);
+							cmdUpdate.ExecuteNonQuery();
+						}
 					}
+					return true;
 				}
-				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error updating customer: " + ex.Message);
+				return false;
 			}
 		}
 
@@ -251,41 +253,49 @@ namespace C969_Project
 				MessageBox.Show("Error deleting customer: " + ex.Message);
 				return false;
 			}
-		}		
+		}
 
 		public bool AddAppointment(NewAppointment appointment)
 		{
-
-			using (var _dbConnection = new MySqlConnection(connectionString))
-			using (var command = new MySqlCommand(@"
+			try
+			{
+				using (var _dbConnection = new MySqlConnection(connectionString))
+				using (var command = new MySqlCommand(@"
 				INSERT INTO appointment (customerId, userId, title, description, location, contact,type, url, start, end, createDate, createdBy, lastUpdate, lastUpdateBy) 
 				VALUES (@customerId, @userId, @title, @description, @location, @contact, @type, @url, @start, @end, @createDate, @createdBy, @lastUpdate, @lastUpdateBy)", _dbConnection))
+				{
+					command.Parameters.AddWithValue("@customerId", appointment.CustomerId);
+					command.Parameters.AddWithValue("@userId", appointment.UserId);
+					command.Parameters.AddWithValue("@title", appointment.Title);
+					command.Parameters.AddWithValue("@description", appointment.Description);
+					command.Parameters.AddWithValue("@location", appointment.Location);
+					command.Parameters.AddWithValue("@contact", appointment.Contact);
+					command.Parameters.AddWithValue("@type", appointment.Type);
+					command.Parameters.AddWithValue("@url", appointment.Url);
+					command.Parameters.AddWithValue("@start", appointment.Start);
+					command.Parameters.AddWithValue("@end", appointment.End);
+					command.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
+					command.Parameters.AddWithValue("@createdBy", appointment.UserId);
+					command.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
+					command.Parameters.AddWithValue("@lastUpdateBy", appointment.UserId);
+					_dbConnection.Open();
+					var result = command.ExecuteNonQuery();
+					return result > 0;
+				}
+			}
+			catch (Exception ex)
 			{
-				command.Parameters.AddWithValue("@customerId", appointment.CustomerId);
-				command.Parameters.AddWithValue("@userId", appointment.UserId);
-				command.Parameters.AddWithValue("@title", appointment.Title);
-				command.Parameters.AddWithValue("@description", appointment.Description);
-				command.Parameters.AddWithValue("@location", appointment.Location);
-				command.Parameters.AddWithValue("@contact", appointment.Contact);
-				command.Parameters.AddWithValue("@type", appointment.Type);
-				command.Parameters.AddWithValue("@url", appointment.Url);
-				command.Parameters.AddWithValue("@start", appointment.Start);
-				command.Parameters.AddWithValue("@end", appointment.End);
-				command.Parameters.AddWithValue("@createDate", DateTime.UtcNow);
-				command.Parameters.AddWithValue("@createdBy", appointment.UserId);
-				command.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
-				command.Parameters.AddWithValue("@lastUpdateBy", appointment.UserId);
-				_dbConnection.Open();
-				var result = command.ExecuteNonQuery();
-				return result > 0;
+				MessageBox.Show("Error adding appointment: " + ex.Message);
+				return false;
 			}
 		}
 
 		public bool UpdateAppointment(UpdateAppointment appointment)
 		{
-
-			using (var _dbConnection = new MySqlConnection(connectionString))
-			using (var command = new MySqlCommand(@"
+			try
+			{
+				using (var _dbConnection = new MySqlConnection(connectionString))
+				using (var command = new MySqlCommand(@"
 				UPDATE appointment
 				SET customerId = @customerId,
 					userId = @userId,
@@ -300,33 +310,47 @@ namespace C969_Project
 					lastUpdate = @lastUpdate,
 					lastUpdateBy = @lastUpdateBy
 				WHERE appointmentId = @appointmentId", _dbConnection))
+				{
+					command.Parameters.AddWithValue("@customerId", appointment.CustomerId);
+					command.Parameters.AddWithValue("@userId", appointment.UserId);
+					command.Parameters.AddWithValue("@title", appointment.Title);
+					command.Parameters.AddWithValue("@description", appointment.Description);
+					command.Parameters.AddWithValue("@location", appointment.Location);
+					command.Parameters.AddWithValue("@contact", appointment.Contact);
+					command.Parameters.AddWithValue("@type", appointment.Type);
+					command.Parameters.AddWithValue("@url", appointment.Url);
+					command.Parameters.AddWithValue("@start", appointment.Start);
+					command.Parameters.AddWithValue("@end", appointment.End);
+					command.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
+					command.Parameters.AddWithValue("@lastUpdateBy", appointment.UserId);
+					_dbConnection.Open();
+					var result = command.ExecuteNonQuery();
+					return result > 0;
+				}
+			}
+			catch (Exception ex)
 			{
-				command.Parameters.AddWithValue("@customerId", appointment.CustomerId);
-				command.Parameters.AddWithValue("@userId", appointment.UserId);
-				command.Parameters.AddWithValue("@title", appointment.Title);
-				command.Parameters.AddWithValue("@description", appointment.Description);
-				command.Parameters.AddWithValue("@location", appointment.Location);
-				command.Parameters.AddWithValue("@contact", appointment.Contact);
-				command.Parameters.AddWithValue("@type", appointment.Type);
-				command.Parameters.AddWithValue("@url", appointment.Url);
-				command.Parameters.AddWithValue("@start", appointment.Start);
-				command.Parameters.AddWithValue("@end", appointment.End);				
-				command.Parameters.AddWithValue("@lastUpdate", DateTime.UtcNow);
-				command.Parameters.AddWithValue("@lastUpdateBy", appointment.UserId);
-				_dbConnection.Open();
-				var result = command.ExecuteNonQuery();
-				return result > 0;
+				MessageBox.Show("Error updating appointment: " + ex.Message);
+				return false;
 			}
 		}
 		public bool DeleteAppointment(int appointmentId)
 		{
-			using (var _dbConnection = new MySqlConnection(connectionString))
-			using (var command = new MySqlCommand("DELETE FROM appointment WHERE appointmentId = @appointmentId", _dbConnection))
+			try
 			{
-				command.Parameters.AddWithValue("@appointmentId", appointmentId);
-				_dbConnection.Open();
-				var result = command.ExecuteNonQuery();
-				return result > 0;
+				using (var _dbConnection = new MySqlConnection(connectionString))
+				using (var command = new MySqlCommand("DELETE FROM appointment WHERE appointmentId = @appointmentId", _dbConnection))
+				{
+					command.Parameters.AddWithValue("@appointmentId", appointmentId);
+					_dbConnection.Open();
+					var result = command.ExecuteNonQuery();
+					return result > 0;
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error deleting appointment: " + ex.Message);
+				return false;
 			}
 		}
 
@@ -518,7 +542,7 @@ namespace C969_Project
 			//This method is for testing purposes only. It will populate the database with some dummy data to work with when testing the application.
 			//In a production environment, this method would not be used and would likely be removed from the codebase entirely.
 			var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Json", "customers.json"));	
-			var customers = JsonSerializer.Deserialize<List<DTOs.Customer>>(json);
+			var customers = JsonSerializer.Deserialize<List<DTOs.NewCustomer>>(json);
 			foreach (var customer in customers)
 			{
 				AddNewCustomer(customer, userId);
