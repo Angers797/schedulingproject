@@ -117,4 +117,309 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbl_username.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="&gt;&gt;txt_userName.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;rbtn_english.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btn_login.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 188</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txt_userName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btn_login.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbl_userLocalZone.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_password.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txt_password.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rbtn_spanish.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;lbl_username.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txt_password.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="&gt;&gt;txt_password.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="btn_exit.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;rbtn_spanish.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="txt_userName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 104</value>
+  </data>
+  <data name="lbl_userLocalZone.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_username.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 110</value>
+  </data>
+  <data name="&gt;&gt;rbtn_spanish.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbl_userLocalZone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="txt_password.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbl_userLocalZone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 232</value>
+  </data>
+  <data name="&gt;&gt;btn_exit.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbl_login.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbl_username.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lbl_password.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="&gt;&gt;lbl_userLocalZone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_userName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_exit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_password.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btn_exit.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="lbl_username.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txt_userName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="rbtn_spanish.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_password.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
+  </data>
+  <data name="lbl_login.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="rbtn_spanish.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 17</value>
+  </data>
+  <data name="&gt;&gt;rbtn_spanish.Name" xml:space="preserve">
+    <value>rbtn_spanish</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;lbl_userRegionDisplay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="rbtn_english.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btn_login.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;lbl_username.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;rbtn_spanish.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lbl_userRegionDisplay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 260</value>
+  </data>
+  <data name="&gt;&gt;btn_exit.Name" xml:space="preserve">
+    <value>btn_exit</value>
+  </data>
+  <data name="btn_login.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;rbtn_english.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="rbtn_english.Location" type="System.Drawing.Point, System.Drawing">
+    <value>179, 12</value>
+  </data>
+  <data name="lbl_userLocalZone.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;lbl_password.Name" xml:space="preserve">
+    <value>lbl_password</value>
+  </data>
+  <data name="&gt;&gt;lbl_userRegionDisplay.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbl_password.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 153</value>
+  </data>
+  <data name="lbl_login.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="btn_login.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;lbl_userLocalZone.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbl_userRegionDisplay.Text" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;btn_exit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_userRegionDisplay.Name" xml:space="preserve">
+    <value>lbl_userRegionDisplay</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>419, 319</value>
+  </data>
+  <data name="&gt;&gt;lbl_userRegionDisplay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_password.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txt_userName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbtn_english.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lbl_username.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbl_login.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="rbtn_english.Text" xml:space="preserve">
+    <value>Ingles</value>
+  </data>
+  <data name="lbl_login.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 58</value>
+  </data>
+  <data name="&gt;&gt;lbl_login.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="txt_password.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="&gt;&gt;lbl_login.Name" xml:space="preserve">
+    <value>lbl_login</value>
+  </data>
+  <data name="rbtn_english.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btn_exit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 188</value>
+  </data>
+  <data name="rbtn_spanish.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 12</value>
+  </data>
+  <data name="txt_password.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 147</value>
+  </data>
+  <data name="&gt;&gt;btn_login.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rbtn_english.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 17</value>
+  </data>
+  <data name="&gt;&gt;txt_userName.Name" xml:space="preserve">
+    <value>txt_userName</value>
+  </data>
+  <data name="lbl_password.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbl_password.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rbtn_english.Name" xml:space="preserve">
+    <value>rbtn_english</value>
+  </data>
+  <data name="lbl_username.Text" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="&gt;&gt;lbl_userLocalZone.Name" xml:space="preserve">
+    <value>lbl_userLocalZone</value>
+  </data>
+  <data name="lbl_userRegionDisplay.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="btn_exit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="lbl_userLocalZone.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="lbl_login.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="&gt;&gt;txt_password.Name" xml:space="preserve">
+    <value>txt_password</value>
+  </data>
+  <data name="rbtn_spanish.Text" xml:space="preserve">
+    <value>Espanol</value>
+  </data>
+  <data name="lbl_userRegionDisplay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_userRegionDisplay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="&gt;&gt;lbl_login.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_login.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lbl_password.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbl_username.Name" xml:space="preserve">
+    <value>lbl_username</value>
+  </data>
+  <data name="&gt;&gt;btn_login.Name" xml:space="preserve">
+    <value>btn_login</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>es</value>
+  </metadata>
 </root>

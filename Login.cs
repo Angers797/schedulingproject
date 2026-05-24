@@ -15,21 +15,21 @@ namespace C969_Project
 	public partial class Login : Form
 	{
 		TimeZoneInfo localZone;
+		RegionInfo userRegion;
 		public Login()
 		{
 			InitializeComponent();
 		}
 
 		private void Main_Load(object sender, EventArgs e)
-		{
-			populateDatabase();
+		{			
 			localZone = TimeZoneInfo.Local;
-			RegionInfo userRegion = RegionInfo.CurrentRegion;
+			userRegion = RegionInfo.CurrentRegion;
 			string localZoneName = localZone.DisplayName;
 			string countryName = userRegion.DisplayName;	
-
-			lbl_userLocalZone.Text = $"Local time zone: {localZoneName}";			
-			lbl_userRegionDisplay.Text = $"Region: {userRegion.EnglishName}";			
+			lbl_userLocalZone.Text = $"Local time zone: {localZoneName}";
+			lbl_userRegionDisplay.Text = $"Region: {userRegion.EnglishName}";
+			populateDatabase();
 		}
 
 		private void populateDatabase()
@@ -50,12 +50,32 @@ namespace C969_Project
 
 		private void rbtn_english_CheckedChanged(object sender, EventArgs e)
 		{
+			// Set the current culture to English (United States)
+				CultureInfo.CurrentCulture = new CultureInfo("en-US");
+				CultureInfo.CurrentUICulture = new CultureInfo("en-US");
+				// Update the UI to reflect the language change
+				UpdateUILanguage("en-US");
+		}
 
+		private void UpdateUILanguage(string lang)
+		{
+			foreach (Control c in this.Controls)
+			{
+				ComponentResourceManager resources = new ComponentResourceManager(typeof(Login));
+				resources.ApplyResources(c, c.Name, new CultureInfo(lang));
+			}
+			lbl_userLocalZone.Text = $"Local time zone: {localZone.DisplayName}";
+			lbl_userRegionDisplay.Text = $"Region: {userRegion.EnglishName}";
 		}
 
 		private void rbtn_spanish_CheckedChanged(object sender, EventArgs e)
 		{
-					
+			if (rbtn_spanish.Checked)
+			{
+				CultureInfo.CurrentCulture = new CultureInfo("es-ES");
+				CultureInfo.CurrentUICulture = new CultureInfo("es-ES");
+				UpdateUILanguage("es-ES");
+			}
 		}
 
 		private void btn_exit_Click(object sender, EventArgs e)

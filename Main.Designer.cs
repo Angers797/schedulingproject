@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
 			this.dgv_upcoming = new System.Windows.Forms.DataGridView();
 			this.label1 = new System.Windows.Forms.Label();
 			this.tab_main = new System.Windows.Forms.TabControl();
@@ -140,32 +141,23 @@
             this.colOverviewUrl,
             this.colOverviewStartTime,
             this.colOverviewEndTime});
-			this.dgv_upcoming.Location = new System.Drawing.Point(6, 26);
+			resources.ApplyResources(this.dgv_upcoming, "dgv_upcoming");
 			this.dgv_upcoming.Name = "dgv_upcoming";
 			this.dgv_upcoming.ReadOnly = true;
-			this.dgv_upcoming.Size = new System.Drawing.Size(332, 469);
-			this.dgv_upcoming.TabIndex = 3;
 			// 
 			// label1
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(6, 3);
+			resources.ApplyResources(this.label1, "label1");
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(184, 20);
-			this.label1.TabIndex = 5;
-			this.label1.Text = "Upcoming Appointments";
 			// 
 			// tab_main
 			// 
 			this.tab_main.Controls.Add(this.tab_overview);
 			this.tab_main.Controls.Add(this.tab_customers);
 			this.tab_main.Controls.Add(this.tab_appointments);
-			this.tab_main.Location = new System.Drawing.Point(2, 4);
+			resources.ApplyResources(this.tab_main, "tab_main");
 			this.tab_main.Name = "tab_main";
 			this.tab_main.SelectedIndex = 0;
-			this.tab_main.Size = new System.Drawing.Size(1064, 517);
-			this.tab_main.TabIndex = 6;
 			this.tab_main.SelectedIndexChanged += new System.EventHandler(this.tab_main_SelectedIndexChanged);
 			// 
 			// tab_overview
@@ -173,19 +165,14 @@
 			this.tab_overview.Controls.Add(this.monthCalendar1);
 			this.tab_overview.Controls.Add(this.label1);
 			this.tab_overview.Controls.Add(this.dgv_upcoming);
-			this.tab_overview.Location = new System.Drawing.Point(4, 22);
+			resources.ApplyResources(this.tab_overview, "tab_overview");
 			this.tab_overview.Name = "tab_overview";
-			this.tab_overview.Padding = new System.Windows.Forms.Padding(3);
-			this.tab_overview.Size = new System.Drawing.Size(1056, 491);
-			this.tab_overview.TabIndex = 0;
-			this.tab_overview.Text = "Overview";
 			this.tab_overview.UseVisualStyleBackColor = true;
 			// 
 			// monthCalendar1
 			// 
-			this.monthCalendar1.Location = new System.Drawing.Point(350, 26);
+			resources.ApplyResources(this.monthCalendar1, "monthCalendar1");
 			this.monthCalendar1.Name = "monthCalendar1";
-			this.monthCalendar1.TabIndex = 6;
 			this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
 			// 
 			// tab_customers
@@ -209,165 +196,107 @@
 			this.tab_customers.Controls.Add(this.txt_address);
 			this.tab_customers.Controls.Add(this.txt_name);
 			this.tab_customers.Controls.Add(this.dgv_customers);
-			this.tab_customers.Location = new System.Drawing.Point(4, 22);
+			resources.ApplyResources(this.tab_customers, "tab_customers");
 			this.tab_customers.Name = "tab_customers";
-			this.tab_customers.Padding = new System.Windows.Forms.Padding(3);
-			this.tab_customers.Size = new System.Drawing.Size(1056, 491);
-			this.tab_customers.TabIndex = 1;
-			this.tab_customers.Text = "Customers";
 			this.tab_customers.UseVisualStyleBackColor = true;
 			// 
 			// btn_clear
 			// 
-			this.btn_clear.Location = new System.Drawing.Point(732, 277);
+			resources.ApplyResources(this.btn_clear, "btn_clear");
 			this.btn_clear.Name = "btn_clear";
-			this.btn_clear.Size = new System.Drawing.Size(75, 23);
-			this.btn_clear.TabIndex = 18;
-			this.btn_clear.Text = "Clear Form";
 			this.btn_clear.UseVisualStyleBackColor = true;
 			this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
 			// 
 			// btn_delete
 			// 
-			this.btn_delete.Location = new System.Drawing.Point(732, 325);
+			resources.ApplyResources(this.btn_delete, "btn_delete");
 			this.btn_delete.Name = "btn_delete";
-			this.btn_delete.Size = new System.Drawing.Size(75, 23);
-			this.btn_delete.TabIndex = 17;
-			this.btn_delete.Text = "Delete";
 			this.btn_delete.UseVisualStyleBackColor = true;
 			this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
 			// 
 			// btn_update
 			// 
-			this.btn_update.Location = new System.Drawing.Point(651, 325);
+			resources.ApplyResources(this.btn_update, "btn_update");
 			this.btn_update.Name = "btn_update";
-			this.btn_update.Size = new System.Drawing.Size(75, 23);
-			this.btn_update.TabIndex = 16;
-			this.btn_update.Text = "Update";
 			this.btn_update.UseVisualStyleBackColor = true;
 			this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
 			// 
 			// btn_add
 			// 
-			this.btn_add.Location = new System.Drawing.Point(570, 325);
+			resources.ApplyResources(this.btn_add, "btn_add");
 			this.btn_add.Name = "btn_add";
-			this.btn_add.Size = new System.Drawing.Size(75, 23);
-			this.btn_add.TabIndex = 15;
-			this.btn_add.Text = "Add";
 			this.btn_add.UseVisualStyleBackColor = true;
 			this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
 			// 
 			// label8
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(707, 169);
+			resources.ApplyResources(this.label8, "label8");
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(50, 13);
-			this.label8.TabIndex = 14;
-			this.label8.Text = "Zip Code";
 			// 
 			// label7
 			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(570, 261);
+			resources.ApplyResources(this.label7, "label7");
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(38, 13);
-			this.label7.TabIndex = 13;
-			this.label7.Text = "Phone";
 			// 
 			// label6
 			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(570, 215);
+			resources.ApplyResources(this.label6, "label6");
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(43, 13);
-			this.label6.TabIndex = 12;
-			this.label6.Text = "Country";
 			// 
 			// label5
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(570, 169);
+			resources.ApplyResources(this.label5, "label5");
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(24, 13);
-			this.label5.TabIndex = 11;
-			this.label5.Text = "City";
 			// 
 			// label4
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(570, 123);
+			resources.ApplyResources(this.label4, "label4");
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(77, 13);
-			this.label4.TabIndex = 10;
-			this.label4.Text = "Address Line 2";
 			// 
 			// label3
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(570, 79);
+			resources.ApplyResources(this.label3, "label3");
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(45, 13);
-			this.label3.TabIndex = 9;
-			this.label3.Text = "Address";
 			// 
 			// lbl_name
 			// 
-			this.lbl_name.AutoSize = true;
-			this.lbl_name.Location = new System.Drawing.Point(570, 37);
+			resources.ApplyResources(this.lbl_name, "lbl_name");
 			this.lbl_name.Name = "lbl_name";
-			this.lbl_name.Size = new System.Drawing.Size(35, 13);
-			this.lbl_name.TabIndex = 8;
-			this.lbl_name.Text = "Name";
 			// 
 			// txt_phone
 			// 
-			this.txt_phone.Location = new System.Drawing.Point(570, 280);
+			resources.ApplyResources(this.txt_phone, "txt_phone");
 			this.txt_phone.Name = "txt_phone";
-			this.txt_phone.Size = new System.Drawing.Size(100, 20);
-			this.txt_phone.TabIndex = 7;
 			// 
 			// txt_country
 			// 
-			this.txt_country.Location = new System.Drawing.Point(570, 234);
+			resources.ApplyResources(this.txt_country, "txt_country");
 			this.txt_country.Name = "txt_country";
-			this.txt_country.Size = new System.Drawing.Size(100, 20);
-			this.txt_country.TabIndex = 6;
 			// 
 			// txt_zipCode
 			// 
-			this.txt_zipCode.Location = new System.Drawing.Point(707, 188);
+			resources.ApplyResources(this.txt_zipCode, "txt_zipCode");
 			this.txt_zipCode.Name = "txt_zipCode";
-			this.txt_zipCode.Size = new System.Drawing.Size(100, 20);
-			this.txt_zipCode.TabIndex = 5;
 			// 
 			// txt_city
 			// 
-			this.txt_city.Location = new System.Drawing.Point(570, 188);
+			resources.ApplyResources(this.txt_city, "txt_city");
 			this.txt_city.Name = "txt_city";
-			this.txt_city.Size = new System.Drawing.Size(100, 20);
-			this.txt_city.TabIndex = 4;
 			// 
 			// txt_addressTwo
 			// 
-			this.txt_addressTwo.Location = new System.Drawing.Point(570, 142);
+			resources.ApplyResources(this.txt_addressTwo, "txt_addressTwo");
 			this.txt_addressTwo.Name = "txt_addressTwo";
-			this.txt_addressTwo.Size = new System.Drawing.Size(100, 20);
-			this.txt_addressTwo.TabIndex = 3;
 			// 
 			// txt_address
 			// 
-			this.txt_address.Location = new System.Drawing.Point(570, 100);
+			resources.ApplyResources(this.txt_address, "txt_address");
 			this.txt_address.Name = "txt_address";
-			this.txt_address.Size = new System.Drawing.Size(100, 20);
-			this.txt_address.TabIndex = 2;
 			// 
 			// txt_name
 			// 
-			this.txt_name.Location = new System.Drawing.Point(570, 56);
+			resources.ApplyResources(this.txt_name, "txt_name");
 			this.txt_name.Name = "txt_name";
-			this.txt_name.Size = new System.Drawing.Size(100, 20);
-			this.txt_name.TabIndex = 1;
 			// 
 			// dgv_customers
 			// 
@@ -383,58 +312,56 @@
             this.colPostalCode,
             this.colPhone,
             this.colCountry});
-			this.dgv_customers.Location = new System.Drawing.Point(7, 7);
+			resources.ApplyResources(this.dgv_customers, "dgv_customers");
 			this.dgv_customers.Name = "dgv_customers";
 			this.dgv_customers.ReadOnly = true;
-			this.dgv_customers.Size = new System.Drawing.Size(369, 488);
-			this.dgv_customers.TabIndex = 0;
 			this.dgv_customers.Click += new System.EventHandler(this.dgv_customers_Click);
 			// 
 			// colId
 			// 
-			this.colId.HeaderText = "Id";
+			resources.ApplyResources(this.colId, "colId");
 			this.colId.Name = "colId";
 			this.colId.ReadOnly = true;
 			// 
 			// colName
 			// 
-			this.colName.HeaderText = "Name";
+			resources.ApplyResources(this.colName, "colName");
 			this.colName.Name = "colName";
 			this.colName.ReadOnly = true;
 			// 
 			// colAddress
 			// 
-			this.colAddress.HeaderText = "Address";
+			resources.ApplyResources(this.colAddress, "colAddress");
 			this.colAddress.Name = "colAddress";
 			this.colAddress.ReadOnly = true;
 			// 
 			// colAddress2
 			// 
-			this.colAddress2.HeaderText = "Address 2";
+			resources.ApplyResources(this.colAddress2, "colAddress2");
 			this.colAddress2.Name = "colAddress2";
 			this.colAddress2.ReadOnly = true;
 			// 
 			// colCity
 			// 
-			this.colCity.HeaderText = "City";
+			resources.ApplyResources(this.colCity, "colCity");
 			this.colCity.Name = "colCity";
 			this.colCity.ReadOnly = true;
 			// 
 			// colPostalCode
 			// 
-			this.colPostalCode.HeaderText = "Postal Code";
+			resources.ApplyResources(this.colPostalCode, "colPostalCode");
 			this.colPostalCode.Name = "colPostalCode";
 			this.colPostalCode.ReadOnly = true;
 			// 
 			// colPhone
 			// 
-			this.colPhone.HeaderText = "Phone";
+			resources.ApplyResources(this.colPhone, "colPhone");
 			this.colPhone.Name = "colPhone";
 			this.colPhone.ReadOnly = true;
 			// 
 			// colCountry
 			// 
-			this.colCountry.HeaderText = "Country";
+			resources.ApplyResources(this.colCountry, "colCountry");
 			this.colCountry.Name = "colCountry";
 			this.colCountry.ReadOnly = true;
 			// 
@@ -466,213 +393,139 @@
 			this.tab_appointments.Controls.Add(this.txt_apptNameView);
 			this.tab_appointments.Controls.Add(this.dgv_apptAppointments);
 			this.tab_appointments.Controls.Add(this.dgv_apptCustomers);
-			this.tab_appointments.Location = new System.Drawing.Point(4, 22);
+			resources.ApplyResources(this.tab_appointments, "tab_appointments");
 			this.tab_appointments.Name = "tab_appointments";
-			this.tab_appointments.Padding = new System.Windows.Forms.Padding(3);
-			this.tab_appointments.Size = new System.Drawing.Size(1056, 491);
-			this.tab_appointments.TabIndex = 2;
-			this.tab_appointments.Text = "Appointments";
 			this.tab_appointments.UseVisualStyleBackColor = true;
 			// 
 			// btn_apptClearForm
 			// 
-			this.btn_apptClearForm.Location = new System.Drawing.Point(897, 348);
+			resources.ApplyResources(this.btn_apptClearForm, "btn_apptClearForm");
 			this.btn_apptClearForm.Name = "btn_apptClearForm";
-			this.btn_apptClearForm.Size = new System.Drawing.Size(75, 23);
-			this.btn_apptClearForm.TabIndex = 27;
-			this.btn_apptClearForm.Text = "Clear Form";
 			this.btn_apptClearForm.UseVisualStyleBackColor = true;
 			this.btn_apptClearForm.Click += new System.EventHandler(this.btn_apptClearForm_Click);
 			// 
 			// txt_apptType
 			// 
-			this.txt_apptType.Location = new System.Drawing.Point(550, 195);
+			resources.ApplyResources(this.txt_apptType, "txt_apptType");
 			this.txt_apptType.Name = "txt_apptType";
-			this.txt_apptType.Size = new System.Drawing.Size(148, 20);
-			this.txt_apptType.TabIndex = 26;
 			// 
 			// txt_apptContact
 			// 
-			this.txt_apptContact.Location = new System.Drawing.Point(550, 167);
+			resources.ApplyResources(this.txt_apptContact, "txt_apptContact");
 			this.txt_apptContact.Name = "txt_apptContact";
-			this.txt_apptContact.Size = new System.Drawing.Size(148, 20);
-			this.txt_apptContact.TabIndex = 25;
 			// 
 			// btn_appt_delete
 			// 
-			this.btn_appt_delete.Location = new System.Drawing.Point(772, 348);
+			resources.ApplyResources(this.btn_appt_delete, "btn_appt_delete");
 			this.btn_appt_delete.Name = "btn_appt_delete";
-			this.btn_appt_delete.Size = new System.Drawing.Size(75, 23);
-			this.btn_appt_delete.TabIndex = 24;
-			this.btn_appt_delete.Text = "Delete";
 			this.btn_appt_delete.UseVisualStyleBackColor = true;
 			this.btn_appt_delete.Click += new System.EventHandler(this.btn_appt_delete_Click);
 			// 
 			// btn_appt_update
 			// 
-			this.btn_appt_update.Location = new System.Drawing.Point(660, 348);
+			resources.ApplyResources(this.btn_appt_update, "btn_appt_update");
 			this.btn_appt_update.Name = "btn_appt_update";
-			this.btn_appt_update.Size = new System.Drawing.Size(75, 23);
-			this.btn_appt_update.TabIndex = 23;
-			this.btn_appt_update.Text = "Update";
 			this.btn_appt_update.UseVisualStyleBackColor = true;
 			this.btn_appt_update.Click += new System.EventHandler(this.btn_appt_update_Click);
 			// 
 			// btn_appt_add
 			// 
-			this.btn_appt_add.Location = new System.Drawing.Point(550, 349);
+			resources.ApplyResources(this.btn_appt_add, "btn_appt_add");
 			this.btn_appt_add.Name = "btn_appt_add";
-			this.btn_appt_add.Size = new System.Drawing.Size(75, 23);
-			this.btn_appt_add.TabIndex = 22;
-			this.btn_appt_add.Text = "Add";
 			this.btn_appt_add.UseVisualStyleBackColor = true;
 			this.btn_appt_add.Click += new System.EventHandler(this.btn_appt_add_Click);
 			// 
 			// label16
 			// 
-			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(484, 283);
+			resources.ApplyResources(this.label16, "label16");
 			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(30, 13);
-			this.label16.TabIndex = 21;
-			this.label16.Text = "Time";
 			// 
 			// label15
 			// 
-			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(481, 256);
+			resources.ApplyResources(this.label15, "label15");
 			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(30, 13);
-			this.label15.TabIndex = 20;
-			this.label15.Text = "Date";
 			// 
 			// label14
 			// 
-			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(484, 230);
+			resources.ApplyResources(this.label14, "label14");
 			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(20, 13);
-			this.label14.TabIndex = 19;
-			this.label14.Text = "Url";
 			// 
 			// label13
 			// 
-			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(484, 203);
+			resources.ApplyResources(this.label13, "label13");
 			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(31, 13);
-			this.label13.TabIndex = 18;
-			this.label13.Text = "Type";
 			// 
 			// label12
 			// 
-			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(481, 175);
+			resources.ApplyResources(this.label12, "label12");
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(44, 13);
-			this.label12.TabIndex = 17;
-			this.label12.Text = "Contact";
 			// 
 			// label11
 			// 
-			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(481, 147);
+			resources.ApplyResources(this.label11, "label11");
 			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(48, 13);
-			this.label11.TabIndex = 16;
-			this.label11.Text = "Location";
 			// 
 			// label10
 			// 
-			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(478, 121);
+			resources.ApplyResources(this.label10, "label10");
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(60, 13);
-			this.label10.TabIndex = 15;
-			this.label10.Text = "Description";
 			// 
 			// label9
 			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(478, 95);
+			resources.ApplyResources(this.label9, "label9");
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(27, 13);
-			this.label9.TabIndex = 14;
-			this.label9.Text = "Title";
 			// 
 			// lbl_apptName
 			// 
-			this.lbl_apptName.AutoSize = true;
-			this.lbl_apptName.Location = new System.Drawing.Point(478, 69);
+			resources.ApplyResources(this.lbl_apptName, "lbl_apptName");
 			this.lbl_apptName.Name = "lbl_apptName";
-			this.lbl_apptName.Size = new System.Drawing.Size(35, 13);
-			this.lbl_apptName.TabIndex = 13;
-			this.lbl_apptName.Text = "Name";
 			// 
 			// dtp_timeEnd
 			// 
-			this.dtp_timeEnd.Location = new System.Drawing.Point(772, 277);
+			resources.ApplyResources(this.dtp_timeEnd, "dtp_timeEnd");
 			this.dtp_timeEnd.Name = "dtp_timeEnd";
-			this.dtp_timeEnd.Size = new System.Drawing.Size(208, 20);
-			this.dtp_timeEnd.TabIndex = 12;
 			// 
 			// dtp_timeStart
 			// 
-			this.dtp_timeStart.Location = new System.Drawing.Point(550, 277);
+			resources.ApplyResources(this.dtp_timeStart, "dtp_timeStart");
 			this.dtp_timeStart.Name = "dtp_timeStart";
-			this.dtp_timeStart.Size = new System.Drawing.Size(200, 20);
-			this.dtp_timeStart.TabIndex = 11;
 			this.dtp_timeStart.Value = new System.DateTime(2026, 5, 8, 17, 24, 0, 0);
 			// 
 			// txt_apptUrl
 			// 
-			this.txt_apptUrl.Location = new System.Drawing.Point(550, 224);
+			resources.ApplyResources(this.txt_apptUrl, "txt_apptUrl");
 			this.txt_apptUrl.Name = "txt_apptUrl";
-			this.txt_apptUrl.Size = new System.Drawing.Size(148, 20);
-			this.txt_apptUrl.TabIndex = 10;
 			// 
 			// dtp_dateEnd
 			// 
-			this.dtp_dateEnd.Location = new System.Drawing.Point(772, 250);
+			resources.ApplyResources(this.dtp_dateEnd, "dtp_dateEnd");
 			this.dtp_dateEnd.Name = "dtp_dateEnd";
-			this.dtp_dateEnd.Size = new System.Drawing.Size(208, 20);
-			this.dtp_dateEnd.TabIndex = 7;
 			// 
 			// dtp_dateStart
 			// 
-			this.dtp_dateStart.Location = new System.Drawing.Point(550, 250);
+			resources.ApplyResources(this.dtp_dateStart, "dtp_dateStart");
 			this.dtp_dateStart.Name = "dtp_dateStart";
-			this.dtp_dateStart.Size = new System.Drawing.Size(200, 20);
-			this.dtp_dateStart.TabIndex = 6;
 			this.dtp_dateStart.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
 			// 
 			// txt_apptLocation
 			// 
-			this.txt_apptLocation.Location = new System.Drawing.Point(550, 141);
+			resources.ApplyResources(this.txt_apptLocation, "txt_apptLocation");
 			this.txt_apptLocation.Name = "txt_apptLocation";
-			this.txt_apptLocation.Size = new System.Drawing.Size(148, 20);
-			this.txt_apptLocation.TabIndex = 5;
 			// 
 			// txt_apptDescription
 			// 
-			this.txt_apptDescription.Location = new System.Drawing.Point(550, 115);
+			resources.ApplyResources(this.txt_apptDescription, "txt_apptDescription");
 			this.txt_apptDescription.Name = "txt_apptDescription";
-			this.txt_apptDescription.Size = new System.Drawing.Size(430, 20);
-			this.txt_apptDescription.TabIndex = 4;
 			// 
 			// txt_apptTitle
 			// 
-			this.txt_apptTitle.Location = new System.Drawing.Point(550, 89);
+			resources.ApplyResources(this.txt_apptTitle, "txt_apptTitle");
 			this.txt_apptTitle.Name = "txt_apptTitle";
-			this.txt_apptTitle.Size = new System.Drawing.Size(148, 20);
-			this.txt_apptTitle.TabIndex = 3;
 			// 
 			// txt_apptNameView
 			// 
-			this.txt_apptNameView.Location = new System.Drawing.Point(550, 63);
+			resources.ApplyResources(this.txt_apptNameView, "txt_apptNameView");
 			this.txt_apptNameView.Name = "txt_apptNameView";
-			this.txt_apptNameView.Size = new System.Drawing.Size(148, 20);
-			this.txt_apptNameView.TabIndex = 2;
 			// 
 			// dgv_apptAppointments
 			// 
@@ -689,11 +542,9 @@
             this.colApptTabUrl,
             this.colApptTabStartTime,
             this.colApptTabEndTime});
-			this.dgv_apptAppointments.Location = new System.Drawing.Point(6, 241);
+			resources.ApplyResources(this.dgv_apptAppointments, "dgv_apptAppointments");
 			this.dgv_apptAppointments.Name = "dgv_apptAppointments";
 			this.dgv_apptAppointments.ReadOnly = true;
-			this.dgv_apptAppointments.Size = new System.Drawing.Size(437, 244);
-			this.dgv_apptAppointments.TabIndex = 1;
 			this.dgv_apptAppointments.Click += new System.EventHandler(this.dgv_apptAppointments_Click);
 			// 
 			// dgv_apptCustomers
@@ -710,190 +561,181 @@
             this.colApptTabCustPostalCode,
             this.colApptTabCustPhone,
             this.colApptTabCustCountry});
-			this.dgv_apptCustomers.Location = new System.Drawing.Point(6, 6);
+			resources.ApplyResources(this.dgv_apptCustomers, "dgv_apptCustomers");
 			this.dgv_apptCustomers.Name = "dgv_apptCustomers";
 			this.dgv_apptCustomers.ReadOnly = true;
-			this.dgv_apptCustomers.Size = new System.Drawing.Size(437, 212);
-			this.dgv_apptCustomers.TabIndex = 0;
 			this.dgv_apptCustomers.Click += new System.EventHandler(this.dgv_apptCustomers_Click);
 			// 
 			// colApptTabCustId
 			// 
-			this.colApptTabCustId.HeaderText = "Id";
+			resources.ApplyResources(this.colApptTabCustId, "colApptTabCustId");
 			this.colApptTabCustId.Name = "colApptTabCustId";
 			this.colApptTabCustId.ReadOnly = true;
 			// 
 			// colApptTabCustName
 			// 
-			this.colApptTabCustName.HeaderText = "Name";
+			resources.ApplyResources(this.colApptTabCustName, "colApptTabCustName");
 			this.colApptTabCustName.Name = "colApptTabCustName";
 			this.colApptTabCustName.ReadOnly = true;
 			// 
 			// colApptTabCustAddress
 			// 
-			this.colApptTabCustAddress.HeaderText = "Address";
+			resources.ApplyResources(this.colApptTabCustAddress, "colApptTabCustAddress");
 			this.colApptTabCustAddress.Name = "colApptTabCustAddress";
 			this.colApptTabCustAddress.ReadOnly = true;
 			// 
 			// colApptTabCustAddress2
 			// 
-			this.colApptTabCustAddress2.HeaderText = "Address 2";
+			resources.ApplyResources(this.colApptTabCustAddress2, "colApptTabCustAddress2");
 			this.colApptTabCustAddress2.Name = "colApptTabCustAddress2";
 			this.colApptTabCustAddress2.ReadOnly = true;
 			// 
 			// colApptTabCustCity
 			// 
-			this.colApptTabCustCity.HeaderText = "City";
+			resources.ApplyResources(this.colApptTabCustCity, "colApptTabCustCity");
 			this.colApptTabCustCity.Name = "colApptTabCustCity";
 			this.colApptTabCustCity.ReadOnly = true;
 			// 
 			// colApptTabCustPostalCode
 			// 
-			this.colApptTabCustPostalCode.HeaderText = "Postal Code";
+			resources.ApplyResources(this.colApptTabCustPostalCode, "colApptTabCustPostalCode");
 			this.colApptTabCustPostalCode.Name = "colApptTabCustPostalCode";
 			this.colApptTabCustPostalCode.ReadOnly = true;
 			// 
 			// colApptTabCustPhone
 			// 
-			this.colApptTabCustPhone.HeaderText = "Phone";
+			resources.ApplyResources(this.colApptTabCustPhone, "colApptTabCustPhone");
 			this.colApptTabCustPhone.Name = "colApptTabCustPhone";
 			this.colApptTabCustPhone.ReadOnly = true;
 			// 
 			// colApptTabCustCountry
 			// 
-			this.colApptTabCustCountry.HeaderText = "Country";
+			resources.ApplyResources(this.colApptTabCustCountry, "colApptTabCustCountry");
 			this.colApptTabCustCountry.Name = "colApptTabCustCountry";
 			this.colApptTabCustCountry.ReadOnly = true;
 			// 
 			// btn_exit
 			// 
-			this.btn_exit.Location = new System.Drawing.Point(924, 528);
+			resources.ApplyResources(this.btn_exit, "btn_exit");
 			this.btn_exit.Name = "btn_exit";
-			this.btn_exit.Size = new System.Drawing.Size(75, 23);
-			this.btn_exit.TabIndex = 7;
-			this.btn_exit.Text = "Exit";
 			this.btn_exit.UseVisualStyleBackColor = true;
 			this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
 			// 
 			// colOverviewId
 			// 
-			this.colOverviewId.HeaderText = "Id";
+			resources.ApplyResources(this.colOverviewId, "colOverviewId");
 			this.colOverviewId.Name = "colOverviewId";
 			this.colOverviewId.ReadOnly = true;
-			this.colOverviewId.Visible = false;
 			// 
 			// colOverviewTitle
 			// 
-			this.colOverviewTitle.HeaderText = "Title";
+			resources.ApplyResources(this.colOverviewTitle, "colOverviewTitle");
 			this.colOverviewTitle.Name = "colOverviewTitle";
 			this.colOverviewTitle.ReadOnly = true;
 			// 
 			// colOverviewDescription
 			// 
-			this.colOverviewDescription.HeaderText = "Description";
+			resources.ApplyResources(this.colOverviewDescription, "colOverviewDescription");
 			this.colOverviewDescription.Name = "colOverviewDescription";
 			this.colOverviewDescription.ReadOnly = true;
 			// 
 			// colOverviewLocation
 			// 
-			this.colOverviewLocation.HeaderText = "Location";
+			resources.ApplyResources(this.colOverviewLocation, "colOverviewLocation");
 			this.colOverviewLocation.Name = "colOverviewLocation";
 			this.colOverviewLocation.ReadOnly = true;
 			// 
 			// colOverviewContact
 			// 
-			this.colOverviewContact.HeaderText = "Contact";
+			resources.ApplyResources(this.colOverviewContact, "colOverviewContact");
 			this.colOverviewContact.Name = "colOverviewContact";
 			this.colOverviewContact.ReadOnly = true;
 			// 
 			// colOverviewType
 			// 
-			this.colOverviewType.HeaderText = "Type";
+			resources.ApplyResources(this.colOverviewType, "colOverviewType");
 			this.colOverviewType.Name = "colOverviewType";
 			this.colOverviewType.ReadOnly = true;
 			// 
 			// colOverviewUrl
 			// 
-			this.colOverviewUrl.HeaderText = "Url";
+			resources.ApplyResources(this.colOverviewUrl, "colOverviewUrl");
 			this.colOverviewUrl.Name = "colOverviewUrl";
 			this.colOverviewUrl.ReadOnly = true;
 			// 
 			// colOverviewStartTime
 			// 
-			this.colOverviewStartTime.HeaderText = "Start";
+			resources.ApplyResources(this.colOverviewStartTime, "colOverviewStartTime");
 			this.colOverviewStartTime.Name = "colOverviewStartTime";
 			this.colOverviewStartTime.ReadOnly = true;
 			// 
 			// colOverviewEndTime
 			// 
-			this.colOverviewEndTime.HeaderText = "End";
+			resources.ApplyResources(this.colOverviewEndTime, "colOverviewEndTime");
 			this.colOverviewEndTime.Name = "colOverviewEndTime";
 			this.colOverviewEndTime.ReadOnly = true;
 			// 
 			// colApptTabApptId
 			// 
-			this.colApptTabApptId.HeaderText = "Id";
+			resources.ApplyResources(this.colApptTabApptId, "colApptTabApptId");
 			this.colApptTabApptId.Name = "colApptTabApptId";
 			this.colApptTabApptId.ReadOnly = true;
-			this.colApptTabApptId.Visible = false;
 			// 
 			// colApptTabTitle
 			// 
-			this.colApptTabTitle.HeaderText = "Title";
+			resources.ApplyResources(this.colApptTabTitle, "colApptTabTitle");
 			this.colApptTabTitle.Name = "colApptTabTitle";
 			this.colApptTabTitle.ReadOnly = true;
 			// 
 			// colApptTabDescription
 			// 
-			this.colApptTabDescription.HeaderText = "Description";
+			resources.ApplyResources(this.colApptTabDescription, "colApptTabDescription");
 			this.colApptTabDescription.Name = "colApptTabDescription";
 			this.colApptTabDescription.ReadOnly = true;
 			// 
 			// colApptTabLocation
 			// 
-			this.colApptTabLocation.HeaderText = "Location";
+			resources.ApplyResources(this.colApptTabLocation, "colApptTabLocation");
 			this.colApptTabLocation.Name = "colApptTabLocation";
 			this.colApptTabLocation.ReadOnly = true;
 			// 
 			// colApptTabContact
 			// 
-			this.colApptTabContact.HeaderText = "Contact";
+			resources.ApplyResources(this.colApptTabContact, "colApptTabContact");
 			this.colApptTabContact.Name = "colApptTabContact";
 			this.colApptTabContact.ReadOnly = true;
 			// 
 			// colApptTabType
 			// 
-			this.colApptTabType.HeaderText = "Type";
+			resources.ApplyResources(this.colApptTabType, "colApptTabType");
 			this.colApptTabType.Name = "colApptTabType";
 			this.colApptTabType.ReadOnly = true;
 			// 
 			// colApptTabUrl
 			// 
-			this.colApptTabUrl.HeaderText = "Url";
+			resources.ApplyResources(this.colApptTabUrl, "colApptTabUrl");
 			this.colApptTabUrl.Name = "colApptTabUrl";
 			this.colApptTabUrl.ReadOnly = true;
 			// 
 			// colApptTabStartTime
 			// 
-			this.colApptTabStartTime.HeaderText = "Start Time";
+			resources.ApplyResources(this.colApptTabStartTime, "colApptTabStartTime");
 			this.colApptTabStartTime.Name = "colApptTabStartTime";
 			this.colApptTabStartTime.ReadOnly = true;
 			// 
 			// colApptTabEndTime
 			// 
-			this.colApptTabEndTime.HeaderText = "End Time";
+			resources.ApplyResources(this.colApptTabEndTime, "colApptTabEndTime");
 			this.colApptTabEndTime.Name = "colApptTabEndTime";
 			this.colApptTabEndTime.ReadOnly = true;
 			// 
 			// Main
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1078, 558);
 			this.Controls.Add(this.btn_exit);
 			this.Controls.Add(this.tab_main);
 			this.Name = "Main";
-			this.Text = "Main Application";
 			((System.ComponentModel.ISupportInitialize)(this.dgv_upcoming)).EndInit();
 			this.tab_main.ResumeLayout(false);
 			this.tab_overview.ResumeLayout(false);
