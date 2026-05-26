@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static C969_Project.DTOs;
 using static C969_Project.Validate;
+using System.IO;
 
 namespace C969_Project
 {
@@ -25,16 +26,44 @@ namespace C969_Project
 		int selectedCustomerId;
 		int selectedAppointmentId;
 		TimeZoneInfo localZone;	
-		int loggedInUser;		
+		int loggedInUser;
+		TimeSpan appointmentAlertThreshold = TimeSpan.FromMinutes(15);	
+		string dbString = "";	
 
-		public Main(TimeZoneInfo localZone, int userId)
+		public Main(TimeZoneInfo localZone, int userId, string dbString)
 		{
 			InitializeComponent();
 			this.localZone = localZone;
-			this.loggedInUser = userId;
-			dataService = new DataService("server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!;AllowUserVariables=True");
+			loggedInUser = userId;
+			this.dbString = dbString;	
+			dataService = new DataService(dbString);
 			fillApptsByDay(DateTime.Today, dgv_upcoming);
 			SetupDateTimePickers();
+			AppointmentAlert();
+			LoginHistory();
+		}
+
+		private void LoginHistory()
+		{
+			string logFilePath = "Login_History.txt";
+			using (StreamWriter writer = new StreamWriter(logFilePath, true))
+			{
+				writer.WriteLine($"{DateTime.UtcNow}: User {loggedInUser} logged in.");
+			}
+		}
+
+		private void AppointmentAlert()
+		{
+			List<Appointment> upcomingAppointments = dataService.GetAppointmentsByUser((int)loggedInUser);
+			DateTime now = DateTime.UtcNow;
+			foreach (Appointment appointment in upcomingAppointments)
+			{
+				DateTime localStart = ConvertToLocalTime(appointment.Start);
+				if (localStart > now && localStart - now <= appointmentAlertThreshold)
+				{
+					MessageBox.Show(string.Format(Strings.AppointmentAlert, appointment.Title, localStart));
+				}
+			}
 		}
 
 		private void SetupDateTimePickers()

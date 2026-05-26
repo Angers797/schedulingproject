@@ -16,6 +16,8 @@ namespace C969_Project
 	{
 		TimeZoneInfo localZone;
 		RegionInfo userRegion;
+		string dbString = "server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!;AllowUserVariables=True";
+
 		public Login()
 		{
 			InitializeComponent();
@@ -36,7 +38,7 @@ namespace C969_Project
 		{
 			try
 			{
-				DataService dataService = new DataService("server = localhost; user = sqlUser; database = client_schedule; port = 3306; password = Passw0rd!;AllowUserVariables = True");
+				DataService dataService = new DataService(dbString);
 				//REMOVE BEFORE SUBMISSION
 				dataService.emptyDatabase();
 				int id = dataService.addTestUser();
@@ -85,7 +87,7 @@ namespace C969_Project
 
 		private void btn_login_Click(object sender, EventArgs e)
 		{
-			DataService dataService = new DataService("server=localhost;user=sqlUser;database=client_schedule;port=3306;password=Passw0rd!;AllowUserVariables=True");
+			DataService dataService = new DataService(dbString);
 			//Add Validation for username and password fields
 			string user = txt_userName.Text;
 			string pass = txt_password.Text;
@@ -98,7 +100,7 @@ namespace C969_Project
 			}
 			else
 			{
-				Main main = new Main(localZone, userId);
+				Main main = new Main(localZone, userId, dbString);
 				main.Show();
 				this.Hide();
 			}	
