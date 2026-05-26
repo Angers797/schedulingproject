@@ -52,6 +52,7 @@ namespace C969_Project
 			}
 		}
 
+		//Still needs to add a string to Strings.resx
 		private void AppointmentAlert()
 		{
 			List<Appointment> upcomingAppointments = dataService.GetAppointmentsByUser((int)loggedInUser);
