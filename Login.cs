@@ -44,7 +44,7 @@ namespace C969_Project
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show($"Error populating database: {ex.Message}");
+				MessageBox.Show(string.Format(Strings.ErrorPopulating, ex.Message));
 			}
 		}
 
@@ -64,8 +64,8 @@ namespace C969_Project
 				ComponentResourceManager resources = new ComponentResourceManager(typeof(Login));
 				resources.ApplyResources(c, c.Name, new CultureInfo(lang));
 			}
-			lbl_userLocalZone.Text = $"Local time zone: {localZone.DisplayName}";
-			lbl_userRegionDisplay.Text = $"Region: {userRegion.EnglishName}";
+			lbl_userLocalZone.Text = string.Format(Strings.LocalTime, localZone.DisplayName);
+			lbl_userRegionDisplay.Text = string.Format(Strings.Region, userRegion.EnglishName);
 		}
 
 		private void rbtn_spanish_CheckedChanged(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace C969_Project
 			//Then
 			if (userId == -1)
 			{
-				MessageBox.Show("Invalid username or password. Please try again.");
+				MessageBox.Show(Strings.InvalidUsername);
 				return;
 			}
 			else

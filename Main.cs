@@ -52,18 +52,18 @@ namespace C969_Project
 		{
 			if(selectedCustomerId >= 0)
 			{
-				MessageBox.Show("Existing customer selected. Please use Update or clear the fields before adding a new customer.");
+				MessageBox.Show(Strings.ExistingCustomerSelected);
 				return;
 			}
 
 			if (IsAnyNull(txt_name.Text, txt_address.Text, txt_city.Text, txt_phone.Text, txt_country.Text))
 			{
-				MessageBox.Show("Please fill out all fields before adding a customer.");
+				MessageBox.Show(Strings.FillOutAllFields);
 				return;
 			}
 			if(!IsPhoneValid(txt_phone.Text))
 			{
-				MessageBox.Show("Please enter a valid phone number.");
+				MessageBox.Show(Strings.InvalidPhoneNumber);
 				return;
 			}
 
@@ -81,12 +81,12 @@ namespace C969_Project
 			if(dataService.AddNewCustomer(newCustomer, loggedInUser))
 			{
 				//If good response, show success message and clear fields. If not, show error message and keep fields populated for user to try again.
-				MessageBox.Show($"Customer {newCustomer.Name} added successfully!");
+				MessageBox.Show(string.Format(Strings.SuccessCustomerAdded));
 				ClearFields(Tab.Customers);
 			}
 			else
 			{
-				MessageBox.Show("Failed to add customer. Please try again.");
+				MessageBox.Show(Strings.FailedToAdd);
 			}
 		}
 
@@ -250,20 +250,20 @@ namespace C969_Project
 		{
 			if (selectedCustomerId < 0)
 			{
-				MessageBox.Show("No customer selected. Please select a customer to update.");
+				MessageBox.Show(Strings.SelectCustomer);
 				return;
 			}
-			DialogResult result = MessageBox.Show("Are you sure you want to update the user " + txt_name.Text + "?", "Update Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			DialogResult result = MessageBox.Show(Strings.ConfirmUpdate + txt_name.Text + "?", Strings.UpdateConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (result == DialogResult.Yes)
 			{	
 				if (IsAnyNull(txt_name.Text, txt_address.Text, txt_city.Text, txt_phone.Text, txt_country.Text))
 				{
-					MessageBox.Show("Please fill out all fields before adding an appointment.");
+					MessageBox.Show(Strings.FillOutAllFields);
 					return;
 				}
 				if (!IsPhoneValid(txt_phone.Text))
 				{
-					MessageBox.Show("Please enter a valid phone number.");
+					MessageBox.Show(Strings.InvalidPhoneNumber);
 					return;
 				}
 
@@ -281,14 +281,9 @@ namespace C969_Project
 				//Hit API to add customer to database here
 				if (dataService.UpdateCustomer(updateCustomer, loggedInUser))
 				{
-
-				}
-				//If good response, show success message and clear fields. If not, show error message and keep fields populated for user to try again.
-				MessageBox.Show($"Customer {updateCustomer.Name} added successfully!");
-				ClearFields(Tab.Customers);
-				//Hit API to update customer in database here
-				//If good response, show success message. If not, show error message.
-				MessageBox.Show($"Customer {txt_name.Text} updated successfully!");
+					ClearFields(Tab.Customers);					
+					MessageBox.Show(Strings.SuccessCustomerUpdated);
+				}	
 			}
 		}
 
@@ -306,10 +301,10 @@ namespace C969_Project
 		{
 			if (selectedCustomerId < 0)
 			{
-				MessageBox.Show("No customer selected. Please select a customer to delete.");
+				MessageBox.Show(Strings.SelectCustomer);
 				return;
 			}
-			DialogResult result = MessageBox.Show("Are you sure you want to delete the user " + txt_name.Text + "?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			DialogResult result = MessageBox.Show(Strings.ConfirmDelete + txt_name.Text + "?", Strings.DeleteConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (result == DialogResult.Yes)
 			{				
 				DTOs.Customer deleteCustomer = new DTOs.Customer
@@ -321,7 +316,7 @@ namespace C969_Project
 				//Hit API to add customer to database here
 				dataService.DeleteCustomer(deleteCustomer.CustomerId);
 				//If good response, show success message and clear fields. If not, show error message and keep fields populated for user to try again.
-				MessageBox.Show($"Customer {deleteCustomer.Name} deleted successfully!");
+				MessageBox.Show(Strings.SuccessCustomerDeleted);
 				ClearFields(Tab.Customers);	
 				fillCustomers(dgv_customers);
 			}
@@ -334,13 +329,13 @@ namespace C969_Project
 
 			if (selectedAppointmentId >= 0)
 			{
-				MessageBox.Show("Existing appointment selected. Please use Update or clear the fields before adding an appointment.");
+				MessageBox.Show(Strings.ExistingAppointmentSelected);
 				return;
 			}
 
 			if (IsAnyNull(txt_apptTitle.Text, txt_apptDescription.Text, txt_apptLocation.Text, txt_apptContact.Text, txt_apptType.Text, txt_apptUrl.Text))
 			{
-				MessageBox.Show("Please fill out all fields before adding an appointment.");
+				MessageBox.Show(Strings.FillOutAllFields);
 				return;
 			}			
 
@@ -364,19 +359,19 @@ namespace C969_Project
 
 			if (!IsApptTimeValid(newAppointment, existingAppointments, TimeZoneInfo.Local))
 			{
-				MessageBox.Show("Invalid appointment time.");
+				MessageBox.Show(Strings.InvalidAppointmentTime);
 				return;
 			}
 			//Hit API to add appointment to database here
 			if (dataService.AddAppointment(newAppointment))
 			{
 				//If good response, show success message and clear fields. If not, show error message and keep fields populated for user to try again.
-				MessageBox.Show($"Appointment {newAppointment.Title} added successfully!");
+				MessageBox.Show(Strings.SuccessAppointmentAdded);
 				ClearFields(Tab.Appointments);
 			}
 			else
 			{
-				MessageBox.Show("Failed to add appointment. Please try again.");
+				MessageBox.Show(Strings.FailedToAdd);
 			}
 		}
 
@@ -387,16 +382,16 @@ namespace C969_Project
 
 			if (selectedAppointmentId < 0)
 			{
-				MessageBox.Show("No appointment selected. Please select an appointment to update.");
+				MessageBox.Show(Strings.SelectAppointment);
 				return;
 			}
 
-			DialogResult result = MessageBox.Show("Are you sure you want to update the appointment " + txt_apptTitle.Text + "?", "Update Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			DialogResult result = MessageBox.Show(Strings.ConfirmUpdate + txt_apptTitle.Text + "?", Strings.UpdateConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (result == DialogResult.Yes)
 			{
 				if (IsAnyNull(txt_apptTitle.Text, txt_apptDescription.Text, txt_apptLocation.Text, txt_apptContact.Text, txt_apptType.Text, txt_apptUrl.Text))
 				{
-					MessageBox.Show("Please fill out all fields before updating an appointment.");
+					MessageBox.Show(Strings.FillOutAllFields);
 					return;
 				}				
 
@@ -419,7 +414,7 @@ namespace C969_Project
 				List<Appointment> existingAppointments = dataService.GetAppointmentsByPerson((int)updateAppointment.UserId, false);
 				if (!IsApptTimeValid(updateAppointment, existingAppointments, TimeZoneInfo.Local))
 				{
-					MessageBox.Show("Invalid appointment time.");
+					MessageBox.Show(Strings.InvalidAppointmentTime);
 					return;
 				}
 
@@ -428,13 +423,9 @@ namespace C969_Project
 				if (dataService.UpdateAppointment(updateAppointment))
 				{
 					//If good response, show success message and clear fields. If not, show error message and keep fields populated for user to try again.
-					MessageBox.Show($"Appointment {updateAppointment.Title} updated successfully!");
+					MessageBox.Show(Strings.SuccessAppointmentUpdated);
 					ClearFields(Tab.Appointments);
-				}
-				else
-				{
-					MessageBox.Show("Failed to update appointment. Please try again.");
-				}
+				}				
 			}
 		}
 
@@ -447,10 +438,10 @@ namespace C969_Project
 		{
 			if (selectedAppointmentId < 0)
 			{
-				MessageBox.Show("No appointment selected. Please select an appointment to delete.");
+				MessageBox.Show(Strings.SelectAppointment);
 				return;
 			}
-			DialogResult result = MessageBox.Show("Are you sure you want to delete the appointment " + txt_apptTitle.Text + "?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			DialogResult result = MessageBox.Show(Strings.ConfirmDelete + txt_apptTitle.Text + "?", Strings.DeleteConfirmation, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (result == DialogResult.Yes)
 			{
 				DTOs.Appointment deleteAppointment = new DTOs.Appointment
@@ -462,7 +453,7 @@ namespace C969_Project
 				//Hit API to add appointment to database here
 				dataService.DeleteAppointment((int)deleteAppointment.AppointmentId);
 				//If good response, show success message and clear fields. If not, show error message and keep fields populated for user to try again.
-				MessageBox.Show($"Appointment {deleteAppointment.Title} deleted successfully!");
+				MessageBox.Show(Strings.SuccessAppointmentDeleted);
 				ClearFields(Tab.Appointments);
 			}
 		}			

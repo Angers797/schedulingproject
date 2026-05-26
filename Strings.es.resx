@@ -117,62 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lbl_username.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 13</value>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>¿Estás segura de que quieres eliminar?</value>
   </data>
-  <data name="btn_login.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 180</value>
+  <data name="ConfirmUpdate" xml:space="preserve">
+    <value>¿Estás seguro de que quieres actualizar?</value>
   </data>
-  <data name="txt_userName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 96</value>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Confirmación de eliminación</value>
   </data>
-  <data name="lbl_username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 103</value>
+  <data name="ErrorPopulating" xml:space="preserve">
+    <value>Error al poblar la base de datos</value>
   </data>
-  <data name="lbl_password.Text" xml:space="preserve">
-    <value>Contrasena</value>
+  <data name="ExistingAppointmentSelected" xml:space="preserve">
+    <value>Se ha seleccionado una cita existente. Por favor, utilice la opción Actualizar o borre los campos antes de agregar una cita.</value>
   </data>
-  <data name="btn_exit.Text" xml:space="preserve">
-    <value>Salida</value>
+  <data name="ExistingCustomerSelected" xml:space="preserve">
+    <value>Se ha seleccionado un cliente existente. Por favor, utilice la opción Actualizar o Borrar los campos antes de agregar un nuevo cliente.</value>
   </data>
-  <data name="lbl_password.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+  <data name="FailedToAdd" xml:space="preserve">
+    <value>No se pudo agregar el registro. Por favor, inténtelo de nuevo.</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Acceso</value>
+  <data name="FillOutAllFields" xml:space="preserve">
+    <value>Por favor, complete todos los campos.</value>
   </data>
-  <data name="btn_login.Text" xml:space="preserve">
-    <value>Acceso</value>
+  <data name="InvalidAppointmentTime" xml:space="preserve">
+    <value>Hora de la cita no válida.</value>
   </data>
-  <data name="rbtn_english.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 12</value>
+  <data name="InvalidPhoneNumber" xml:space="preserve">
+    <value>Por favor, utilice un número de teléfono válido.</value>
   </data>
-  <data name="lbl_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 145</value>
+  <data name="InvalidUsername" xml:space="preserve">
+    <value>Nombre de usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.</value>
   </data>
-  <data name="lbl_login.Text" xml:space="preserve">
-    <value>Acceso</value>
+  <data name="LocalTime" xml:space="preserve">
+    <value>Zona horaria local</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>412, 325</value>
+  <data name="Region" xml:space="preserve">
+    <value>Región</value>
   </data>
-  <data name="lbl_login.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 50</value>
+  <data name="SelectAppointment" xml:space="preserve">
+    <value>No se ha seleccionado ninguna cita. Por favor, seleccione una cita para actualizar.</value>
   </data>
-  <data name="btn_exit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 180</value>
+  <data name="SelectCustomer" xml:space="preserve">
+    <value>No se ha seleccionado ningún cliente. Por favor, seleccione un cliente.</value>
   </data>
-  <data name="rbtn_spanish.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 12</value>
+  <data name="SuccessAppointmentAdded" xml:space="preserve">
+    <value>¡Cita añadida con éxito!</value>
   </data>
-  <data name="txt_password.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 139</value>
+  <data name="SuccessAppointmentDeleted" xml:space="preserve">
+    <value>¡Cita eliminada con éxito!</value>
   </data>
-  <data name="lbl_username.Text" xml:space="preserve">
-    <value>Nombre de Usuario</value>
+  <data name="SuccessAppointmentUpdated" xml:space="preserve">
+    <value>¡Cita actualizada correctamente!</value>
   </data>
-  <data name="lbl_login.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+  <data name="SuccessCustomerAdded" xml:space="preserve">
+    <value>¡Cliente agregado con éxito!</value>
+  </data>
+  <data name="SuccessCustomerDeleted" xml:space="preserve">
+    <value>¡Cliente eliminado con éxito!</value>
+  </data>
+  <data name="SuccessCustomerUpdated" xml:space="preserve">
+    <value>¡Cliente actualizado correctamente!</value>
+  </data>
+  <data name="UpdateConfirmation" xml:space="preserve">
+    <value>Confirmación de actualización</value>
   </data>
 </root>

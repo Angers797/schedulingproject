@@ -38,8 +38,7 @@ namespace C969_Project
 					var result = command.ExecuteScalar();
 
 					if(result == null || result == DBNull.Value)
-					{
-						MessageBox.Show("Invalid username or password.");
+					{						
 						return -1; // Indicate authentication failure with a special value
 					}
 					return Convert.ToInt32(result);
