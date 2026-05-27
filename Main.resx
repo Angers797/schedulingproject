@@ -120,10 +120,59 @@
   <metadata name="colOverviewId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="colOverviewTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colOverviewDescription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colOverviewLocation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colOverviewContact.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colOverviewType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colOverviewUrl.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colOverviewStartTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colOverviewEndTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dgv_upcoming.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 26</value>
+  </data>
+  <data name="dgv_upcoming.Size" type="System.Drawing.Size, System.Drawing">
+    <value>332, 469</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dgv_upcoming.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;dgv_upcoming.Name" xml:space="preserve">
+    <value>dgv_upcoming</value>
+  </data>
+  <data name="&gt;&gt;dgv_upcoming.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgv_upcoming.Parent" xml:space="preserve">
+    <value>tab_overview</value>
+  </data>
+  <data name="&gt;&gt;dgv_upcoming.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="colOverviewId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="colOverviewId.HeaderText" xml:space="preserve">
     <value>Id</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="colOverviewId.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -175,28 +224,6 @@
   <data name="colOverviewEndTime.HeaderText" xml:space="preserve">
     <value>End</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dgv_upcoming.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 26</value>
-  </data>
-  <data name="dgv_upcoming.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 469</value>
-  </data>
-  <data name="dgv_upcoming.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;dgv_upcoming.Name" xml:space="preserve">
-    <value>dgv_upcoming</value>
-  </data>
-  <data name="&gt;&gt;dgv_upcoming.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgv_upcoming.Parent" xml:space="preserve">
-    <value>tab_overview</value>
-  </data>
-  <data name="&gt;&gt;dgv_upcoming.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -225,7 +252,85 @@
     <value>tab_overview</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btn_genReport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>489, 415</value>
+  </data>
+  <data name="btn_genReport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_genReport.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btn_genReport.Text" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="&gt;&gt;btn_genReport.Name" xml:space="preserve">
+    <value>btn_genReport</value>
+  </data>
+  <data name="&gt;&gt;btn_genReport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_genReport.Parent" xml:space="preserve">
+    <value>tab_overview</value>
+  </data>
+  <data name="&gt;&gt;btn_genReport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cmb_reports.Items" xml:space="preserve">
+    <value>Appointment Types</value>
+  </data>
+  <data name="cmb_reports.Items1" xml:space="preserve">
+    <value>User Schedule</value>
+  </data>
+  <data name="cmb_reports.Location" type="System.Drawing.Point, System.Drawing">
+    <value>350, 415</value>
+  </data>
+  <data name="cmb_reports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="cmb_reports.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cmb_reports.Name" xml:space="preserve">
+    <value>cmb_reports</value>
+  </data>
+  <data name="&gt;&gt;cmb_reports.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmb_reports.Parent" xml:space="preserve">
+    <value>tab_overview</value>
+  </data>
+  <data name="&gt;&gt;cmb_reports.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>350, 398</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Generate Reports</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>tab_overview</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="monthCalendar1.Location" type="System.Drawing.Point, System.Drawing">
     <value>350, 26</value>
@@ -243,7 +348,7 @@
     <value>tab_overview</value>
   </data>
   <data name="&gt;&gt;monthCalendar1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="tab_overview.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -272,6 +377,621 @@
   </data>
   <data name="&gt;&gt;tab_overview.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;btn_clear.Name" xml:space="preserve">
+    <value>btn_clear</value>
+  </data>
+  <data name="&gt;&gt;btn_clear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_clear.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;btn_clear.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btn_delete.Name" xml:space="preserve">
+    <value>btn_delete</value>
+  </data>
+  <data name="&gt;&gt;btn_delete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_delete.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;btn_delete.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btn_update.Name" xml:space="preserve">
+    <value>btn_update</value>
+  </data>
+  <data name="&gt;&gt;btn_update.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_update.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;btn_update.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btn_add.Name" xml:space="preserve">
+    <value>btn_add</value>
+  </data>
+  <data name="&gt;&gt;btn_add.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_add.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;btn_add.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lbl_name.Name" xml:space="preserve">
+    <value>lbl_name</value>
+  </data>
+  <data name="&gt;&gt;lbl_name.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_name.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;lbl_name.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;txt_phone.Name" xml:space="preserve">
+    <value>txt_phone</value>
+  </data>
+  <data name="&gt;&gt;txt_phone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_phone.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;txt_phone.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txt_country.Name" xml:space="preserve">
+    <value>txt_country</value>
+  </data>
+  <data name="&gt;&gt;txt_country.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_country.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;txt_country.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txt_zipCode.Name" xml:space="preserve">
+    <value>txt_zipCode</value>
+  </data>
+  <data name="&gt;&gt;txt_zipCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_zipCode.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;txt_zipCode.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txt_city.Name" xml:space="preserve">
+    <value>txt_city</value>
+  </data>
+  <data name="&gt;&gt;txt_city.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_city.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;txt_city.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txt_addressTwo.Name" xml:space="preserve">
+    <value>txt_addressTwo</value>
+  </data>
+  <data name="&gt;&gt;txt_addressTwo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_addressTwo.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;txt_addressTwo.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;txt_address.Name" xml:space="preserve">
+    <value>txt_address</value>
+  </data>
+  <data name="&gt;&gt;txt_address.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_address.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;txt_address.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txt_name.Name" xml:space="preserve">
+    <value>txt_name</value>
+  </data>
+  <data name="&gt;&gt;txt_name.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_name.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;txt_name.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;dgv_customers.Name" xml:space="preserve">
+    <value>dgv_customers</value>
+  </data>
+  <data name="&gt;&gt;dgv_customers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgv_customers.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;dgv_customers.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="tab_customers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tab_customers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_customers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1056, 491</value>
+  </data>
+  <data name="tab_customers.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tab_customers.Text" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="&gt;&gt;tab_customers.Name" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;tab_customers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_customers.Parent" xml:space="preserve">
+    <value>tab_main</value>
+  </data>
+  <data name="&gt;&gt;tab_customers.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btn_apptClearForm.Name" xml:space="preserve">
+    <value>btn_apptClearForm</value>
+  </data>
+  <data name="&gt;&gt;btn_apptClearForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_apptClearForm.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;btn_apptClearForm.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txt_apptType.Name" xml:space="preserve">
+    <value>txt_apptType</value>
+  </data>
+  <data name="&gt;&gt;txt_apptType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_apptType.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;txt_apptType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txt_apptContact.Name" xml:space="preserve">
+    <value>txt_apptContact</value>
+  </data>
+  <data name="&gt;&gt;txt_apptContact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_apptContact.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;txt_apptContact.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_delete.Name" xml:space="preserve">
+    <value>btn_appt_delete</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_delete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_delete.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_delete.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_update.Name" xml:space="preserve">
+    <value>btn_appt_update</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_update.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_update.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_update.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_add.Name" xml:space="preserve">
+    <value>btn_appt_add</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_add.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_add.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;btn_appt_add.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
+  </data>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;lbl_apptName.Name" xml:space="preserve">
+    <value>lbl_apptName</value>
+  </data>
+  <data name="&gt;&gt;lbl_apptName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_apptName.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;lbl_apptName.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;dtp_timeEnd.Name" xml:space="preserve">
+    <value>dtp_timeEnd</value>
+  </data>
+  <data name="&gt;&gt;dtp_timeEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtp_timeEnd.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;dtp_timeEnd.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;dtp_timeStart.Name" xml:space="preserve">
+    <value>dtp_timeStart</value>
+  </data>
+  <data name="&gt;&gt;dtp_timeStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtp_timeStart.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;dtp_timeStart.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txt_apptUrl.Name" xml:space="preserve">
+    <value>txt_apptUrl</value>
+  </data>
+  <data name="&gt;&gt;txt_apptUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_apptUrl.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;txt_apptUrl.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;dtp_dateEnd.Name" xml:space="preserve">
+    <value>dtp_dateEnd</value>
+  </data>
+  <data name="&gt;&gt;dtp_dateEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtp_dateEnd.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;dtp_dateEnd.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;dtp_dateStart.Name" xml:space="preserve">
+    <value>dtp_dateStart</value>
+  </data>
+  <data name="&gt;&gt;dtp_dateStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtp_dateStart.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;dtp_dateStart.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;txt_apptLocation.Name" xml:space="preserve">
+    <value>txt_apptLocation</value>
+  </data>
+  <data name="&gt;&gt;txt_apptLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_apptLocation.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;txt_apptLocation.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;txt_apptDescription.Name" xml:space="preserve">
+    <value>txt_apptDescription</value>
+  </data>
+  <data name="&gt;&gt;txt_apptDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_apptDescription.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;txt_apptDescription.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;txt_apptTitle.Name" xml:space="preserve">
+    <value>txt_apptTitle</value>
+  </data>
+  <data name="&gt;&gt;txt_apptTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_apptTitle.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;txt_apptTitle.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;txt_apptNameView.Name" xml:space="preserve">
+    <value>txt_apptNameView</value>
+  </data>
+  <data name="&gt;&gt;txt_apptNameView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_apptNameView.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;txt_apptNameView.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptAppointments.Name" xml:space="preserve">
+    <value>dgv_apptAppointments</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptAppointments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptAppointments.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptAppointments.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptCustomers.Name" xml:space="preserve">
+    <value>dgv_apptCustomers</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptCustomers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptCustomers.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptCustomers.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="tab_appointments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tab_appointments.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tab_appointments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1056, 491</value>
+  </data>
+  <data name="tab_appointments.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tab_appointments.Text" xml:space="preserve">
+    <value>Appointments</value>
+  </data>
+  <data name="&gt;&gt;tab_appointments.Name" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;tab_appointments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_appointments.Parent" xml:space="preserve">
+    <value>tab_main</value>
+  </data>
+  <data name="&gt;&gt;tab_appointments.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tab_main.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 4</value>
+  </data>
+  <data name="tab_main.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1064, 517</value>
+  </data>
+  <data name="tab_main.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tab_main.Name" xml:space="preserve">
+    <value>tab_main</value>
+  </data>
+  <data name="&gt;&gt;tab_main.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tab_main.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tab_main.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="btn_clear.Location" type="System.Drawing.Point, System.Drawing">
     <value>732, 277</value>
@@ -708,6 +1428,51 @@
   <metadata name="colId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="colName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colAddress2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colCity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colPostalCode.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colPhone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colCountry.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgv_customers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 7</value>
+  </data>
+  <data name="dgv_customers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 488</value>
+  </data>
+  <data name="dgv_customers.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dgv_customers.Name" xml:space="preserve">
+    <value>dgv_customers</value>
+  </data>
+  <data name="&gt;&gt;dgv_customers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgv_customers.Parent" xml:space="preserve">
+    <value>tab_customers</value>
+  </data>
+  <data name="&gt;&gt;dgv_customers.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <metadata name="colId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="colId.HeaderText" xml:space="preserve">
     <value>Id</value>
   </data>
@@ -752,54 +1517,6 @@
   </metadata>
   <data name="colCountry.HeaderText" xml:space="preserve">
     <value>Country</value>
-  </data>
-  <data name="dgv_customers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 7</value>
-  </data>
-  <data name="dgv_customers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 488</value>
-  </data>
-  <data name="dgv_customers.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dgv_customers.Name" xml:space="preserve">
-    <value>dgv_customers</value>
-  </data>
-  <data name="&gt;&gt;dgv_customers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgv_customers.Parent" xml:space="preserve">
-    <value>tab_customers</value>
-  </data>
-  <data name="&gt;&gt;dgv_customers.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="tab_customers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tab_customers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tab_customers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1056, 491</value>
-  </data>
-  <data name="tab_customers.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tab_customers.Text" xml:space="preserve">
-    <value>Customers</value>
-  </data>
-  <data name="&gt;&gt;tab_customers.Name" xml:space="preserve">
-    <value>tab_customers</value>
-  </data>
-  <data name="&gt;&gt;tab_customers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_customers.Parent" xml:space="preserve">
-    <value>tab_main</value>
-  </data>
-  <data name="&gt;&gt;tab_customers.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="btn_apptClearForm.Location" type="System.Drawing.Point, System.Drawing">
     <value>897, 348</value>
@@ -1374,6 +2091,54 @@
   <metadata name="colApptTabApptId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="colApptTabTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabDescription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabLocation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabContact.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabUrl.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabStartTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabEndTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgv_apptAppointments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 241</value>
+  </data>
+  <data name="dgv_apptAppointments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>437, 244</value>
+  </data>
+  <data name="dgv_apptAppointments.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptAppointments.Name" xml:space="preserve">
+    <value>dgv_apptAppointments</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptAppointments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptAppointments.Parent" xml:space="preserve">
+    <value>tab_appointments</value>
+  </data>
+  <data name="&gt;&gt;dgv_apptAppointments.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <metadata name="colApptTabApptId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="colApptTabApptId.HeaderText" xml:space="preserve">
     <value>Id</value>
   </data>
@@ -1428,26 +2193,50 @@
   <data name="colApptTabEndTime.HeaderText" xml:space="preserve">
     <value>End Time</value>
   </data>
-  <data name="dgv_apptAppointments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 241</value>
+  <metadata name="colApptTabCustId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabCustName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabCustAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabCustAddress2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabCustCity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabCustPostalCode.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabCustPhone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colApptTabCustCountry.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgv_apptCustomers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
   </data>
-  <data name="dgv_apptAppointments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>437, 244</value>
+  <data name="dgv_apptCustomers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>437, 212</value>
   </data>
-  <data name="dgv_apptAppointments.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="dgv_apptCustomers.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;dgv_apptAppointments.Name" xml:space="preserve">
-    <value>dgv_apptAppointments</value>
+  <data name="&gt;&gt;dgv_apptCustomers.Name" xml:space="preserve">
+    <value>dgv_apptCustomers</value>
   </data>
-  <data name="&gt;&gt;dgv_apptAppointments.Type" xml:space="preserve">
+  <data name="&gt;&gt;dgv_apptCustomers.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgv_apptAppointments.Parent" xml:space="preserve">
+  <data name="&gt;&gt;dgv_apptCustomers.Parent" xml:space="preserve">
     <value>tab_appointments</value>
   </data>
-  <data name="&gt;&gt;dgv_apptAppointments.ZOrder" xml:space="preserve">
-    <value>24</value>
+  <data name="&gt;&gt;dgv_apptCustomers.ZOrder" xml:space="preserve">
+    <value>25</value>
   </data>
   <metadata name="colApptTabCustId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1497,75 +2286,6 @@
   <data name="colApptTabCustCountry.HeaderText" xml:space="preserve">
     <value>Country</value>
   </data>
-  <data name="dgv_apptCustomers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="dgv_apptCustomers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>437, 212</value>
-  </data>
-  <data name="dgv_apptCustomers.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dgv_apptCustomers.Name" xml:space="preserve">
-    <value>dgv_apptCustomers</value>
-  </data>
-  <data name="&gt;&gt;dgv_apptCustomers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgv_apptCustomers.Parent" xml:space="preserve">
-    <value>tab_appointments</value>
-  </data>
-  <data name="&gt;&gt;dgv_apptCustomers.ZOrder" xml:space="preserve">
-    <value>25</value>
-  </data>
-  <data name="tab_appointments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tab_appointments.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tab_appointments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1056, 491</value>
-  </data>
-  <data name="tab_appointments.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tab_appointments.Text" xml:space="preserve">
-    <value>Appointments</value>
-  </data>
-  <data name="&gt;&gt;tab_appointments.Name" xml:space="preserve">
-    <value>tab_appointments</value>
-  </data>
-  <data name="&gt;&gt;tab_appointments.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_appointments.Parent" xml:space="preserve">
-    <value>tab_main</value>
-  </data>
-  <data name="&gt;&gt;tab_appointments.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tab_main.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 4</value>
-  </data>
-  <data name="tab_main.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1064, 517</value>
-  </data>
-  <data name="tab_main.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;tab_main.Name" xml:space="preserve">
-    <value>tab_main</value>
-  </data>
-  <data name="&gt;&gt;tab_main.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tab_main.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tab_main.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="btn_exit.Location" type="System.Drawing.Point, System.Drawing">
     <value>924, 528</value>
   </data>
@@ -1601,102 +2321,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Main Application</value>
-  </data>
-  <data name="&gt;&gt;colId.Name" xml:space="preserve">
-    <value>colId</value>
-  </data>
-  <data name="&gt;&gt;colId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colName.Name" xml:space="preserve">
-    <value>colName</value>
-  </data>
-  <data name="&gt;&gt;colName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colAddress.Name" xml:space="preserve">
-    <value>colAddress</value>
-  </data>
-  <data name="&gt;&gt;colAddress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colAddress2.Name" xml:space="preserve">
-    <value>colAddress2</value>
-  </data>
-  <data name="&gt;&gt;colAddress2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colCity.Name" xml:space="preserve">
-    <value>colCity</value>
-  </data>
-  <data name="&gt;&gt;colCity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colPostalCode.Name" xml:space="preserve">
-    <value>colPostalCode</value>
-  </data>
-  <data name="&gt;&gt;colPostalCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colPhone.Name" xml:space="preserve">
-    <value>colPhone</value>
-  </data>
-  <data name="&gt;&gt;colPhone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colCountry.Name" xml:space="preserve">
-    <value>colCountry</value>
-  </data>
-  <data name="&gt;&gt;colCountry.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustId.Name" xml:space="preserve">
-    <value>colApptTabCustId</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustName.Name" xml:space="preserve">
-    <value>colApptTabCustName</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustAddress.Name" xml:space="preserve">
-    <value>colApptTabCustAddress</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustAddress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustAddress2.Name" xml:space="preserve">
-    <value>colApptTabCustAddress2</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustAddress2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustCity.Name" xml:space="preserve">
-    <value>colApptTabCustCity</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustCity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustPostalCode.Name" xml:space="preserve">
-    <value>colApptTabCustPostalCode</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustPostalCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustPhone.Name" xml:space="preserve">
-    <value>colApptTabCustPhone</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustPhone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustCountry.Name" xml:space="preserve">
-    <value>colApptTabCustCountry</value>
-  </data>
-  <data name="&gt;&gt;colApptTabCustCountry.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;colOverviewId.Name" xml:space="preserve">
     <value>colOverviewId</value>
@@ -1752,6 +2376,54 @@
   <data name="&gt;&gt;colOverviewEndTime.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;colId.Name" xml:space="preserve">
+    <value>colId</value>
+  </data>
+  <data name="&gt;&gt;colId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colName.Name" xml:space="preserve">
+    <value>colName</value>
+  </data>
+  <data name="&gt;&gt;colName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colAddress.Name" xml:space="preserve">
+    <value>colAddress</value>
+  </data>
+  <data name="&gt;&gt;colAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colAddress2.Name" xml:space="preserve">
+    <value>colAddress2</value>
+  </data>
+  <data name="&gt;&gt;colAddress2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colCity.Name" xml:space="preserve">
+    <value>colCity</value>
+  </data>
+  <data name="&gt;&gt;colCity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colPostalCode.Name" xml:space="preserve">
+    <value>colPostalCode</value>
+  </data>
+  <data name="&gt;&gt;colPostalCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colPhone.Name" xml:space="preserve">
+    <value>colPhone</value>
+  </data>
+  <data name="&gt;&gt;colPhone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colCountry.Name" xml:space="preserve">
+    <value>colCountry</value>
+  </data>
+  <data name="&gt;&gt;colCountry.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;colApptTabApptId.Name" xml:space="preserve">
     <value>colApptTabApptId</value>
   </data>
@@ -1804,6 +2476,54 @@
     <value>colApptTabEndTime</value>
   </data>
   <data name="&gt;&gt;colApptTabEndTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustId.Name" xml:space="preserve">
+    <value>colApptTabCustId</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustName.Name" xml:space="preserve">
+    <value>colApptTabCustName</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustAddress.Name" xml:space="preserve">
+    <value>colApptTabCustAddress</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustAddress2.Name" xml:space="preserve">
+    <value>colApptTabCustAddress2</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustAddress2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustCity.Name" xml:space="preserve">
+    <value>colApptTabCustCity</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustCity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustPostalCode.Name" xml:space="preserve">
+    <value>colApptTabCustPostalCode</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustPostalCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustPhone.Name" xml:space="preserve">
+    <value>colApptTabCustPhone</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustPhone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustCountry.Name" xml:space="preserve">
+    <value>colApptTabCustCountry</value>
+  </data>
+  <data name="&gt;&gt;colApptTabCustCountry.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

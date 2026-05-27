@@ -55,7 +55,7 @@ namespace C969_Project
 		//Still needs to add a string to Strings.resx
 		private void AppointmentAlert()
 		{
-			List<Appointment> upcomingAppointments = dataService.GetAppointmentsByUser((int)loggedInUser);
+			List<Appointment> upcomingAppointments = dataService.GetAppointmentsByPerson((int)loggedInUser, false);
 			DateTime now = DateTime.UtcNow;
 			foreach (Appointment appointment in upcomingAppointments)
 			{
@@ -542,6 +542,31 @@ namespace C969_Project
 				dtp_timeStart.Value = Convert.ToDateTime(row.Cells["colApptStartTime"].Value);
 				dtp_dateEnd.Value = Convert.ToDateTime(row.Cells["colApptEndDate"].Value);
 				dtp_timeEnd.Value = Convert.ToDateTime(row.Cells["colApptEndTime"].Value);				
+			}
+		}
+
+		private void btn_genReport_Click(object sender, EventArgs e)
+		{
+			if(cmb_reports.SelectedItem == null)
+			{
+				MessageBox.Show(Strings.SelectReport);
+				return;
+			}
+			string selectedReport = cmb_reports.SelectedItem.ToString();
+			if(selectedReport == Strings.ReportApptsByType)
+			{
+				ReportApptsByType reportForm = new ReportApptsByType(dbString);
+				reportForm.ShowDialog();
+			}
+			else if(selectedReport == Strings.ReportApptsByMonth)
+			{
+				ReportApptsByMonth reportForm = new ReportApptsByMonth(dbString);
+				reportForm.ShowDialog();
+			}
+			else if(selectedReport == Strings.ReportScheduleByContact)
+			{
+				ReportScheduleByContact reportForm = new ReportScheduleByContact(dbString);
+				reportForm.ShowDialog();
 			}
 		}
 	}	

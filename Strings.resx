@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AppointmentAlert" xml:space="preserve">
+    <value>You have an appointment in the next 15 minutes!</value>
+  </data>
   <data name="ConfirmDelete" xml:space="preserve">
     <value>Are you sure you want to delete</value>
   </data>

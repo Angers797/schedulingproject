@@ -61,6 +61,15 @@ namespace C969_Project {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have an appointment in the next 15 minutes!.
+        /// </summary>
+        internal static string AppointmentAlert {
+            get {
+                return ResourceManager.GetString("AppointmentAlert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to delete.
         /// </summary>
         internal static string ConfirmDelete {

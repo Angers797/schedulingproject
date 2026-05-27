@@ -30,6 +30,15 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
 			this.dgv_upcoming = new System.Windows.Forms.DataGridView();
+			this.colOverviewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colOverviewEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.label1 = new System.Windows.Forms.Label();
 			this.tab_main = new System.Windows.Forms.TabControl();
 			this.tab_overview = new System.Windows.Forms.TabPage();
@@ -88,6 +97,15 @@
 			this.txt_apptTitle = new System.Windows.Forms.TextBox();
 			this.txt_apptNameView = new System.Windows.Forms.TextBox();
 			this.dgv_apptAppointments = new System.Windows.Forms.DataGridView();
+			this.colApptTabApptId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colApptTabEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dgv_apptCustomers = new System.Windows.Forms.DataGridView();
 			this.colApptTabCustId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colApptTabCustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,24 +116,9 @@
 			this.colApptTabCustPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colApptTabCustCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.btn_exit = new System.Windows.Forms.Button();
-			this.colOverviewId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colOverviewTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colOverviewDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colOverviewLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colOverviewContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colOverviewType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colOverviewUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colOverviewStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colOverviewEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colApptTabApptId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colApptTabTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colApptTabDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colApptTabLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colApptTabContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colApptTabType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colApptTabUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colApptTabStartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colApptTabEndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.label2 = new System.Windows.Forms.Label();
+			this.cmb_reports = new System.Windows.Forms.ComboBox();
+			this.btn_genReport = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_upcoming)).BeginInit();
 			this.tab_main.SuspendLayout();
 			this.tab_overview.SuspendLayout();
@@ -145,6 +148,60 @@
 			this.dgv_upcoming.Name = "dgv_upcoming";
 			this.dgv_upcoming.ReadOnly = true;
 			// 
+			// colOverviewId
+			// 
+			resources.ApplyResources(this.colOverviewId, "colOverviewId");
+			this.colOverviewId.Name = "colOverviewId";
+			this.colOverviewId.ReadOnly = true;
+			// 
+			// colOverviewTitle
+			// 
+			resources.ApplyResources(this.colOverviewTitle, "colOverviewTitle");
+			this.colOverviewTitle.Name = "colOverviewTitle";
+			this.colOverviewTitle.ReadOnly = true;
+			// 
+			// colOverviewDescription
+			// 
+			resources.ApplyResources(this.colOverviewDescription, "colOverviewDescription");
+			this.colOverviewDescription.Name = "colOverviewDescription";
+			this.colOverviewDescription.ReadOnly = true;
+			// 
+			// colOverviewLocation
+			// 
+			resources.ApplyResources(this.colOverviewLocation, "colOverviewLocation");
+			this.colOverviewLocation.Name = "colOverviewLocation";
+			this.colOverviewLocation.ReadOnly = true;
+			// 
+			// colOverviewContact
+			// 
+			resources.ApplyResources(this.colOverviewContact, "colOverviewContact");
+			this.colOverviewContact.Name = "colOverviewContact";
+			this.colOverviewContact.ReadOnly = true;
+			// 
+			// colOverviewType
+			// 
+			resources.ApplyResources(this.colOverviewType, "colOverviewType");
+			this.colOverviewType.Name = "colOverviewType";
+			this.colOverviewType.ReadOnly = true;
+			// 
+			// colOverviewUrl
+			// 
+			resources.ApplyResources(this.colOverviewUrl, "colOverviewUrl");
+			this.colOverviewUrl.Name = "colOverviewUrl";
+			this.colOverviewUrl.ReadOnly = true;
+			// 
+			// colOverviewStartTime
+			// 
+			resources.ApplyResources(this.colOverviewStartTime, "colOverviewStartTime");
+			this.colOverviewStartTime.Name = "colOverviewStartTime";
+			this.colOverviewStartTime.ReadOnly = true;
+			// 
+			// colOverviewEndTime
+			// 
+			resources.ApplyResources(this.colOverviewEndTime, "colOverviewEndTime");
+			this.colOverviewEndTime.Name = "colOverviewEndTime";
+			this.colOverviewEndTime.ReadOnly = true;
+			// 
 			// label1
 			// 
 			resources.ApplyResources(this.label1, "label1");
@@ -162,6 +219,9 @@
 			// 
 			// tab_overview
 			// 
+			this.tab_overview.Controls.Add(this.btn_genReport);
+			this.tab_overview.Controls.Add(this.cmb_reports);
+			this.tab_overview.Controls.Add(this.label2);
 			this.tab_overview.Controls.Add(this.monthCalendar1);
 			this.tab_overview.Controls.Add(this.label1);
 			this.tab_overview.Controls.Add(this.dgv_upcoming);
@@ -547,6 +607,60 @@
 			this.dgv_apptAppointments.ReadOnly = true;
 			this.dgv_apptAppointments.Click += new System.EventHandler(this.dgv_apptAppointments_Click);
 			// 
+			// colApptTabApptId
+			// 
+			resources.ApplyResources(this.colApptTabApptId, "colApptTabApptId");
+			this.colApptTabApptId.Name = "colApptTabApptId";
+			this.colApptTabApptId.ReadOnly = true;
+			// 
+			// colApptTabTitle
+			// 
+			resources.ApplyResources(this.colApptTabTitle, "colApptTabTitle");
+			this.colApptTabTitle.Name = "colApptTabTitle";
+			this.colApptTabTitle.ReadOnly = true;
+			// 
+			// colApptTabDescription
+			// 
+			resources.ApplyResources(this.colApptTabDescription, "colApptTabDescription");
+			this.colApptTabDescription.Name = "colApptTabDescription";
+			this.colApptTabDescription.ReadOnly = true;
+			// 
+			// colApptTabLocation
+			// 
+			resources.ApplyResources(this.colApptTabLocation, "colApptTabLocation");
+			this.colApptTabLocation.Name = "colApptTabLocation";
+			this.colApptTabLocation.ReadOnly = true;
+			// 
+			// colApptTabContact
+			// 
+			resources.ApplyResources(this.colApptTabContact, "colApptTabContact");
+			this.colApptTabContact.Name = "colApptTabContact";
+			this.colApptTabContact.ReadOnly = true;
+			// 
+			// colApptTabType
+			// 
+			resources.ApplyResources(this.colApptTabType, "colApptTabType");
+			this.colApptTabType.Name = "colApptTabType";
+			this.colApptTabType.ReadOnly = true;
+			// 
+			// colApptTabUrl
+			// 
+			resources.ApplyResources(this.colApptTabUrl, "colApptTabUrl");
+			this.colApptTabUrl.Name = "colApptTabUrl";
+			this.colApptTabUrl.ReadOnly = true;
+			// 
+			// colApptTabStartTime
+			// 
+			resources.ApplyResources(this.colApptTabStartTime, "colApptTabStartTime");
+			this.colApptTabStartTime.Name = "colApptTabStartTime";
+			this.colApptTabStartTime.ReadOnly = true;
+			// 
+			// colApptTabEndTime
+			// 
+			resources.ApplyResources(this.colApptTabEndTime, "colApptTabEndTime");
+			this.colApptTabEndTime.Name = "colApptTabEndTime";
+			this.colApptTabEndTime.ReadOnly = true;
+			// 
 			// dgv_apptCustomers
 			// 
 			this.dgv_apptCustomers.AllowUserToAddRows = false;
@@ -621,113 +735,26 @@
 			this.btn_exit.UseVisualStyleBackColor = true;
 			this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
 			// 
-			// colOverviewId
+			// label2
 			// 
-			resources.ApplyResources(this.colOverviewId, "colOverviewId");
-			this.colOverviewId.Name = "colOverviewId";
-			this.colOverviewId.ReadOnly = true;
+			resources.ApplyResources(this.label2, "label2");
+			this.label2.Name = "label2";
 			// 
-			// colOverviewTitle
+			// cmb_reports
 			// 
-			resources.ApplyResources(this.colOverviewTitle, "colOverviewTitle");
-			this.colOverviewTitle.Name = "colOverviewTitle";
-			this.colOverviewTitle.ReadOnly = true;
+			this.cmb_reports.FormattingEnabled = true;
+			this.cmb_reports.Items.AddRange(new object[] {
+            resources.GetString("cmb_reports.Items"),
+            resources.GetString("cmb_reports.Items1")});
+			resources.ApplyResources(this.cmb_reports, "cmb_reports");
+			this.cmb_reports.Name = "cmb_reports";
 			// 
-			// colOverviewDescription
+			// btn_genReport
 			// 
-			resources.ApplyResources(this.colOverviewDescription, "colOverviewDescription");
-			this.colOverviewDescription.Name = "colOverviewDescription";
-			this.colOverviewDescription.ReadOnly = true;
-			// 
-			// colOverviewLocation
-			// 
-			resources.ApplyResources(this.colOverviewLocation, "colOverviewLocation");
-			this.colOverviewLocation.Name = "colOverviewLocation";
-			this.colOverviewLocation.ReadOnly = true;
-			// 
-			// colOverviewContact
-			// 
-			resources.ApplyResources(this.colOverviewContact, "colOverviewContact");
-			this.colOverviewContact.Name = "colOverviewContact";
-			this.colOverviewContact.ReadOnly = true;
-			// 
-			// colOverviewType
-			// 
-			resources.ApplyResources(this.colOverviewType, "colOverviewType");
-			this.colOverviewType.Name = "colOverviewType";
-			this.colOverviewType.ReadOnly = true;
-			// 
-			// colOverviewUrl
-			// 
-			resources.ApplyResources(this.colOverviewUrl, "colOverviewUrl");
-			this.colOverviewUrl.Name = "colOverviewUrl";
-			this.colOverviewUrl.ReadOnly = true;
-			// 
-			// colOverviewStartTime
-			// 
-			resources.ApplyResources(this.colOverviewStartTime, "colOverviewStartTime");
-			this.colOverviewStartTime.Name = "colOverviewStartTime";
-			this.colOverviewStartTime.ReadOnly = true;
-			// 
-			// colOverviewEndTime
-			// 
-			resources.ApplyResources(this.colOverviewEndTime, "colOverviewEndTime");
-			this.colOverviewEndTime.Name = "colOverviewEndTime";
-			this.colOverviewEndTime.ReadOnly = true;
-			// 
-			// colApptTabApptId
-			// 
-			resources.ApplyResources(this.colApptTabApptId, "colApptTabApptId");
-			this.colApptTabApptId.Name = "colApptTabApptId";
-			this.colApptTabApptId.ReadOnly = true;
-			// 
-			// colApptTabTitle
-			// 
-			resources.ApplyResources(this.colApptTabTitle, "colApptTabTitle");
-			this.colApptTabTitle.Name = "colApptTabTitle";
-			this.colApptTabTitle.ReadOnly = true;
-			// 
-			// colApptTabDescription
-			// 
-			resources.ApplyResources(this.colApptTabDescription, "colApptTabDescription");
-			this.colApptTabDescription.Name = "colApptTabDescription";
-			this.colApptTabDescription.ReadOnly = true;
-			// 
-			// colApptTabLocation
-			// 
-			resources.ApplyResources(this.colApptTabLocation, "colApptTabLocation");
-			this.colApptTabLocation.Name = "colApptTabLocation";
-			this.colApptTabLocation.ReadOnly = true;
-			// 
-			// colApptTabContact
-			// 
-			resources.ApplyResources(this.colApptTabContact, "colApptTabContact");
-			this.colApptTabContact.Name = "colApptTabContact";
-			this.colApptTabContact.ReadOnly = true;
-			// 
-			// colApptTabType
-			// 
-			resources.ApplyResources(this.colApptTabType, "colApptTabType");
-			this.colApptTabType.Name = "colApptTabType";
-			this.colApptTabType.ReadOnly = true;
-			// 
-			// colApptTabUrl
-			// 
-			resources.ApplyResources(this.colApptTabUrl, "colApptTabUrl");
-			this.colApptTabUrl.Name = "colApptTabUrl";
-			this.colApptTabUrl.ReadOnly = true;
-			// 
-			// colApptTabStartTime
-			// 
-			resources.ApplyResources(this.colApptTabStartTime, "colApptTabStartTime");
-			this.colApptTabStartTime.Name = "colApptTabStartTime";
-			this.colApptTabStartTime.ReadOnly = true;
-			// 
-			// colApptTabEndTime
-			// 
-			resources.ApplyResources(this.colApptTabEndTime, "colApptTabEndTime");
-			this.colApptTabEndTime.Name = "colApptTabEndTime";
-			this.colApptTabEndTime.ReadOnly = true;
+			resources.ApplyResources(this.btn_genReport, "btn_genReport");
+			this.btn_genReport.Name = "btn_genReport";
+			this.btn_genReport.UseVisualStyleBackColor = true;
+			this.btn_genReport.Click += new System.EventHandler(this.btn_genReport_Click);
 			// 
 			// Main
 			// 
@@ -839,5 +866,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabUrl;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabStartTime;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colApptTabEndTime;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button btn_genReport;
+		private System.Windows.Forms.ComboBox cmb_reports;
 	}
 }
