@@ -102,11 +102,13 @@
 			// 
 			resources.ApplyResources(this.lbl_userLocalZone, "lbl_userLocalZone");
 			this.lbl_userLocalZone.Name = "lbl_userLocalZone";
+
 			// 
 			// lbl_userRegionDisplay
 			// 
 			resources.ApplyResources(this.lbl_userRegionDisplay, "lbl_userRegionDisplay");
 			this.lbl_userRegionDisplay.Name = "lbl_userRegionDisplay";
+
 			// 
 			// Login
 			// 

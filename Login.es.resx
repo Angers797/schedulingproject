@@ -155,7 +155,7 @@
     <value>Acceso</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>412, 325</value>
+    <value>416, 325</value>
   </data>
   <data name="lbl_login.Location" type="System.Drawing.Point, System.Drawing">
     <value>98, 50</value>
@@ -174,5 +174,8 @@
   </data>
   <data name="lbl_login.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
+  </data>
+  <data name="lbl_userRegionDisplay.Text" xml:space="preserve">
+    <value>$"Region: {userRegion.EnglishName}"</value>
   </data>
 </root>

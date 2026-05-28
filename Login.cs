@@ -26,10 +26,8 @@ namespace C969_Project
 		private void Main_Load(object sender, EventArgs e)
 		{			
 			localZone = TimeZoneInfo.Local;
-			userRegion = RegionInfo.CurrentRegion;
-			string localZoneName = localZone.DisplayName;
-			string countryName = userRegion.DisplayName;	
-			lbl_userLocalZone.Text = $"Local time zone: {localZoneName}";
+			userRegion = new RegionInfo(CultureInfo.InstalledUICulture.Name);
+			lbl_userLocalZone.Text = $"Local time zone: {localZone.DisplayName}";
 			lbl_userRegionDisplay.Text = $"Region: {userRegion.EnglishName}";
 			populateDatabase();
 		}
@@ -61,14 +59,27 @@ namespace C969_Project
 
 		private void UpdateUILanguage(string lang)
 		{
+			var culture = new CultureInfo(lang);
+			ComponentResourceManager resources = new ComponentResourceManager(typeof(Login));
+
 			foreach (Control c in this.Controls)
 			{
-				ComponentResourceManager resources = new ComponentResourceManager(typeof(Login));
-				resources.ApplyResources(c, c.Name, new CultureInfo(lang));
+				resources.ApplyResources(c, c.Name, culture);
 			}
+			
 			lbl_userLocalZone.Text = string.Format(Strings.LocalTime, localZone.DisplayName);
 			lbl_userRegionDisplay.Text = string.Format(Strings.Region, userRegion.EnglishName);
+			//Force the labels to stay because they keep disappearing
+			FillTimeAndRegionLabels();
+
 		}
+
+		private void FillTimeAndRegionLabels()
+		{
+			lbl_userLocalZone.Text = $"Local time zone: {localZone.DisplayName}";
+			lbl_userRegionDisplay.Text = $"Region: {userRegion.EnglishName}";
+		}
+
 
 		private void rbtn_spanish_CheckedChanged(object sender, EventArgs e)
 		{
