@@ -555,21 +555,134 @@ namespace C969_Project
 			string selectedReport = cmb_reports.SelectedItem.ToString();
 			if(selectedReport == Strings.ReportApptsByType)
 			{
-				ReportApptsByType reportForm = new ReportApptsByType(dbString);
-				reportForm.ShowDialog();
+				GenerateReportApptTypesByCountry();
 			}
 			else if(selectedReport == Strings.ReportApptsByMonth)
 			{
-				ReportApptsByMonth reportForm = new ReportApptsByMonth(dbString);
-				reportForm.ShowDialog();
+				GenerateReportApptTypesByMonth();
 			}
 			else if(selectedReport == Strings.ReportScheduleByContact)
 			{
-				ReportScheduleByContact reportForm = new ReportScheduleByContact(dbString);
-				reportForm.ShowDialog();
+				GenerateReportScheduleByUser();
 			}
+		}
+
+		private void GenerateReportScheduleByUser()
+		{
+			var allAppointments = dataService.GetAllAppointments();
+			//Group appointments by contact and generate a schedule for each contact based on their appointments by date and time
+			var scheduleByContact = allAppointments.GroupBy(a => a.Contact)
+				.Select(g => new
+				{					Contact = g.Key,
+					Appointments = g.OrderBy(a => a.Start).Select(a => new
+					{						Title = a.Title,
+						Description = a.Description,
+						Location = a.Location,
+						Type = a.Type,
+						Start = ConvertToLocalTime(a.Start),
+						End = ConvertToLocalTime(a.End)
+					})
+				});
+			//Format the data into a readable format and write to a text file
+			StringBuilder reportContent = new StringBuilder();
+			foreach (var contactSchedule in scheduleByContact)
+			{
+				reportContent.AppendLine($"Contact: {contactSchedule.Contact}");
+				foreach (var appt in contactSchedule.Appointments)
+				{
+					reportContent.AppendLine($"  Title: {appt.Title}");
+					reportContent.AppendLine($"  Description: {appt.Description}");
+					reportContent.AppendLine($"  Location: {appt.Location}");
+					reportContent.AppendLine($"  Type: {appt.Type}");
+					reportContent.AppendLine($"  Start: {appt.Start}");
+					reportContent.AppendLine($"  End: {appt.End}");
+					reportContent.AppendLine();
+				}
+			}
+			//Write the report content to a text file and ensure no duplicate files
+			string fileName = "ScheduleByContactReport.txt";
+			int fileIndex = 1;
+			while (File.Exists(fileName))
+			{
+				fileName = $"ScheduleByContactReport_{fileIndex}.txt";
+				fileIndex++;
+			}
+			File.WriteAllText(fileName, reportContent.ToString());
+		}
+
+		private void GenerateReportApptTypesByMonth()
+		{
+			var allAppointments = dataService.GetAllAppointments();
+			//Sort appointments by Month and derive how many appts of each type per month
+			var appointmentsByMonth = allAppointments.GroupBy(a => a.Start.Month)
+				.Select(g => new
+				{					Month = g.Key,
+					Types = g.GroupBy(a => a.Type)
+						.Select(t => new
+						{							Type = t.Key,
+							Count = t.Count()
+						})
+				});
+				//Format the data into a readable format and write to a text file
+				StringBuilder reportContent = new StringBuilder();
+				foreach (var monthGroup in appointmentsByMonth)
+				{
+					reportContent.AppendLine($"Month: {monthGroup.Month}");
+					foreach (var typeGroup in monthGroup.Types)
+					{
+						reportContent.AppendLine($"  Type: {typeGroup.Type} - Count: {typeGroup.Count}");
+					}
+					reportContent.AppendLine();
+				}
+				//Write the report content to a text file and ensure no duplicate files
+				string fileName = "ApptTypesByMonthReport.txt";
+				int fileIndex = 1;
+				while (File.Exists(fileName))
+				{
+					fileName = $"ApptTypesByMonthReport_{fileIndex}.txt";
+					fileIndex++;
+				}
+				File.WriteAllText(fileName, reportContent.ToString());
+		}
+
+		private void GenerateReportApptTypesByCountry()
+		{
+			var allAppointments = dataService.GetAllAppointments();
+			//Group appointments by Country and derive how many appts of each type per country
+			var appointmentsByCountry = allAppointments.GroupBy(a => a.Location)
+				.Select(g => new
+				{					Country = g.Key,
+					Types = g.GroupBy(a => a.Type)
+						.Select(t => new
+						{							Type = t.Key,
+							Count = t.Count()
+						})
+				});
+			//Format the data into a readable format and write to a text file
+			StringBuilder reportContent = new StringBuilder();
+			foreach (var countryGroup in appointmentsByCountry)
+			{
+				reportContent.AppendLine($"Country: {countryGroup.Country}");
+				foreach (var typeGroup in countryGroup.Types)
+				{
+					reportContent.AppendLine($"  Type: {typeGroup.Type} - Count: {typeGroup.Count}");
+				}
+				reportContent.AppendLine();
+			}
+			//Write the report content to a text file and ensure no duplicate files
+			string fileName = "ApptTypesByCountryReport.txt";
+			int fileIndex = 1;
+			while (File.Exists(fileName))
+			{
+				fileName = $"ApptTypesByCountryReport_{fileIndex}.txt";
+				fileIndex++;
+			}
+			File.WriteAllText(fileName, reportContent.ToString());
 		}
 	}	
 }
+
+
+
 
 
