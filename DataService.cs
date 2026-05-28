@@ -438,6 +438,45 @@ namespace C969_Project
 			}
 		}
 
+		public List<Appointment> GetAllAppointments()
+		{
+			var appointments = new List<Appointment>();
+			try
+			{
+				using (var _dbConnection = new MySqlConnection(connectionString))
+				using (var command = new MySqlCommand("SELECT * FROM appointment", _dbConnection))
+				{
+					_dbConnection.Open();
+					using (MySqlDataReader reader = command.ExecuteReader())
+					{
+						while (reader.Read())
+						{
+							appointments.Add(new Appointment
+							{
+								AppointmentId = reader.GetInt32(0),
+								CustomerId = reader.GetInt32(1),
+								UserId = reader.GetInt32(2),
+								Title = reader.IsDBNull(3) ? null : reader.GetString("title"),
+								Description = reader.IsDBNull(4) ? null : reader.GetString("description"),
+								Location = reader.IsDBNull(5) ? null : reader.GetString("location"),
+								Contact = reader.IsDBNull(6) ? null : reader.GetString("contact"),
+								Type = reader.IsDBNull(7) ? null : reader.GetString("type"),
+								Url = reader.IsDBNull(8) ? null : reader.GetString("url"),
+								Start = reader.GetDateTime(9),
+								End = reader.GetDateTime(10)
+							});
+						}
+					}
+				}
+				return appointments;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error fetching appointments: " + ex.Message);
+				return null;
+			}
+		}
+
 		public List<Appointment> GetAppointmentsByMonth(int month, int year)
 		{
 			var appointments = new List<Appointment>();

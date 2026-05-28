@@ -42,6 +42,9 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.tab_main = new System.Windows.Forms.TabControl();
 			this.tab_overview = new System.Windows.Forms.TabPage();
+			this.btn_genReport = new System.Windows.Forms.Button();
+			this.cmb_reports = new System.Windows.Forms.ComboBox();
+			this.label2 = new System.Windows.Forms.Label();
 			this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
 			this.tab_customers = new System.Windows.Forms.TabPage();
 			this.btn_clear = new System.Windows.Forms.Button();
@@ -116,9 +119,6 @@
 			this.colApptTabCustPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colApptTabCustCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.btn_exit = new System.Windows.Forms.Button();
-			this.label2 = new System.Windows.Forms.Label();
-			this.cmb_reports = new System.Windows.Forms.ComboBox();
-			this.btn_genReport = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_upcoming)).BeginInit();
 			this.tab_main.SuspendLayout();
 			this.tab_overview.SuspendLayout();
@@ -228,6 +228,28 @@
 			resources.ApplyResources(this.tab_overview, "tab_overview");
 			this.tab_overview.Name = "tab_overview";
 			this.tab_overview.UseVisualStyleBackColor = true;
+			// 
+			// btn_genReport
+			// 
+			resources.ApplyResources(this.btn_genReport, "btn_genReport");
+			this.btn_genReport.Name = "btn_genReport";
+			this.btn_genReport.UseVisualStyleBackColor = true;
+			this.btn_genReport.Click += new System.EventHandler(this.btn_genReport_Click);
+			// 
+			// cmb_reports
+			// 
+			this.cmb_reports.FormattingEnabled = true;
+			this.cmb_reports.Items.AddRange(new object[] {
+            resources.GetString("cmb_reports.Items"),
+            resources.GetString("cmb_reports.Items1"),
+            resources.GetString("cmb_reports.Items2")});
+			resources.ApplyResources(this.cmb_reports, "cmb_reports");
+			this.cmb_reports.Name = "cmb_reports";
+			// 
+			// label2
+			// 
+			resources.ApplyResources(this.label2, "label2");
+			this.label2.Name = "label2";
 			// 
 			// monthCalendar1
 			// 
@@ -734,27 +756,6 @@
 			this.btn_exit.Name = "btn_exit";
 			this.btn_exit.UseVisualStyleBackColor = true;
 			this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
-			// 
-			// label2
-			// 
-			resources.ApplyResources(this.label2, "label2");
-			this.label2.Name = "label2";
-			// 
-			// cmb_reports
-			// 
-			this.cmb_reports.FormattingEnabled = true;
-			this.cmb_reports.Items.AddRange(new object[] {
-            resources.GetString("cmb_reports.Items"),
-            resources.GetString("cmb_reports.Items1")});
-			resources.ApplyResources(this.cmb_reports, "cmb_reports");
-			this.cmb_reports.Name = "cmb_reports";
-			// 
-			// btn_genReport
-			// 
-			resources.ApplyResources(this.btn_genReport, "btn_genReport");
-			this.btn_genReport.Name = "btn_genReport";
-			this.btn_genReport.UseVisualStyleBackColor = true;
-			this.btn_genReport.Click += new System.EventHandler(this.btn_genReport_Click);
 			// 
 			// Main
 			// 

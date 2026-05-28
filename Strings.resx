@@ -159,11 +159,23 @@
   <data name="Region" xml:space="preserve">
     <value>Region: </value>
   </data>
+  <data name="ReportApptsByMonth" xml:space="preserve">
+    <value>Appointment Types</value>
+  </data>
+  <data name="ReportApptsByType" xml:space="preserve">
+    <value>Appointment Types By Country</value>
+  </data>
+  <data name="ReportScheduleByContact" xml:space="preserve">
+    <value>User Schedule</value>
+  </data>
   <data name="SelectAppointment" xml:space="preserve">
     <value>No appointment selected. Please select an appointment to update.</value>
   </data>
   <data name="SelectCustomer" xml:space="preserve">
     <value>No customer selected. Please select a customer</value>
+  </data>
+  <data name="SelectReport" xml:space="preserve">
+    <value>Please select a report type from the drop-down menu</value>
   </data>
   <data name="SuccessAppointmentAdded" xml:space="preserve">
     <value>Appointment added successfully!</value>

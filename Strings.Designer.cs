@@ -187,6 +187,33 @@ namespace C969_Project {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Appointment Types.
+        /// </summary>
+        internal static string ReportApptsByMonth {
+            get {
+                return ResourceManager.GetString("ReportApptsByMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Appointment Types By Country.
+        /// </summary>
+        internal static string ReportApptsByType {
+            get {
+                return ResourceManager.GetString("ReportApptsByType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Schedule.
+        /// </summary>
+        internal static string ReportScheduleByContact {
+            get {
+                return ResourceManager.GetString("ReportScheduleByContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No appointment selected. Please select an appointment to update..
         /// </summary>
         internal static string SelectAppointment {
@@ -201,6 +228,15 @@ namespace C969_Project {
         internal static string SelectCustomer {
             get {
                 return ResourceManager.GetString("SelectCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a report type from the drop-down menu.
+        /// </summary>
+        internal static string SelectReport {
+            get {
+                return ResourceManager.GetString("SelectReport", resourceCulture);
             }
         }
         

@@ -159,11 +159,24 @@
   <data name="Region" xml:space="preserve">
     <value>Región</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ReportApptsByMonth" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ReportApptsByType" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ReportScheduleByContact" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="SelectAppointment" xml:space="preserve">
     <value>No se ha seleccionado ninguna cita. Por favor, seleccione una cita para actualizar.</value>
   </data>
   <data name="SelectCustomer" xml:space="preserve">
     <value>No se ha seleccionado ningún cliente. Por favor, seleccione un cliente.</value>
+  </data>
+  <data name="SelectReport" xml:space="preserve">
+    <value>Por favor, seleccione un tipo de informe del menú desplegable.</value>
   </data>
   <data name="SuccessAppointmentAdded" xml:space="preserve">
     <value>¡Cita añadida con éxito!</value>
